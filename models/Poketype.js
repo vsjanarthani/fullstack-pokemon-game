@@ -30,7 +30,7 @@ Poketype.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'Poketype'
+        modelName: 'poketype'
     }
 );
 
