@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
+const uuid = require('uuid');
 const sequelize = require('../config/connection');
 
 // create User model
@@ -13,8 +14,8 @@ class User extends Model {
 User.init(
     {
         id: { 
-            type: DataTypes.INTEGER,
-            autoIncrement: true,
+            type: DataTypes.UUID,
+            defaultValue: DataTypes.UUIDV4,
             allowNull: false,
             unique: true,
             primaryKey: true,
