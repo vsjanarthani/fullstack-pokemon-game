@@ -1,0 +1,29 @@
+{
+  "name": "fullstack-pokemon-game",
+  "version": "1.0.0",
+  "description": "Pokemon battle game using Node.js & express",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "seed": "node seeds/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sarahdurks/fullstack-pokemon-game.git"
+  },
+  "author": "Janarthani V Subramaniam, Yevgeniya Terlyuk, Megan Close, Sarah Durkin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sarahdurks/fullstack-pokemon-game/issues"
+  },
+  "homepage": "https://github.com/sarahdurks/fullstack-pokemon-game/blob/main/README.md",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.0",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.2"
+  }
+}
