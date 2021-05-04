@@ -4,7 +4,7 @@ const pokemonData = [
   {
     pokedex: '001',
     pokemon_name: 'Bulbasaur',
-    pokemon_pic: 'https://res.cloudinary.com/janarthani/image/upload/v1620024159/001_lv7exg.png',
+    pokemon_pic: 'https://res.cloudinary.com/janarthani/image/upload/v1620088352/001_efpn3l.png',
     hp: 45, 
     attack: 49,
     defense: 49,
@@ -15,7 +15,7 @@ const pokemonData = [
   {
     pokedex: '002',
     pokemon_name: 'Ivysaur',
-    pokemon_pic: 'https://res.cloudinary.com/janarthani/image/upload/v1620024159/001_lv7exg.png',
+    pokemon_pic: 'https://res.cloudinary.com/janarthani/image/upload/v1620088352/001_efpn3l.png',
     hp: 60, 
     attack: 62,
     defense: 63,
@@ -26,7 +26,7 @@ const pokemonData = [
   {
     pokedex: '003',
     pokemon_name: 'Venusaur',
-    pokemon_pic: 'https://res.cloudinary.com/janarthani/image/upload/v1620024159/001_lv7exg.png',
+    pokemon_pic: 'https://res.cloudinary.com/janarthani/image/upload/v1620088352/001_efpn3l.png',
     hp: 80, 
     attack: 82,
     defense: 83,
@@ -37,7 +37,7 @@ const pokemonData = [
   {
     pokedex: '004',
     pokemon_name: 'Charmander',
-    pokemon_pic: 'https://res.cloudinary.com/janarthani/image/upload/v1620024159/001_lv7exg.png',
+    pokemon_pic: 'https://res.cloudinary.com/janarthani/image/upload/v1620088362/004_tzbv4e.png',
     hp: 39, 
     attack: 52,
     defense: 43,
@@ -48,7 +48,7 @@ const pokemonData = [
   {
     pokedex: '005',
     pokemon_name: 'Charmeleon',
-    pokemon_pic: 'https://res.cloudinary.com/janarthani/image/upload/v1620024159/001_lv7exg.png',
+    pokemon_pic: 'https://res.cloudinary.com/janarthani/image/upload/v1620088352/001_efpn3l.png',
     hp: 58, 
     attack: 64,
     defense: 58,
@@ -59,7 +59,7 @@ const pokemonData = [
   {
     pokedex: '006',
     pokemon_name: 'Charizard',
-    pokemon_pic: 'https://res.cloudinary.com/janarthani/image/upload/v1620024159/001_lv7exg.png',
+    pokemon_pic: 'https://res.cloudinary.com/janarthani/image/upload/v1620088352/001_efpn3l.png',
     hp: 78, 
     attack: 84,
     defense: 78,
@@ -70,7 +70,7 @@ const pokemonData = [
   {
     pokedex: '007',
     pokemon_name: 'Squirtle',
-    pokemon_pic: 'https://res.cloudinary.com/janarthani/image/upload/v1620024159/001_lv7exg.png',
+    pokemon_pic: 'https://res.cloudinary.com/janarthani/image/upload/v1620088367/007_ooqqgu.png',
     hp: 44, 
     attack: 48,
     defense: 65,
@@ -81,7 +81,7 @@ const pokemonData = [
   {
     pokedex: '008',
     pokemon_name: 'Wartortle',
-    pokemon_pic: 'https://res.cloudinary.com/janarthani/image/upload/v1620024159/001_lv7exg.png',
+    pokemon_pic: 'https://res.cloudinary.com/janarthani/image/upload/v1620088352/001_efpn3l.png',
     hp: 59, 
     attack: 63,
     defense: 80,
@@ -92,7 +92,7 @@ const pokemonData = [
   {
     pokedex: '009',
     pokemon_name: 'Blastoise',
-    pokemon_pic: 'https://res.cloudinary.com/janarthani/image/upload/v1620024159/001_lv7exg.png',
+    pokemon_pic: 'https://res.cloudinary.com/janarthani/image/upload/v1620088352/001_efpn3l.png',
     hp: 79, 
     attack: 83,
     defense: 100,
@@ -103,7 +103,7 @@ const pokemonData = [
   {
     pokedex: '010',
     pokemon_name: 'Caterpie',
-    pokemon_pic: 'https://res.cloudinary.com/janarthani/image/upload/v1620024159/001_lv7exg.png',
+    pokemon_pic: 'https://res.cloudinary.com/janarthani/image/upload/v1620088352/001_efpn3l.png',
     hp: 45, 
     attack: 30,
     defense: 35,
@@ -114,7 +114,7 @@ const pokemonData = [
   {
     pokedex: '011',
     pokemon_name: 'Metapod',
-    pokemon_pic: 'https://res.cloudinary.com/janarthani/image/upload/v1620024159/001_lv7exg.png',
+    pokemon_pic: 'https://res.cloudinary.com/janarthani/image/upload/v1620088352/001_efpn3l.png',
     hp: 50, 
     attack: 20,
     defense: 55,
@@ -125,7 +125,7 @@ const pokemonData = [
   {
     pokedex: '012',
     pokemon_name: 'Butterfree',
-    pokemon_pic: 'https://res.cloudinary.com/janarthani/image/upload/v1620024159/001_lv7exg.png',
+    pokemon_pic: 'https://res.cloudinary.com/janarthani/image/upload/v1620088352/001_efpn3l.png',
     hp: 60, 
     attack: 45,
     defense: 50,
@@ -136,7 +136,7 @@ const pokemonData = [
   {
     pokedex: '013',
     pokemon_name: 'Weedle',
-    pokemon_pic: 'https://res.cloudinary.com/janarthani/image/upload/v1620024159/001_lv7exg.png',
+    pokemon_pic: 'https://res.cloudinary.com/janarthani/image/upload/v1620088352/001_efpn3l.png',
     hp: 40, 
     attack: 35,
     defense: 30,
@@ -147,7 +147,7 @@ const pokemonData = [
   {
     pokedex: '014',
     pokemon_name: 'Kakuna',
-    pokemon_pic: 'https://res.cloudinary.com/janarthani/image/upload/v1620024159/001_lv7exg.png',
+    pokemon_pic: 'https://res.cloudinary.com/janarthani/image/upload/v1620088352/001_efpn3l.png',
     hp: 45, 
     attack: 25,
     defense: 50,
@@ -158,7 +158,7 @@ const pokemonData = [
   {
     pokedex: '015',
     pokemon_name: 'Beedrill',
-    pokemon_pic: 'https://res.cloudinary.com/janarthani/image/upload/v1620024159/001_lv7exg.png',
+    pokemon_pic: 'https://res.cloudinary.com/janarthani/image/upload/v1620088352/001_efpn3l.png',
     hp: 65, 
     attack: 90,
     defense: 40,
@@ -169,7 +169,7 @@ const pokemonData = [
   {
     pokedex: '016',
     pokemon_name: 'Pidgey',
-    pokemon_pic: 'https://res.cloudinary.com/janarthani/image/upload/v1620024159/001_lv7exg.png',
+    pokemon_pic: 'https://res.cloudinary.com/janarthani/image/upload/v1620088352/001_efpn3l.png',
     hp: 40, 
     attack: 45,
     defense: 40,
@@ -180,7 +180,7 @@ const pokemonData = [
   {
     pokedex: '017',
     pokemon_name: 'Pidgeotto',
-    pokemon_pic: 'https://res.cloudinary.com/janarthani/image/upload/v1620024159/001_lv7exg.png',
+    pokemon_pic: 'https://res.cloudinary.com/janarthani/image/upload/v1620088352/001_efpn3l.png',
     hp: 63, 
     attack: 60,
     defense: 55,
@@ -191,7 +191,7 @@ const pokemonData = [
   {
     pokedex: '018',
     pokemon_name: 'Pidgeot',
-    pokemon_pic: 'https://res.cloudinary.com/janarthani/image/upload/v1620024159/001_lv7exg.png',
+    pokemon_pic: 'https://res.cloudinary.com/janarthani/image/upload/v1620088352/001_efpn3l.png',
     hp: 83, 
     attack: 80,
     defense: 75,
@@ -202,7 +202,7 @@ const pokemonData = [
   {
     pokedex: '019',
     pokemon_name: 'Rattata',
-    pokemon_pic: 'https://res.cloudinary.com/janarthani/image/upload/v1620024159/001_lv7exg.png',
+    pokemon_pic: 'https://res.cloudinary.com/janarthani/image/upload/v1620088352/001_efpn3l.png',
     hp: 30, 
     attack: 56,
     defense: 35,
@@ -213,7 +213,7 @@ const pokemonData = [
   {
     pokedex: '020',
     pokemon_name: 'Raticate',
-    pokemon_pic: 'https://res.cloudinary.com/janarthani/image/upload/v1620024159/001_lv7exg.png',
+    pokemon_pic: 'https://res.cloudinary.com/janarthani/image/upload/v1620088352/001_efpn3l.png',
     hp: 55, 
     attack: 81,
     defense: 60,

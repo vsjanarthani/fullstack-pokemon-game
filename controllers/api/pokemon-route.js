@@ -18,7 +18,7 @@ router.get('/:id', async (req, res) => {
   try {
     const { id } = req.params;
     const pokemonById = await Pokemon.findOne({
-      where: { id }
+      where: { pokedex: id }
     });
     if (!pokemonById) {
       return res.status(404).json({ message: 'No pokemon found with this id' });
