@@ -18,11 +18,17 @@ const getPokemon = () => {
         .then(response => response.json())
         // .then(data => console.log(data));
         .then(data=> {
-            console.log(data);
+            // console.log(data);
             let pokeName = data.name;
             console.log(pokeName);
-            let pokeHP = data.stats[0]
-            console.log(pokeHP);
+            let pokeHP = data.stats[0].base_stat;
+            console.log(`HP value is ${pokeHP}`);
+            let pokeAttack = data.stats[1].base_stat;
+            console.log(`Attack value is ${pokeAttack}`);
+            let pokeDefense = data.stats[2].base_stat;
+            console.log(`Defense value is ${pokeDefense}`);
+            let pokeSpeed = data.stats[5].base_stat;
+            console.log(`Speed value is ${pokeSpeed}`);
         })
     }
 };
