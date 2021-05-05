@@ -1,4 +1,3 @@
-
 // setting empty array to hold random pokemon ids to pull from api
 let pokeNums = [];
 
@@ -20,18 +19,25 @@ const getPokemon = () => {
             .then(data => {
                 let eachPoke = 
                     {
-                        Name: data.name,
-                        HP: data.stats[0].base_stat,
-                        Attack: data.stats[1].base_stat,
-                        Defense: data.stats[2].base_stat,
-                        Speed: data.stats[5].base_stat,
-                        ImageSrc: data.sprites.front_default
+                        name: data.name,
+                        hp: data.stats[0].base_stat,
+                        attack: data.stats[1].base_stat,
+                        defense: data.stats[2].base_stat,
+                        speed: data.stats[5].base_stat,
+                        imageSrc: data.sprites.front_default
                     };
                 pokeData.push(eachPoke);
             })
     }
 };
-console.log(pokeData);
+// console.log(pokeData);
 
 getPokemon();
+
+app.get('/', (req, res) => {
+
+    res.render("draftpage", { pokeData })
+
+  });
+
 
