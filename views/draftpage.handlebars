@@ -1,0 +1,16 @@
+<div class="row">
+    {{#each pokeData}}
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{{imageSrc}}" alt="pokemon image">
+  <div class="card-body">
+    <h5 class="card-title">{{name}}</h5>
+    <p class="card-text">HP is {{hp}}</p>
+    <p class="card-text">Attack is {{attack}}</p>
+    <p class="card-text">Defense is {{defense}}</p>
+    <p class="card-text">Speed is {{speed}}</p>
+    <button class="btn btn-dark">DRAFT ME</button>
+  </div>
+    {{/each}}
+</div>
+
+</div>
