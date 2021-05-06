@@ -36,44 +36,56 @@ router.get('/:id', async (req, res) => {
 });
 
 // POST /api/users
-router.post('/', async (req, res) => {
-  try {
-    const { username, email, password } = req.body
-    console.log(username, email, password);
-    const newUser = await User.create({
-      username,
-      email,
-      password
+router.post('/', (req, res) => {
+ 
+  User.create({
+    username: req.body.username,
+    email: req.body.email,
+    password: req.body.password
+  })
+    .then(dbUserData => {
+      req.session.save(() => {
+        req.session.user_id = dbUserData.id;
+        req.session.username = dbUserData.username;
+        req.session.loggedIn = true;
+  
+        res.json(dbUserData);
+      });
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
     });
-    res.status(200).json(newUser);
-  }
-  catch (e) {
-    res.status(400).json({ Error: e });
-  }
 });
 
 // POST /api/users/login
-router.post('/login', async (req, res) => {
-  // expects {email: 'lernantino@gmail.com', password: 'password1234'}
-  try {
-    const { email, password } = req.body
-    const userLogin = await User.findOne({
-      where: { email }
-    });
-    // console.log('User Login', userLogin);
-    if (!userLogin.email) {
-      return res.status(400).json({ message: 'No user with that email address!' });
+router.post('/login', (req, res) => {
+
+  User.findOne({
+    where: {
+      username: req.body.username
     }
-    const validPassword = await userLogin.checkPassword(password);
-    // console.log(validPassword);
+  }).then(dbUserData => {
+    if (!dbUserData) {
+      res.status(400).json({ message: 'No user with that username!' });
+      return;
+    }
+
+    const validPassword = dbUserData.checkPassword(req.body.password);
+
     if (!validPassword) {
-      return res.status(400).json({ message: 'Incorrect password!' });  
+      res.status(400).json({ message: 'Incorrect password!' });
+      return;
     }
-    res.json({ user: userLogin.username, message: 'You are now logged in!' });
-  }
-  catch (e) {
-    res.status(400).json({ Error: e });
-  }
+
+    req.session.save(() => {
+      req.session.user_id = dbUserData.id;
+      req.session.username = dbUserData.username;
+      req.session.loggedIn = true;
+  
+      res.json({ user: dbUserData, message: 'You are now logged in!' });
+    });
+  });
 });
 
 // PUT /api/users/id
