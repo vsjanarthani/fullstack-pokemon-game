@@ -19,7 +19,7 @@ const getPokemon = () => {
             .then(data => {
                 let eachPoke = 
                     {
-                        name: data.name,
+                        name: (data.name).toUpperCase(),
                         hp: data.stats[0].base_stat,
                         attack: data.stats[1].base_stat,
                         defense: data.stats[2].base_stat,
@@ -30,14 +30,9 @@ const getPokemon = () => {
             })
     }
 };
-// console.log(pokeData);
+console.log(pokeData);
 
 getPokemon();
 
-app.get('/', (req, res) => {
-
-    res.render("draftpage", { pokeData })
-
-  });
 
 
