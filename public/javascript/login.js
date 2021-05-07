@@ -37,13 +37,21 @@ async function signupFormHandler(event) {
           password
         }),
         headers: { 'Content-Type': 'application/json' }
-      });
+      })
+      .then(response => {
+          return response.json()
+      })
+      .then(response => {
+          alert(response.message);
+      })
   
-      if (response.ok) {
-        document.location.replace('/draftpage');
-      } else {
-        alert(response.statusText);
-      }
+    //   if (response.ok) {
+    //     document.location.replace('/draftpage');
+    //   } else {
+    //       let res = response.json()
+    //     // alert(response.statusText);
+    //     console.log(res);
+    //   }
     }
   }
   

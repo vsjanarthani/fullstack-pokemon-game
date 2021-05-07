@@ -40,10 +40,15 @@ console.log(pokeData);
 getPokemon();
 
 router.get('/draftpage', (req, res) => {
+    if (!req.session.loggedIn) {
+        res.redirect('/login');
+        return;
+    }
     res.render("draftpage", { pokeData })
 });
 
 router.get('/login', (req, res) => {
+    console.log(req.session)
     if (req.session.loggedIn) {
         res.redirect('/draftpage');
         return;
