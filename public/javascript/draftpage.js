@@ -1,13 +1,15 @@
 let buttonEl = document.querySelector(".listen");
 let nameEl = document.querySelectorAll(".card-title");
 let nameEl2 = document.querySelector(".card-title");
-let pokeTeam = [] 
+let pokeTeam = []
 
-buttonEl.addEventListener("click", function(event) {
+buttonEl.addEventListener("click", function (event) {
     let pokemonName = event.target.id;
     console.log(pokemonName);
-    pokeTeam.push(pokemonName);
-    console.log(pokeTeam)
+    if (pokeTeam.length < 6) {
+        pokeTeam.push(pokemonName);
+        console.log(pokeTeam)
+    }
 });
 
 
