@@ -6,7 +6,7 @@ let pokeTeam = []
 buttonEl.addEventListener("click", function (event) {
     let pokemonName = event.target.id;
     console.log(pokemonName);
-    if (pokeTeam.length < 6) {
+    if (pokeTeam.length < 6 && !pokeTeam.includes(pokemonName)) {
         pokeTeam.push(pokemonName);
         console.log(pokeTeam)
     }
