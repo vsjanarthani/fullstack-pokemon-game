@@ -27,11 +27,7 @@ const typeData = [
   },
   {
     type: 'Water',
-    type_icon: 'https://res.cloudinary.com/janarthani/image/upload/v1620088352/001_efpn3l.png'
-  },
-  {
-    type: 'Grass',
-    type_icon: 'https://res.cloudinary.com/janarthani/image/upload/v1620088352/001_efpn3l.png'
+    type_icon: 'https://res.cloudinary.com/janarthani/image/upload/v1620024159/001_lv7exg.png'
   }
 ];
 

@@ -1,9 +1,11 @@
-# PokeMon Battles 2.0 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+# Pokémon Battles 2.0 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-![Frame 86](https://user-images.githubusercontent.com/77648727/116839206-45cd9380-ab86-11eb-9d6b-27ffd22bbca5.png)
+![Frame 93](https://user-images.githubusercontent.com/77648727/117231866-f335e680-add4-11eb-83e0-de678e290453.png)
+
+
 
 ## Description
-This is a Pokemon Battle game. Choose your pokemon and choose your user and have fun battling.
+This is a Pokemon Draft.
 
 ## Built With
 JavaScript, ES6, Node.js (express.js, mysql2, sequelize, nodemon, dotenv, express-handlebars), Heroku.
