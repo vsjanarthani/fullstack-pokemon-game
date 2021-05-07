@@ -35,69 +35,73 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// POST /api/users - Sign up
+// POST /api/users
 router.post('/', async (req, res) => {
   try {
-    const { username, email, password } = req.body
-    const newUser = await User.create({
-      username,
-      email,
-      password
-    });
-    // req.session.save((newUser) => {
-    //   req.session.user_id = newUser.id;
-    //   req.session.username = newUser.username;
-    //   req.session.loggedIn = true;
-    // });
-    res.status(200).json(newUser);
+    const dbUserData =
+      await User.create({
+        username: req.body.username,
+        email: req.body.email,
+        password: req.body.password
+      })
+    dbUserData => {
+      req.session.save(() => {
+        req.session.user_id = dbUserData.id;
+        req.session.username = dbUserData.username;
+        req.session.loggedIn = true;
+
+        res.json(dbUserData);
+      });
+    }
   }
   catch (e) {
-    console.log(e);
     res.status(400).json({ Error: e });
   }
 });
 
 // POST /api/users/login
-router.post('/login', async (req, res) => {
-  // expects {email: 'lernantino@gmail.com', password: 'password1234'}
-  try {
-    const { email, password } = req.body
-    const userLogin = await User.findOne({
-      where: { email }
-    });
-    console.log('User Login', userLogin);
-    if (!userLogin.email) {
-      return res.status(400).json({ message: 'No user with that email address!' });
+router.post('/login', (req, res) => {
+  User.findOne({
+    where: {
+      username: req.body.username
     }
-    const validPassword = await userLogin.checkPassword(password);
-    console.log(validPassword);
-    if (!validPassword) {
-      return res.status(400).json({ message: 'Incorrect password!' });
-    }
+  })
+    .then(dbUserData => {
+      if (!dbUserData) {
+        res.status(400).json({ message: 'No user with that username!' });
+        return;
+      }
+      console.log(dbUserData);
+      const validPassword = dbUserData.checkPassword(req.body.password);
+      console.log(validPassword)
+      if (!validPassword) {
+        return res.status(400).json({ message: 'Incorrect password!' });
 
-    // req.session.save((userLogin) => {
-    //   req.session.user_id = userLogin.id;
-    //   req.session.username = userLogin.username;
-    //   req.session.loggedIn = true; 
-    //   console.log(req.session.user_id);
-    // });
+      }
 
-    res.status(200).json({ user: userLogin.username, message: 'You are now logged in!' });
-  }
-  catch (e) {
-    res.status(400).json({ Error: e });
-  }
+      req.session.save(() => {
+        req.session.user_id = dbUserData.id;
+        req.session.username = dbUserData.username;
+        req.session.loggedIn = true;
+        console.log(req.session);
+
+        res.json({ user: dbUserData, message: 'You are now logged in!' });
+      });
+    })
 });
 
 
-// logout 
-router.post('/logout', (req, res) => {
-  if (req.session.loggedIn) {
-      req.session.destroy(() => {
-          res.status(204).end();
+// User log out
+router.post("/logout", async (req, res) => {
+  try {
+    if (req.session.loggedIn) {
+      await req.session.destroy(() => {
+        res.status(204).end();
       });
-  } else {
-      res.status(404).end();
+    }
+  }
+  catch (e) {
+    res.status(400).json({ Error: e });
   }
 
 });

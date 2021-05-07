@@ -1,5 +1,5 @@
 // DOM selection
-const emailEl = document.querySelector('.email-login');
+const usernameEl = document.querySelector('.username-login');
 const passwordEl = document.querySelector('.password-login');
 const loginButtonEl = document.querySelector('#loginbtn');
 
@@ -7,15 +7,15 @@ const loginButtonEl = document.querySelector('#loginbtn');
 
 loginButtonEl.addEventListener('click', async (event) => {
   event.preventDefault();
-  const email = emailEl.value.trim();
+  const username = usernameEl.value.trim();
   const password = passwordEl.value.trim();
-  // console.log(email, password);
-  if (email && password) {
+  // console.log(username, password);
+  if (username && password) {
     try {
       const response = await fetch('/api/users/login', {
         method: 'POST',
         body: JSON.stringify({
-          email,
+          username,
           password
         }),
         headers: { 'Content-Type': 'application/json' }
