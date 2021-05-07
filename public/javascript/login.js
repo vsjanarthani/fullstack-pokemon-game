@@ -1,60 +1,38 @@
-async function signupFormHandler(event) {
-    event.preventDefault();
-  
-    const username = document.querySelector('#username-signup').value.trim();
-    const email = document.querySelector('#email-signup').value.trim();
-    const password = document.querySelector('#password-signup').value.trim();
-  
-    if (username && email && password) {
-      const response = await fetch('/api/users', {
-        method: 'post',
+// DOM selection
+const emailEl = document.querySelector('.email-login');
+const passwordEl = document.querySelector('.password-login');
+const loginButtonEl = document.querySelector('#loginbtn');
+
+//   Event listener for Login button
+
+loginButtonEl.addEventListener('click', async (event) => {
+  event.preventDefault();
+  const email = emailEl.value.trim();
+  const password = passwordEl.value.trim();
+  // console.log(email, password);
+  if (email && password) {
+    try {
+      const response = await fetch('/api/users/login', {
+        method: 'POST',
         body: JSON.stringify({
-          username,
           email,
           password
         }),
         headers: { 'Content-Type': 'application/json' }
       });
+
       if (response.ok) {
-          console.log("success!");
+        alert('Login Succesful');
+        document.location.replace('/draftpage');
       } else {
-          alert(response.statusText);
+        alert(response.statusText);
       }
     }
-  };
-
-  async function loginFormHandler(event) {
-    event.preventDefault();
-  
-    const username = document.querySelector('#username-login').value.trim();
-    const password = document.querySelector('#password-login').value.trim();
-  
-    if (username && password) {
-      const response = await fetch('/api/users/login', {
-        method: 'post',
-        body: JSON.stringify({
-          username,
-          password
-        }),
-        headers: { 'Content-Type': 'application/json' }
-      })
-      .then(response => {
-          return response.json()
-      })
-      .then(response => {
-          alert(response.message);
-      })
-  
-    //   if (response.ok) {
-    //     document.location.replace('/draftpage');
-    //   } else {
-    //       let res = response.json()
-    //     // alert(response.statusText);
-    //     console.log(res);
-    //   }
+    catch (e) {
+      console.log(e);
     }
   }
-  
-  document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
-  
-  document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
+});
+
+
+

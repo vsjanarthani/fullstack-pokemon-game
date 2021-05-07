@@ -1,3 +1,8 @@
+const router = require('express').Router();
+const fetch = require('node-fetch');
+// const sequelize = require('../config/connection');
+// const { User } = require('../models');
+
 // setting empty array to hold random pokemon ids to pull from api
 let pokeNums = [];
 
@@ -17,15 +22,15 @@ const getPokemon = () => {
         fetch(`https://pokeapi.co/api/v2/pokemon/${pokeNum}`)
             .then(response => response.json())
             .then(data => {
-                let eachPoke = 
-                    {
-                        name: (data.name).toUpperCase(),
-                        hp: data.stats[0].base_stat,
-                        attack: data.stats[1].base_stat,
-                        defense: data.stats[2].base_stat,
-                        speed: data.stats[5].base_stat,
-                        imageSrc: data.sprites.front_default
-                    };
+                let eachPoke =
+                {
+                    name: (data.name).toUpperCase(),
+                    hp: data.stats[0].base_stat,
+                    attack: data.stats[1].base_stat,
+                    defense: data.stats[2].base_stat,
+                    speed: data.stats[5].base_stat,
+                    imageSrc: data.sprites.front_default
+                };
                 pokeData.push(eachPoke);
             })
     }
@@ -34,5 +39,13 @@ console.log(pokeData);
 
 getPokemon();
 
+router.get('/', (req, res) => {
+    // if (!req.session.loggedIn) {
+    //     res.redirect('/login');
+    //     return;
+    // }
+    res.render("draftpage", { pokeData })
+});
 
 
+module.exports = router;

@@ -1,33 +1,37 @@
-<form class="login-form">
-  <div>
-    <label for="username-login">username:</label>
-    <input type="text" id="username-login" />
-  </div>
-  <div>
-    <label for="password-login">password:</label>
-    <input type="password" id="password-login" />
-  </div>
-  <div>
-    <button type="submit">login</button>
-  </div>
-</form>
+<!-- Background image -->
+<div class="bg-image">
 
-<form class="signup-form">
-  <div>
-    <label for="username-signup">username:</label>
-    <input type="text" id="username-signup" />
-  </div>
-  <div>
-    <label for="email-signup">email:</label>
-    <input type="text" id="email-signup" />
-  </div>
-  <div>
-    <label for="password-signup">password:</label>
-    <input type="password" id="password-signup" />
-  </div>
-  <div>
-    <button type="submit">signup</button>
-  </div>
-</form>
+<div class="container-fluid">
+    <form 
+        class="col-4 position-absolute top-50 start-50 translate-middle border border-dark p-10 m-10">
+        <!-- Email input -->
+        <div class="form-outline m-4">
+            <input type="email" id="form1Example1" class="form-control email-login" />
+            <label class="form-label" for="form1Example1">Email address</label>
+        </div>
+
+        <!-- Password input -->
+        <div class="form-outline m-4">
+            <input type="password" id="form1Example2" class="form-control password-login" />
+            <label class="form-label" for="form1Example2">Password</label>
+        </div>
+
+        <!-- Sign up section -->
+        <div class="row m-4">
+                <div class="col">
+                    <!-- Simple link -->
+                    <a class="text-dark" id="sign-up" href="/signup">Want to Sign up?</a>
+                </div>
+
+            <!-- Submit button -->
+            <button id="loginbtn" type="submit" class="btn btn-dark btn-block mt-4 p-2">Log in</button>
+        </div>
+    </form>
+</div>
+
+</div>
+<!-- Background image -->
+
+
 
 <script src="/javascript/login.js"></script>
