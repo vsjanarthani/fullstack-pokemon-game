@@ -23,7 +23,9 @@
               aria-valuenow="{{speed}}" aria-valuemin="0" aria-valuemax="100">Speed</div>
           </div>
           <div class="card-footer">
+            {{!-- {{#if loggedIn}} --}}
             <button class="btn btn-dark">DRAFT ME</button>
+            {{!-- {{/if}} --}}
           </div>
         </div>
       </div>
@@ -31,3 +33,9 @@
     {{/each}}
   </div>
 </div>
+
+ <nav>
+  <button id="logout" class="btn-no-style">logout</button>
+</nav>
+
+<script src="/javascript/logout.js"></script>

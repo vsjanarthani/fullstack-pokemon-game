@@ -37,7 +37,7 @@ router.get('/:id', async (req, res) => {
 
 // POST /api/users
 router.post('/', (req, res) => {
- 
+
   User.create({
     username: req.body.username,
     email: req.body.email,
@@ -48,7 +48,7 @@ router.post('/', (req, res) => {
         req.session.user_id = dbUserData.id;
         req.session.username = dbUserData.username;
         req.session.loggedIn = true;
-  
+
         res.json(dbUserData);
       });
     })
@@ -82,11 +82,27 @@ router.post('/login', (req, res) => {
       req.session.user_id = dbUserData.id;
       req.session.username = dbUserData.username;
       req.session.loggedIn = true;
-  
+      console.log(req.session);
+
       res.json({ user: dbUserData, message: 'You are now logged in!' });
     });
   });
 });
+
+
+// User log out
+router.post("./logout", (req, res) => {
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  }
+  else {
+    res.status(404).end();
+  }
+
+});
+
 
 // PUT /api/users/id
 router.put('/:id', async (req, res) => {
