@@ -5,13 +5,13 @@ let pokeTeam = []
 
 buttonEl.addEventListener("click", function (event) {
     let pokemonName = event.target.id;
-    let thisButton = document.getElementById(`${pokemonName}`);
-    thisButton.disabled = true;
-    thisButton.innerText = "Already Drafted!"
     console.log(pokemonName);
     if (pokeTeam.length < 6 && !pokeTeam.includes(pokemonName)) {
         pokeTeam.push(pokemonName);
-        console.log(pokeTeam)
+        console.log(pokeTeam);
+        let thisButton = document.getElementById(`${pokemonName}`);
+        thisButton.disabled = true;
+        thisButton.innerText = "Already Drafted!"
     }
 });
 
