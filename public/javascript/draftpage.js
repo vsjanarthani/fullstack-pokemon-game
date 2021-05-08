@@ -1,19 +1,56 @@
-let buttonEl = document.querySelector(".listen");
-let nameEl = document.querySelectorAll(".card-title");
-let nameEl2 = document.querySelector(".card-title");
+let buttonEl = document.querySelector("#listen");
 let pokeTeam = []
 
+// fetch(`/api/team`, {
+//     method: 'POST',
+//     body: JSON.stringify({
+//         pokedex,
+//         pokemon_name,
+//         pokemon_pic,
+//         hp,
+//         attack,
+//         defense,
+//         speed
+//     }),
+//     headers: {
+//         'Content-Type': 'application/json'
+//     }
+// })
+// .then(response => {
+//     if (response.ok) {
+//         pokeTeam.push(response);
+//     } 
+// })
+// .catch (e => {
+// console.log(e);
+// alert(response.statusText);
+// });
+
+// console.log (pokeTeam);
+
+
+
+
 buttonEl.addEventListener("click", function (event) {
-    let pokedex = event.target.name;
-    console.log(pokedex);
-    
-    if (pokeTeam.length < 6) {
-        pokeTeam.push(pokedex);
+    let buttonId = event.target.id;
+    if (pokeTeam.length < 6 && !pokeTeam.includes(buttonId) && buttonId != "") {
+        let thisButton = document.getElementById(`${buttonId}`);
+        thisButton.disabled = true;
+        thisButton.innerText = "Already Drafted!"
+        pokeInfo = buttonId.split(" ");
+        let thisPokemon = {
+            pokedex: pokeInfo[0],
+            pokemon_name: pokeInfo[1],
+            pokemon_pic: pokeInfo[2],
+            hp: pokeInfo[3],
+            attack: pokeInfo[4],
+            defense: pokeInfo[5],
+            speed: pokeInfo[6]
+        }
+        pokeTeam.push(thisPokemon);
         console.log(pokeTeam);
-        event.target.disabled = true;
-        event.target.innerText = "Already Drafted!"
     }
-    
+
 });
 
 
@@ -42,35 +79,11 @@ buttonEl.addEventListener("click", function (event) {
 //         defense,
 //         speed);
 
-//     if (pokeTeam.length < 6 && !pokeTeam.includes(pokedex)) {
-//         pokeTeam.push(pokedex);
-//         // include fetch function to check if the team has more than 6 pokemon
+    // if (pokeTeam.length < 6 && !pokeTeam.includes(pokedex)) {
+    //     pokeTeam.push(pokedex);
+    //     // include fetch function to check if the team has more than 6 pokemon
     
-//         const response = fetch(`/api/pokemons`, {
-//             method: 'POST',
-//             body: JSON.stringify({
-//                 pokedex,
-//                 pokemon_name,
-//                 pokemon_pic,
-//                 hp,
-//                 attack,
-//                 defense,
-//                 speed
-//             }),
-//             headers: {
-//                 'Content-Type': 'application/json'
-//             }
-//         })
-//         .then(response => {
-//             if (response.ok) {
-//                 event.target.disabled = true;
-//                 event.target.innerText = "Already Drafted!"
-//             } 
-//         })
-//         .catch (e => {
-//         console.log(e);
-//         alert(response.statusText);
-//     })
+
 // }
 // };
 
