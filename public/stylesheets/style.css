@@ -1,5 +1,4 @@
 
-
 .bg-image{
 	background: url("https://i.imgur.com/sEJsZpb.png") 50% no-repeat;
 	background-size: cover;
@@ -15,8 +14,6 @@
 	-ms-flex-pack: center;
 	justify-content: center;
 }
-
-@import '~mdb-ui-kit/css/mdb.min.css';
 
 .progress {
     margin-bottom: 3px;
