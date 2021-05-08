@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container listen">
   <div class="row card-group">
     {{#each pokeData}}
     <div class="col col-md-3" style="max-width:18rem">
@@ -24,7 +24,7 @@
           </div>
           <div class="card-footer">
 
-            <button name="{{id}}" class="btn btn-dark draft-btn">DRAFT ME</button>
+            <button class="btn btn-dark" id="{{name}}">DRAFT ME</button>
 
           </div>
         </div>
@@ -39,4 +39,4 @@
 </nav>
 
 <script src="/javascript/logout.js"></script>
-<script src="/javascript/draftpage.js"></script>
+<script src="/javascript/draftpage.js""></script>

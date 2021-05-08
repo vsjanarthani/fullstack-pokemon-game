@@ -1,16 +1,25 @@
-# Pokémon Battles 2.0 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+# The Pokémon Draft [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ![Frame 93](https://user-images.githubusercontent.com/77648727/117231866-f335e680-add4-11eb-83e0-de678e290453.png)
 
 
+## Description 🏈
+This is a simple game built around the idea of selecting and saving a Pokemon team. Players are able to review stats of "free agent" pokemon to draft and claim them for their Poké team. Data comes from the PokéAPI and the team a user builds is stored for future use and play. 
 
-## Description
-This is a Pokemon Draft.
+In later-stage development efforts, this game will hav elogic closer to resembling a fantasy football draft logic, where players take turns selecting the best Pokémon.
 
-## Built With
-JavaScript, ES6, Node.js (express.js, mysql2, sequelize, nodemon, dotenv, express-handlebars), Heroku.
+## Built With & Using 🧰
+- [x] JavaScript
+- [x] ES6 
+- [x] Node.js (express.js, mysql2, sequelize, nodemon, dotenv, express-handlebars)
+- [x] Heroku
+- [x] PokéAPI
+- [x] Socket.io
 
-## Table of Contents
+![Frame 97](https://user-images.githubusercontent.com/77648727/117524923-b6a0f100-af74-11eb-811e-3a901792e48c.png)
+
+
+## Table of Contents 📑
 * [User-Story](#User-Story)
 * [Acceptance-Criteria](#Acceptance-Criteria)
 * [Installation](#Installation)
@@ -21,47 +30,52 @@ JavaScript, ES6, Node.js (express.js, mysql2, sequelize, nodemon, dotenv, expres
 * [Screenshot](#Screenshot)
 * [Questions](#Questions)
 
-### User-Story
+### User-Story 📖
+> AS    
+> I WANT    
+> SO I CAN    
 
+### Acceptance-Criteria :white_check_mark:
+> ADD     
+> THIS     
+> TOO       
 
-### Acceptance-Criteria
+![Frame 98](https://user-images.githubusercontent.com/77648727/117524982-0bdd0280-af75-11eb-9e7d-515cb89fd5f4.png)
 
+### Installation & Usage 🧮
+> To download the application: ```git clone https://github.com/sarahdurks/fullstack-pokemon-game.git```.         
+> ```npm i```  to install dependencies      
+> Configure an .env file with tyour username, password and database name      
+> ```npm start``` to start the server      
+> ```npm run seed``` to seed the database      
 
-### Installation
-To download the application, use 
-```git clone https://github.com/sarahdurks/fullstack-pokemon-game.git```. 
-Inorder to install the necessary dependencies run 
-```npm install``` 
-in your terminal. 
-
-### Usage
-After installing all the dependencies, set up the .env file with the username, password and database name. <br> Enter 
-```npm start``` 
-to check if the server is running without any error. <br> To run seed, enter
-```npm run seed``` 
-in your terminal. <br> For a walkthrough demo click here [Walkthrough-Video](https:).
-
-### License
+### License 📛
 This application is covered under the following license. 
 
 **MIT**
 
-### Authors
-Janarthani: [GitHub](https://github.com/vsjanarthani)
-Yevgeniya Terlyuk
-Megan Close
-Sarah Durkin
+### Authors 📝
+Janarthani: [GitHub](https://github.com/vsjanarthani)      
+Yevgeniya Terlyuk [GitHub](https://github.com/down-dive)     
+Megan Close [GitHub](https://github.com/meganclo)      
+Sarah Durkin [GitHub](https://github.com/sarahdurks)      
 
-### Tests
-No automated test is set up for this application. 
-
+### Tests 🤓
+No automated test are set up for this application yet.
+![Frame 99](https://user-images.githubusercontent.com/77648727/117526120-cf5ed600-af77-11eb-9b39-3549d7b88208.png)
 ### Screenshot
 ![code](./assets/)
 
-### Questions
+### Questions 🤔
 If you have any questions, please reach out to the Author's email.
 <br>
 Janarthani - Email: <janarthani.vs@gmail.com>
 Yevgeniya Terlyuk
 Megan Close
 Sarah Durkin
+
+### Resources & References 🙏
+- add these
+
+![Frame 100](https://user-images.githubusercontent.com/77648727/117526123-d554b700-af77-11eb-9830-6d010eb296e4.png)
+
