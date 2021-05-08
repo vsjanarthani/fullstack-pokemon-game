@@ -1,7 +1,7 @@
 const seedUsers = require('./user-seeds');
 const seedPokemon = require('./pokemon-seeds');
-const seedPokemontype = require('./poketype-seeds');
-const seedAbilities = require('./ability-seeds');
+const seedTeamData = require('./team-seeds');
+
 const sequelize = require('../config/connection');
 
 const seedAll = async () => {
@@ -15,11 +15,8 @@ const seedAll = async () => {
   await seedPokemon();
   console.log('\n----- POKEMONS SEEDED -----\n');
 
-  await seedPokemontype();
-  console.log('\n----- POKEMON TYPES SEEDED -----\n');
-
-  await seedAbilities();
-  console.log('\n----- POKEMON ABILITIES SEEDED -----\n');
+  await seedTeamData();
+  console.log('\n----- TEAMS SEEDED -----\n');
 
   process.exit(0);
 };

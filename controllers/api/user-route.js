@@ -1,14 +1,12 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
-// GET /api/users
+// GET /api/users - Get All users
 router.get('/', async (req, res) => {
   try {
-    const allUsers = await User.findAll(
-      // {
-      //   attributes: { exclude: ['password'] }
-      // }
-    );
+    const allUsers = await User.findAll({
+      attributes: { exclude: ['password'] }
+    });
     res.status(200).json(allUsers);
   }
   catch (e) {
@@ -16,15 +14,14 @@ router.get('/', async (req, res) => {
   }
 });
 
-// GET /api/users/id
+// GET /api/users/id - Get user by 
 router.get('/:id', async (req, res) => {
-
   try {
     const { id } = req.params;
     const userById = await User.findOne({
-      attributes: { exclude: ['password'] },
-      where: { id }
+      attributes: { exclude: ['password'] }
     });
+
     if (!userById) {
       return res.status(404).json({ message: 'No user found with this id' });
     }
@@ -35,77 +32,70 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// POST /api/users
-router.post('/', async (req, res) => {
-  try {
-    const dbUserData =
-      await User.create({
-        username: req.body.username,
-        email: req.body.email,
-        password: req.body.password
-      })
-    dbUserData => {
+// POST /api/users - Sign up
+router.post('/', (req, res) => {
+  // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
+  User.create({
+    username: req.body.username,
+    email: req.body.email,
+    password: req.body.password
+  })
+    .then(dbUserData => {
       req.session.save(() => {
         req.session.user_id = dbUserData.id;
         req.session.username = dbUserData.username;
         req.session.loggedIn = true;
-
+  
         res.json(dbUserData);
       });
-    }
-  }
-  catch (e) {
-    res.status(400).json({ Error: e });
-  }
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 // POST /api/users/login
 router.post('/login', (req, res) => {
+  // expects {email: 'lernantino@gmail.com', password: 'password1234'}
   User.findOne({
     where: {
-      username: req.body.username
+      email: req.body.email
     }
-  })
-    .then(dbUserData => {
-      if (!dbUserData) {
-        res.status(400).json({ message: 'No user with that username!' });
-        return;
-      }
-      console.log(dbUserData);
-      const validPassword = dbUserData.checkPassword(req.body.password);
-      console.log(validPassword)
-      if (!validPassword) {
-        return res.status(400).json({ message: 'Incorrect password!' });
+  }).then(dbUserData => {
+    if (!dbUserData) {
+      res.status(400).json({ message: 'No user with that email address!' });
+      return;
+    }
 
-      }
+    const validPassword = dbUserData.checkPassword(req.body.password);
 
-      req.session.save(() => {
-        req.session.user_id = dbUserData.id;
-        req.session.username = dbUserData.username;
-        req.session.loggedIn = true;
-        console.log(req.session);
+    if (!validPassword) {
+      res.status(400).json({ message: 'Incorrect password!' });
+      return;
+    }
 
-        res.json({ user: dbUserData, message: 'You are now logged in!' });
-      });
-    })
+    req.session.save(() => {
+      req.session.user_id = dbUserData.id;
+      req.session.username = dbUserData.username;
+      req.session.loggedIn = true;
+  
+      res.json({ user: dbUserData, message: 'You are now logged in!' });
+    });
+  });
 });
 
-
-// User log out
-router.post("/logout", async (req, res) => {
-  try {
-    if (req.session.loggedIn) {
-      await req.session.destroy(() => {
-        res.status(204).end();
-      });
-    }
+// POST /api/users/logout
+router.post('/logout', (req, res) => {
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
   }
-  catch (e) {
-    res.status(400).json({ Error: e });
+  else {
+    res.status(404).end();
   }
-
 });
-
 
 // PUT /api/users/id
 router.put('/:id', async (req, res) => {

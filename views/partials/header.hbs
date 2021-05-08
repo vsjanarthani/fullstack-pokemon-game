@@ -1,0 +1,35 @@
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #5cb3c8;">
+      <div class="container-fluid">
+        <h1 class="col-3 btn btn-rounded fs-3"><a class="nav-link text-dark" href="/team">Pokemon Draft</a></h1>
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarTogglerDemo03"
+          aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars text-dark"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            {{#if loggedIn}}
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="/api/team">My Team</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="/draftpage">Pokemon Draft</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="/battle">Battle</a>
+            </li>
+            <li class="nav-item">
+              <a id="logout" class="nav-link text-dark" href="/">Logout</a>
+            </li>
+            {{/if}}
+             
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+{{#if loggedIn}}
+   <script src="/javascript/logout.js"></script>
+{{/if}}
