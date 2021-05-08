@@ -4,10 +4,8 @@ let nameEl2 = document.querySelector(".card-title");
 let pokeTeam = []
 
 buttonEl.addEventListener("click", function (event) {
-<<<<<<< HEAD
     let thisPokemonData = event.target.id;
     let pokeArray = thisPokemonData.split(" ");
-=======
     let pokedex = event.target.name;
     console.log(pokedex);
     
@@ -18,7 +16,6 @@ buttonEl.addEventListener("click", function (event) {
         event.target.innerText = "Already Drafted!"
     let thisPokemonData = event.target.id;
     let pokeArray = thisPokemonData.split(" ");*/
->>>>>>> fix
 
     let pokemonData = {
         name: pokeArray[0],
