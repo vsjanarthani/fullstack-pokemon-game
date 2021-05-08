@@ -1,4 +1,4 @@
-<div class="container listen">
+<div class="container" id="listen">
     <div class="row card-group">
         {{#each pokeData}}
         <div class="col col-md-3" style="max-width:18rem">
@@ -27,7 +27,7 @@
                     </div>
                     <div class="card-footer">
 
-                        <button id="draft-me-btn" type="submit" class="btn btn-dark" name="{{id}}">DRAFT ME</button>
+                        <button id="{{id}} {{name}} {{imageSrc}} {{hp}} {{attack}} {{defense}} {{speed}}" type="submit" class="btn btn-dark">DRAFT ME</button>
 
                     </div>
                 </div>
