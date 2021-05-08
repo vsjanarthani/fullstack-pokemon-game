@@ -50,10 +50,10 @@ This application is covered under the following license.
 **MIT**
 
 ### Authors 📝
-Janarthani: [GitHub](https://github.com/vsjanarthani)
-Yevgeniya Terlyuk [GitHub](https://github.com/down-dive)
-Megan Close [GitHub](https://github.com/meganclo)
-Sarah Durkin [GitHub](https://github.com/sarahdurks)
+Janarthani: [GitHub](https://github.com/vsjanarthani)      
+Yevgeniya Terlyuk [GitHub](https://github.com/down-dive)     
+Megan Close [GitHub](https://github.com/meganclo)      
+Sarah Durkin [GitHub](https://github.com/sarahdurks)      
 
 ### Tests 🤓
 No automated test are set up for this application yet.
