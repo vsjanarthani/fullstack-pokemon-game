@@ -40,6 +40,8 @@ In later-stage development efforts, this game will hav elogic closer to resembli
 > THIS     
 > TOO       
 
+![Frame 98](https://user-images.githubusercontent.com/77648727/117524982-0bdd0280-af75-11eb-9e7d-515cb89fd5f4.png)
+
 ### Installation & Usage 🧮
 > To download the application: ```git clone https://github.com/sarahdurks/fullstack-pokemon-game.git```.         
 > ```npm i```  to install dependencies      
@@ -60,7 +62,7 @@ Sarah Durkin [GitHub](https://github.com/sarahdurks)
 
 ### Tests 🤓
 No automated test are set up for this application yet.
-
+![Frame 99](https://user-images.githubusercontent.com/77648727/117526120-cf5ed600-af77-11eb-9b39-3549d7b88208.png)
 ### Screenshot
 ![code](./assets/)
 
@@ -71,3 +73,9 @@ Janarthani - Email: <janarthani.vs@gmail.com>
 Yevgeniya Terlyuk
 Megan Close
 Sarah Durkin
+
+### Resources & References 🙏
+- add these
+
+![Frame 100](https://user-images.githubusercontent.com/77648727/117526123-d554b700-af77-11eb-9830-6d010eb296e4.png)
+
