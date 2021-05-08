@@ -42,18 +42,18 @@ getPokemon();
 
 router.get('/', (req, res) => {
     console.log(req.session)
-    // if (req.session.loggedIn) {
-    //     res.redirect('/draftpage');
-    //     return;
-    // }
+    if (req.session.loggedIn) {
+        res.redirect('/draftpage');
+        return;
+    }
     res.render('login');
 });
 
 router.get('/signup', (req, res) => {
-    // if (req.session.loggedIn) {
-    //     res.redirect('/draftpage');
-    //     return;
-    // }
+    if (req.session.loggedIn) {
+        res.redirect('/draftpage');
+        return;
+    }
     res.render('signup');
 });
 
