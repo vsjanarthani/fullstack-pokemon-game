@@ -4,7 +4,7 @@
 
 
 ## Description 🏈
-This is a simple game built around the idea of selecting and saving a Pokemon team. players are able to review stats of "free agent" pokemon to draft and claim them for their team. Data comes from the PokéAPI and the team a user builds is stored for future use and play. 
+This is a simple game built around the idea of selecting and saving a Pokemon team. Players are able to review stats of "free agent" pokemon to draft and claim them for their Poké team. Data comes from the PokéAPI and the team a user builds is stored for future use and play. 
 
 In later-stage development efforts, this game will hav elogic closer to resembling a fantasy football draft logic, where players take turns selecting the best Pokémon.
 
