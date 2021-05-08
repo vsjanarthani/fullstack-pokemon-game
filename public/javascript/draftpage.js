@@ -7,11 +7,33 @@ buttonEl.addEventListener("click", function (event) {
     let pokedex = event.target.name;
     console.log(pokedex);
     
-    if (pokeTeam.length < 6) {
+   /* if (pokeTeam.length < 6) {
         pokeTeam.push(pokedex);
         console.log(pokeTeam);
         event.target.disabled = true;
         event.target.innerText = "Already Drafted!"
+    let thisPokemonData = event.target.id;
+    let pokeArray = thisPokemonData.split(" ");*/
+
+    let pokemonData = {
+        name: pokeArray[0],
+        hp: pokeArray[1],
+        attact: pokeArray[2],
+        defense: pokeArray[3],
+        speed: pokeArray[4],
+        imageSrc: pokeArray[5]
+    }
+    let pokemonName = pokeArray[0];
+    console.log(pokemonName);
+    console.log(pokemonData);
+
+    if (pokeTeam.length < 6 && !pokeTeam.includes(pokemonData)) {
+        pokeTeam.push(pokemonData);
+        console.log(pokeTeam);
+        let thisButton = document.getElementById(`${pokemonName}`);
+        console.log(`${pokemonName}`)
+        thisButton.disabled = true;
+        thisButton.innerText = "Already Drafted!"
     }
     
 });
