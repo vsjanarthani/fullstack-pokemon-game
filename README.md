@@ -75,7 +75,17 @@ Megan Close
 Sarah Durkin
 
 ### Resources & References 🙏
-- add these
+
+#### Dev Related
+- [MDN Web Docs Array.prototype.filter()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)    
+- [Using Array Filter StackOverflow](https://stackoverflow.com/questions/56168771/how-to-limit-for-10-results-the-array-filter)    
+
+#### Design
+- [Stickpng assets for Pokemon Graphics (non-sprites)] (https://www.stickpng.com/)    
+- [12up Pokemon Go Article](https://www.12up.com/posts/3595664-every-nfl-helmet-redesigned-with-pokemon-go-characters)    
+- [Canva for Image Cleanup](https://www.canva.com/)    
+
+
 
 ![Frame 100](https://user-images.githubusercontent.com/77648727/117526123-d554b700-af77-11eb-9830-6d010eb296e4.png)
 
