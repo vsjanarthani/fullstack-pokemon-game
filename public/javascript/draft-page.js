@@ -6,6 +6,14 @@ const draftTeamBtnEl = document.querySelector('#draft-team');
 
 // console.log (pokeTeam);
 
+//ISSUES
+
+//Team ID hardcoded
+// https://github.com/sarahdurks/fullstack-pokemon-game/issues/12
+
+//Pokemon count should be incremental, ties to here and the team model
+//https://github.com/sarahdurks/fullstack-pokemon-game/issues/10
+
 // Listening for button click to draft each pokemon
 PokemonBtnEl.addEventListener("click", (event) => {
     let buttonId = event.target.id;
