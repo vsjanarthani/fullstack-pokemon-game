@@ -18,6 +18,9 @@ router.get('/', sessionAuth, (req, res) => {
                 const team = teamData.get({ plain: true });
                 res.render('team', { team, loggedIn: true });
             }
+            else {
+                res.redirect('/draftpage');
+            }
         })
         .catch(e => {
             console.log(e)
