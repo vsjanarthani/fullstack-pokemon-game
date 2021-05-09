@@ -2,6 +2,14 @@ const router = require('express').Router();
 const fetch = require('node-fetch');
 const sessionAuth = require('../../utils/auth');
 
+// ISSUES 
+// Initial fetch logic
+//https://github.com/sarahdurks/fullstack-pokemon-game/issues/16
+
+//Clear Draft
+//https://github.com/sarahdurks/fullstack-pokemon-game/issues/11
+
+
 // Function to fetch pokemon every 24hrs
 let id;
 
