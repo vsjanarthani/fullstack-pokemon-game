@@ -2,6 +2,47 @@ const router = require('express').Router();
 const fetch = require('node-fetch');
 const sessionAuth = require('../../utils/auth');
 
+// Function to fetch pokemon every 24hrs
+let id;
+
+const promisifedPingApi = new Promise ((resolve, reject) => {
+  id = setTimeout(() => {
+    getPokemon();
+  }, 500);
+});
+
+Promise.race([
+    promisifedPingApi,
+    new Promise((_, reject) => {
+      setTimeout(() => reject('Timeout!'), 500);
+      (function () {
+        setInterval(function () {
+          getRandomWord();
+        }, 1000 * 60 * 60 * 24);
+      }) ();
+    })
+  ]).then(res => {
+      console.log('response: ', res);
+  })
+    .catch(e => {
+      console.error('error: ', e);
+      clearTimeout(id);
+    });
+
+// End of Function to fetch pokemon every 24hrs
+
+// const savedDate = localStorage.getItem("date");
+// const todaydate = new Date();
+// const mydate = todaydate.getFullYear() + '-' + (todaydate.getMonth() + 1) + '-' + todaydate.getDate();
+
+// if (!savedDate || savedDate != mydate) {
+//   getPokemon();
+// } else {
+//   localStorage.setItem('date', mydate);
+//   return
+// }
+
+
 // setting empty array to hold random pokemon ids to pull from api
 let pokeNums = [];
 
@@ -37,7 +78,6 @@ const getPokemon = () => {
 };
 console.log(pokeData);
 
-getPokemon();
 
 // Function to render Draftpage
 router.get('/', sessionAuth, (req, res) => {
@@ -50,3 +90,8 @@ router.get('/', sessionAuth, (req, res) => {
 
 
 module.exports = router;
+
+
+// to do
+// 1. Modify the setinterval or clearTimeout function to make sure the fetch is happening every 24 hrs. Test the code above
+// 2. Exclude the saved pokemons from fetch request (compare if podex array includes random nums)

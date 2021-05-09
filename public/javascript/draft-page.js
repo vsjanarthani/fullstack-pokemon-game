@@ -43,14 +43,15 @@ draftTeamBtnEl.addEventListener('click', event => {
         }
     })
         .then(response => {
-            return response.json();
-        })
-        .then (response => {
-        console.log(response);
-            if (response.status == 200) {
+            // return response.json();
+            if (response.ok) {
                 alert(`Pokemon Draft Completed!`);
+                document.location.replace('/team');
             }
         })
+        // .then (response => {
+        // console.log(response);
+        // })
         .catch(e => {
             console.log(e);
             alert(response.statusText);
@@ -59,64 +60,12 @@ draftTeamBtnEl.addEventListener('click', event => {
 });
 
     
+// to do
+// 1. Event listener for clear draft button
+// 2. A way to get team_id and pokemon_count on line 25 and line 12 instead of hardcoding
+// 3. Change the pokemon_count as a function to count the pokemon in the team
 
 
 
 
 
-
-// //  Function to post pokemon data to the database
-// const pokemonDraftHandler = event => {
-    // let pokeImgEl = document.querySelector('#poke-img');
-    // let draftbtnEl = document.querySelector('#draft-me-btn');
-    // let hpEl = document.querySelector('#hp');
-    // let attackEl = document.querySelector('#attack');
-    // let defenseEl = document.querySelector('#defense');
-    // let speedEl = document.querySelector('#speed');
-    // let pokedex = draftbtnEl.getAttribute('name');
-    // let pokemon_name = document.querySelector("#poke-name").textContent;
-    // let pokemon_pic = pokeImgEl.getAttribute("src");
-    // let hp = hpEl.getAttribute("aria-valuenow");
-    // let attack = attackEl.getAttribute("aria-valuenow");
-    // let defense = defenseEl.getAttribute("aria-valuenow");
-    // let speed = speedEl.getAttribute("aria-valuenow");
-
-//     console.log(pokedex,
-//         pokemon_name,
-//         pokemon_pic,
-//         hp,
-//         attack,
-//         defense,
-//         speed);
-
-    // if (pokeTeam.length < 6 && !pokeTeam.includes(pokedex)) {
-    //     pokeTeam.push(pokedex);
-    //     // include fetch function to check if the team has more than 6 pokemon
-
-
-// }
-// };
-
-// // Event listner for click
-// document.querySelector(".listen").addEventListener('click', pokemonDraftHandler);
-
-// // Function to reset the variables
-// function resetValues() {
-//     draftbtnEl.innerText = "";
-//     pokemon_name.innerText = "";
-//     pokemon_pic.innerText = "";
-//     hp.innerText = "";
-//     attack.innerText = "";
-//     defense.innerText = "";
-//     speed.innerText = "";
-
-//     console.log(pokedex,
-//         pokemon_name,
-//         pokemon_pic,
-//         hp,
-//         attack,
-//         defense,
-//         speed);
-// };
-
-// resetValues();
