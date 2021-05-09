@@ -1,37 +1,13 @@
-let buttonEl = document.querySelector("#listen");
-let pokeTeam = []
 
-// fetch(`/api/team`, {
-//     method: 'POST',
-//     body: JSON.stringify({
-//         pokedex,
-//         pokemon_name,
-//         pokemon_pic,
-//         hp,
-//         attack,
-//         defense,
-//         speed
-//     }),
-//     headers: {
-//         'Content-Type': 'application/json'
-//     }
-// })
-// .then(response => {
-//     if (response.ok) {
-//         pokeTeam.push(response);
-//     } 
-// })
-// .catch (e => {
-// console.log(e);
-// alert(response.statusText);
-// });
+// DOM Selection
+let PokemonBtnEl = document.querySelector("#listen");
+const pokeTeam = []
+const draftTeamBtnEl = document.querySelector('#draft-team');
 
 // console.log (pokeTeam);
 
-
-
-
-buttonEl.addEventListener("click", function (event) {
+// Listening for button click to draft each pokemon
+PokemonBtnEl.addEventListener("click", (event) => {
     let buttonId = event.target.id;
     if (pokeTeam.length < 6 && !pokeTeam.includes(buttonId) && buttonId != "") {
         let thisButton = document.getElementById(`${buttonId}`);
@@ -45,13 +21,47 @@ buttonEl.addEventListener("click", function (event) {
             hp: pokeInfo[3],
             attack: pokeInfo[4],
             defense: pokeInfo[5],
-            speed: pokeInfo[6]
+            speed: pokeInfo[6],
+            team_id: '4a5a129a-f0e4-4529-a1ff-f8cea4d65998'
+            // find a way to include team id in the array to bulk create
         }
         pokeTeam.push(thisPokemon);
         console.log(pokeTeam);
     }
 
 });
+
+draftTeamBtnEl.addEventListener('click', event => {
+    event.preventDefault();
+   const response = fetch(`/api/pokemons/team`, {
+        method: 'POST',
+        body: JSON.stringify({
+            pokeTeam
+        }),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+        .then(response => {
+            return response.json();
+        })
+        .then (response => {
+        console.log(response);
+            if (response.status == 200) {
+                alert(`Pokemon Draft Completed!`);
+            }
+        })
+        .catch(e => {
+            console.log(e);
+            alert(response.statusText);
+        });
+
+});
+
+    
+
+
+
 
 
 
@@ -82,7 +92,7 @@ buttonEl.addEventListener("click", function (event) {
     // if (pokeTeam.length < 6 && !pokeTeam.includes(pokedex)) {
     //     pokeTeam.push(pokedex);
     //     // include fetch function to check if the team has more than 6 pokemon
-    
+
 
 // }
 // };

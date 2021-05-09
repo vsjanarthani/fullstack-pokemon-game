@@ -4,21 +4,19 @@ const sessionAuth = require('../../utils/auth');
 
 // GET /team
 router.get('/', sessionAuth, (req, res) => {
-
+    console.log(req.session.user_id);
     Team.findOne({
         where: { user_id: req.session.user_id },
-        // include: [
-        //     {
-        //         model: Pokemon,
-        //         attributes: ['pokedex', 'pokemon_name', 'pokemon_pic', 'hp', 'attack', 'defense', 'speed'],
-        //     }]
+        include: [
+            {
+                model: Pokemon,
+                attributes: ['pokedex', 'pokemon_name', 'pokemon_pic', 'hp', 'attack', 'defense', 'speed'],
+            }]
     })
         .then(teamData => {
             if (teamData) {
                 const team = teamData.get({ plain: true });
                 res.render('team', { team, loggedIn: true });
-            } else {
-                res.render('team', { team:false, loggedIn: true });
             }
         })
         .catch (e => {

@@ -3,7 +3,9 @@ const sequelize = require('../config/connection');
 const uuid = require('uuid');
 
 // create Pokemon model
-class Team extends Model { }
+class Team extends Model { 
+
+}
 
 Team.init(
     {
@@ -21,9 +23,17 @@ Team.init(
         team_logo: {
             type: DataTypes.STRING,
             allowNull: true,
-            // validate: {
-            //     isUrl: true
-            // }
+            validate: {
+                isUrl: true
+            }
+        },
+        pokemon_count: {
+            type: DataTypes.INTEGER,
+            defaultValue: 0,
+            allowNull: true,
+            validate: {
+                max: 6 
+            }
         },
         user_id: {
             type: DataTypes.UUID,
@@ -34,10 +44,6 @@ Team.init(
                 deferrable: Deferrable.INITIALLY_IMMEDIATE
             }
         }
-        // team_count: {
-        //     type: DataTypes.INTEGER,
-        //     defaultValue: 0,
-        // }
     },
     {
         sequelize,

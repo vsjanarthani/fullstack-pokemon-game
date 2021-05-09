@@ -1,3 +1,79 @@
 {{> header}}
+{{#unless team}}
+	<!-- banner section start -->
+	<div class="layout_padding banner_section">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<h1 class="banner_taital">Welcome to Pokeman draft</h1>
+					<p class="browse_text">You dont have any pokemons drafted. To start building your team, enter the team name and logo down below and start drafting.</p>
+					<div class="banner_bt">
+						<button class="read_bt">Create Team</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- banner section end -->
+{{/unless}}
 
-{{> pokemon-display}}
+{{#if team}}
+
+	<!-- banner section start -->
+	<div class="layout_padding banner_section">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<h1 class="banner_taital">Welcome back to Pokeman draft {{team.team_name}}</h1>
+                    <h4 class="banner_taital">Your secret key for drafting is {{team.id}}</h4>
+					<p class="browse_text">You have {{team.pokemon_count}} pokemon drafted. To draft more pokemons please visit draft-page.</p>
+					<div class="banner_bt">
+						<button class="read_bt"><a href="/draftpage">Draft Team</a></button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- banner section end -->
+
+<div class="container" id="listen">
+    <div class="row card-group">
+       {{#each team.pokemons as |pokemon|}}
+        <div class="col col-md-3" style="max-width:18rem">
+            <div class="card">
+                <img id="poke-img" class="card-img-top" src="{{pokemon_pic}}" alt="pokemon image">
+                <div class="card-body">
+                    <h5 id="poke-name" class="card-title">{{pokemon_name}}</h5>
+                    <div class="progress">
+                        <div id="hp" class="progress-bar progress-bar-striped" role="progressbar" style="width: {{hp}}%"
+                            aria-valuenow="{{hp}}" aria-valuemin="0" aria-valuemax="100">HP</div>
+                    </div>
+                    <div class="progress">
+                        <div id="attack" class="progress-bar progress-bar-striped bg-danger" role="progressbar"
+                            style="width: {{attack}}%" aria-valuenow="{{attack}}" aria-valuemin="0" aria-valuemax="100">
+                            Attack</div>
+                    </div>
+                    <div class="progress">
+                        <div id="defense" class="progress-bar progress-bar-striped bg-info" role="progressbar"
+                            style="width: {{defense}}%" aria-valuenow="{{defense}}" aria-valuemin="0"
+                            aria-valuemax="100">Defense</div>
+                    </div>
+                    <div class="progress">
+                        <div id="speed" class="progress-bar progress-bar-striped bg-warning" role="progressbar"
+                            style="width: {{speed}}%" aria-valuenow="{{speed}}" aria-valuemin="0" aria-valuemax="100">
+                            Speed</div>
+                    </div>
+                    <div class="card-footer">
+
+                        <button id="remove-pokemon" name="{{pokedex}}" type="button" class="btn btn-dark">REMOVE ME</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+{{/if}}
+
+<script src="/javascript/team-page.js"></script>

@@ -12,11 +12,11 @@ const seedAll = async () => {
   await seedUsers();
   console.log('\n----- USERS SEEDED -----\n');
 
-  await seedPokemon();
-  console.log('\n----- POKEMONS SEEDED -----\n');
-
   await seedTeamData();
   console.log('\n----- TEAMS SEEDED -----\n');
+
+  await seedPokemon();
+  console.log('\n----- POKEMONS SEEDED -----\n');
 
   process.exit(0);
 };

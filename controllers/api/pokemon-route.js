@@ -52,9 +52,21 @@ router.post('/', sessionAuth, (req, res) => {
     });
 });
 
+// POST /api/pokemons/team
+router.post('/team', sessionAuth, (req,res) => {
+  const { pokeTeam } =req.body
+  // console.log (pokeTeam);
+Pokemon.bulkCreate(pokeTeam)
+.then(pokemonData => res.status(200).json(pokemonData))
+    .catch(e => {
+      console.log(e);
+      res.status(400).json({ Error: e });
+    });
+})
+
 // DELETE /api/pokemons/id
 router.delete('/:id', sessionAuth, (req, res) => {
-  
+  console.log('delete route hit');
   Pokemon.destroy({
     where: {
       pokedex: req.params.id
