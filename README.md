@@ -81,7 +81,7 @@ Sarah Durkin
 - [Using Array Filter StackOverflow](https://stackoverflow.com/questions/56168771/how-to-limit-for-10-results-the-array-filter)    
 
 #### Design
-- [Stickpng assets for Pokemon Graphics (non-sprites)] (https://www.stickpng.com/)    
+- [Stickpng assets for Pokemon Graphics non-sprites] (https://www.stickpng.com/)    
 - [12up Pokemon Go Article](https://www.12up.com/posts/3595664-every-nfl-helmet-redesigned-with-pokemon-go-characters)    
 - [Canva for Image Cleanup](https://www.canva.com/)    
 
