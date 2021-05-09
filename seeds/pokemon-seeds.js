@@ -9,7 +9,7 @@ const pokemonData = [
     attack: 49,
     defense: 49,
     speed: 45,
-    user_id:'0a9213f9-003e-4fba-9837-e23756924e99'
+    team_id:'b5296bda-df8d-428a-8386-f2a14e992ad2'
   },
   {
     pokedex: '002',
@@ -19,7 +19,7 @@ const pokemonData = [
     attack: 62,
     defense: 63,
     speed: 60,
-    user_id:'1895ee2d-bcf8-4c8c-8146-e56c876f9197'
+    team_id:'b5296bda-df8d-428a-8386-f2a14e992ad2'
   },
   {
     pokedex: '003',
@@ -29,7 +29,7 @@ const pokemonData = [
     attack: 82,
     defense: 83,
     speed: 80,
-    user_id:'0a9213f9-003e-4fba-9837-e23756924e99'
+    team_id:'f1b559f4-d6bd-4cfa-bb59-df1a0156cedd'
   },
   {
     pokedex: '004',
@@ -39,7 +39,7 @@ const pokemonData = [
     attack: 52,
     defense: 43,
     speed: 65,
-    user_id:'0a9213f9-003e-4fba-9837-e23756924e99'
+    team_id:'f1b559f4-d6bd-4cfa-bb59-df1a0156cedd'
   },
   {
     pokedex: '005',
@@ -49,7 +49,7 @@ const pokemonData = [
     attack: 64,
     defense: 58,
     speed: 80,
-    user_id:'1895ee2d-bcf8-4c8c-8146-e56c876f9197'
+    team_id:'b5296bda-df8d-428a-8386-f2a14e992ad2'
   },
   {
     pokedex: '006',
@@ -59,7 +59,7 @@ const pokemonData = [
     attack: 84,
     defense: 78,
     speed: 100,
-    user_id:'1895ee2d-bcf8-4c8c-8146-e56c876f9197'
+    team_id:'b5296bda-df8d-428a-8386-f2a14e992ad2'
   },
   {
     pokedex: '007',
@@ -69,7 +69,7 @@ const pokemonData = [
     attack: 48,
     defense: 65,
     speed: 43,
-    user_id:'557f5ae0-7760-4305-b2b1-40f72a082f0e'
+    team_id:'f1b559f4-d6bd-4cfa-bb59-df1a0156cedd'
   },
   {
     pokedex: '008',
@@ -79,7 +79,7 @@ const pokemonData = [
     attack: 63,
     defense: 80,
     speed: 58,
-    user_id:'557f5ae0-7760-4305-b2b1-40f72a082f0e'
+    team_id:'f1b559f4-d6bd-4cfa-bb59-df1a0156cedd'
   },
   {
     pokedex: '009',
@@ -89,7 +89,7 @@ const pokemonData = [
     attack: 83,
     defense: 100,
     speed: 78,
-    user_id:'557f5ae0-7760-4305-b2b1-40f72a082f0e'
+    team_id:'2c44cb54-05d0-4c3d-b1d3-9a897cb073dc'
   },
   {
     pokedex: '010',
@@ -99,7 +99,7 @@ const pokemonData = [
     attack: 30,
     defense: 35,
     speed: 45,
-    user_id:'be88bf2d-e41e-4fa0-937d-7e252cc73404'
+    team_id:'2c44cb54-05d0-4c3d-b1d3-9a897cb073dc'
   },
   {
     pokedex: '011',
@@ -109,7 +109,7 @@ const pokemonData = [
     attack: 20,
     defense: 55,
     speed: 30,
-    user_id:'be88bf2d-e41e-4fa0-937d-7e252cc73404'
+    team_id:'2c44cb54-05d0-4c3d-b1d3-9a897cb073dc'
   },
   {
     pokedex: '012',
@@ -119,7 +119,7 @@ const pokemonData = [
     attack: 45,
     defense: 50,
     speed: 70,
-    user_id:'be88bf2d-e41e-4fa0-937d-7e252cc73404'
+    team_id:'2c44cb54-05d0-4c3d-b1d3-9a897cb073dc'
   },
   {
     pokedex: '013',
@@ -129,7 +129,7 @@ const pokemonData = [
     attack: 35,
     defense: 30,
     speed: 50,
-    user_id:'e8c9edd0-c059-4f23-b525-a51f8bd7e648'
+    team_id:'4a5a129a-f0e4-4529-a1ff-f8cea4d65998'
   },
   {
     pokedex: '014',
@@ -139,7 +139,7 @@ const pokemonData = [
     attack: 25,
     defense: 50,
     speed: 35,
-    user_id:'be88bf2d-e41e-4fa0-937d-7e252cc73404'
+    team_id:'4a5a129a-f0e4-4529-a1ff-f8cea4d65998'
   },
   {
     pokedex: '015',
@@ -149,7 +149,7 @@ const pokemonData = [
     attack: 90,
     defense: 40,
     speed: 75,
-    user_id:'e8c9edd0-c059-4f23-b525-a51f8bd7e648'
+    team_id:'bca48c72-36d3-4866-9f54-bd041b5f7d02'
   },
   {
     pokedex: '016',
@@ -159,7 +159,7 @@ const pokemonData = [
     attack: 45,
     defense: 40,
     speed: 56,
-    user_id:'e8c9edd0-c059-4f23-b525-a51f8bd7e648'
+    team_id:'bca48c72-36d3-4866-9f54-bd041b5f7d02'
   },
   {
     pokedex: '017',
@@ -169,7 +169,7 @@ const pokemonData = [
     attack: 60,
     defense: 55,
     speed: 71,
-    user_id:'e8c9edd0-c059-4f23-b525-a51f8bd7e648'
+    team_id:'bca48c72-36d3-4866-9f54-bd041b5f7d02'
   },
   {
     pokedex: '018',
@@ -179,7 +179,7 @@ const pokemonData = [
     attack: 80,
     defense: 75,
     speed: 101,
-    user_id:'1895ee2d-bcf8-4c8c-8146-e56c876f9197'
+    team_id:'2c44cb54-05d0-4c3d-b1d3-9a897cb073dc'
   },
   {
     pokedex: '019',
@@ -189,7 +189,7 @@ const pokemonData = [
     attack: 56,
     defense: 35,
     speed: 72,
-    user_id:'e8c9edd0-c059-4f23-b525-a51f8bd7e648'
+    team_id:'bca48c72-36d3-4866-9f54-bd041b5f7d02'
   },
   {
     pokedex: '020',
@@ -199,7 +199,7 @@ const pokemonData = [
     attack: 81,
     defense: 60,
     speed: 97,
-    user_id:'e8c9edd0-c059-4f23-b525-a51f8bd7e648'
+    team_id:'2c44cb54-05d0-4c3d-b1d3-9a897cb073dc'
   },
 ];
 

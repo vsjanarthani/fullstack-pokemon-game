@@ -22,7 +22,7 @@ loginButtonEl.addEventListener('click', async (event) => {
       });
 
       if (response.ok) {
-        document.location.replace('/draftpage');
+        document.location.replace('/team');
       } else {
         alert(response.statusText);
       }

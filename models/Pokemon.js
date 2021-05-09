@@ -39,24 +39,16 @@ Pokemon.init(
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        user_id: {
+        team_id: {
             type: DataTypes.UUID,
             allowNull: false,
             references: {
-                model: 'user',
+                model: 'team',
                 key: 'id',
                 deferrable: Deferrable.INITIALLY_IMMEDIATE
+                
             }
-        },
-        // team_id: {
-        //     type: DataTypes.UUID,
-        //     allowNull: false,
-        //     references: {
-        //         model: 'team',
-        //         key: 'id',
-        //         deferrable: Deferrable.INITIALLY_IMMEDIATE
-        //     }
-        // }
+        }
     },
     {
         sequelize,
