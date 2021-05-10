@@ -7,9 +7,19 @@
         <div class="row">
             <div class="col-sm-12">
                 <h1 class="banner_taital">Welcome to Pokémon Draft</h1>
+                <!-- Pick a Team Name Generator-->
+               <p class="browse_text">First, let's name your team!</p>
+                 {{>name-team}}
+                 </div>
+                 <!-- Pick a Logo-->
+                 <p class="browse_text">Let's pick your team logo.</p>
+                <div class="banner_bt">
+                    {{> logo}}
+                    </div>
+                <!-- Pick Pokemon-->
                 <p class="browse_text">You don't have any Pokémon drafted yet! To start building your team, select from the free agent Pokémon below.</p>
                 <div class="banner_bt">
-                    <button class="read_bt">Create Team</button>
+             <button class="read_bt">Create Team</button>
                 </div>
             </div>
         </div>
