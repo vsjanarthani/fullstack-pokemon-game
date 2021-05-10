@@ -1,8 +1,29 @@
+
+.draft-header {
+	background-image: url("https://res.cloudinary.com/actionfdfds/image/upload/v1620603338/intrologo_khbj0h.png") 50% no-repeat;
+	
+	height: 10vh;
+	max-width: 10vh;
+	position: absolute;
+  	left: 0px;
+  	top: 0px;
+}
+
+}
+
 #draft-clear, #draft-team{
 	font-family: 'Poppins', sans-serif;
 	font-weight: 500;
 	font-size: medium;
 	justify-self: auto;
+}
+
+.form-group {
+	font-size: medium;
+}
+
+#heroHeadline {
+	max-width: 10vh;
 }
 .navbar-brand{
 	font-family: 'Poppins', sans-serif;
@@ -10,6 +31,14 @@
 	font-weight: 600;
 
 
+}
+
+body {
+	font-size: medium;
+}
+.signupbtn{
+	min-width: 50px !important;
+	font-size: large !important;
 }
 .card-title {
 	font-family: 'Poppins', sans-serif;
@@ -73,7 +102,7 @@ logoIcon {
 	max-height: 50px;
 }
 .bg-image{
-	background: url("https://i.imgur.com/sEJsZpb.png") 50% no-repeat;
+	background: url("https://res.cloudinary.com/actionfdfds/image/upload/v1620603068/background_gyqjms.png") 50% no-repeat;
 	background-size: cover;
 	height: 100vh;
 	text-align: center;
