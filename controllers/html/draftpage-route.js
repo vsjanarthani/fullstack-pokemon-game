@@ -1,7 +1,9 @@
 const router = require('express').Router();
 const fetch = require('node-fetch');
 const sessionAuth = require('../../utils/auth');
+const dev = process.env.NODE_ENV !== 'production';
 
+const server = dev ? 'http://localhost:5000' : 'https://your_deployment.server.com';
 // Function to fetch pokemon every 24hrs
 let id;
 
@@ -45,15 +47,15 @@ const promisifedPingApi = new Promise ((resolve, reject) => {
 // empty array to store selected pokemon
 let selectedPokedex =[];
 // fetching our selected pokedex from database
-fetch("/api/pokemons")
+fetch(`${server}/api/pokemons`)
     .then(response => response.json())
     .then(data => {
-        console.log(data);
+        // console.log(data);
         for (let i = 0; i < data.length; i++) {
             const pokedex = data[i].pokedex;
             selectedPokedex.push(pokedex)
         }
-        console.log(selectedPokedex);
+        // console.log(selectedPokedex);
 
     })
     .catch(e => {
@@ -100,9 +102,25 @@ const getPokemon = () => {
 };
 console.log(pokeData);
 
+router.post("/updatePokeData", (req, res) => {
+    console.log("john is so nice")
+    console.log(req.body);
+    let updatedPokemon = req.body;
+     for (let i = 0; i < updatedPokemon.length; i++) {
+         const newPoke = updatedPokemon[i].pokedex;
+         for (let i = 0; i < pokeData.length; i++) {
+             const pokeInData = pokeData[i].pokedex;
+             if (pokeInData == newPoke) {
+                pokeData[i].selected = true;
+             }
+         }
+     }
+     console.log(pokeData); 
+});
 
 // Function to render Draftpage
 router.get('/', sessionAuth, (req, res) => {
+    // console.log(pokeData)
     res.render("draftpage", {
         pokeData,
         loggedIn: req.session.loggedIn,

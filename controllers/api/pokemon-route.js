@@ -3,32 +3,16 @@ const { Pokemon, Team } = require('../../models');
 const sessionAuth = require('../../utils/auth');
 const { QueryTypes } = require('sequelize');
 const { sequelize } = require('../../models/User');
+const fetch = require('node-fetch');
+const dev = process.env.NODE_ENV !== 'production';
+
+const server = dev ? 'http://localhost:5000' : 'https://your_deployment.server.com';
 
 // GET /api/pokemons
 router.get('/', async (req, res) => {
   try {
     const allPokemon = await Pokemon.findAll();
     res.status(200).json(allPokemon);
-  }
-  catch (e) {
-    res.status(400).json({ Error: e });
-  }
-});
-
-// GET all pokedex from selected Pokemons
-router.get('/selectedPokedex', async (req, res) => {
-  try {
-    const allPokedex = await Pokemon.findAll({
-      attributes: {
-          include: [
-              [
-                  sequelize.literal(`(
-                    SELECT pokedex FROM pokemon WHERE selected = true;
-                  )`),
-              ]
-          ]
-      }
-  });
   }
   catch (e) {
     res.status(400).json({ Error: e });
@@ -108,8 +92,22 @@ router.post('/team', sessionAuth, (req, res) => {
   // console.log (pokeTeam);
   Pokemon.bulkCreate(pokeTeam)
     .then(pokemonData => {
-      console.log(pokemonData)
-      res.status(200).json(pokemonData)})
+      console.log("initiating update", pokeTeam)
+      res.status(200).json(pokemonData)
+      fetch(`${server}/draftpage/updatePokeData`, {
+        headers: {
+          // 'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        method: "POST",
+        body: JSON.stringify(
+            pokeTeam
+         )
+      })
+      .catch(e=> {
+        console.log(e);
+      })
+    })
     
     .catch(e => {
       console.log(e);

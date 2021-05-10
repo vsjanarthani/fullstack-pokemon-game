@@ -50,7 +50,7 @@ Pokemon.init(
         },
         selected: {
             type: DataTypes.BOOLEAN,
-            defaultValue: true,
+            defaultValue: false,
             allowNull: false
         }
     },

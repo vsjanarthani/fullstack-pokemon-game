@@ -11,13 +11,13 @@ let team_id;
 let pokemons;
 
 // function to check count and disable buttons if needed 
-const countCheck = () => {
-    if (dbTeam[1] = 0) {
-        console.log(dbTeam[1])
-        console.log("buttons will be disabled now")
-        // PokemonBtnEl.disabled = true;
-    }
-};
+// const countCheck = () => {
+//     if (dbTeam[1] = 0) {
+//         console.log(dbTeam[1])
+//         console.log("buttons will be disabled now")
+//         // PokemonBtnEl.disabled = true;
+//     }
+// };
 
 // Fetch team id and pokemon count
 fetch("/api/team")
@@ -55,10 +55,8 @@ PokemonBtnEl.addEventListener("click", (event) => {
             selected: true
         }
         pokeTeam.push(thisPokemon);
-        console.log(pokeTeam);
+        // console.log(pokeTeam);
     }
-    // countCheck();
-
 });
 
 draftTeamBtnEl.addEventListener('click', event => {
