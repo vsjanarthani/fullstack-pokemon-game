@@ -4,6 +4,7 @@ const Pokemon = require('./Pokemon');
 const Team = require('./Team');
 
 
+
 const Highscore = require('./Highscore');
 
 // Model Associations

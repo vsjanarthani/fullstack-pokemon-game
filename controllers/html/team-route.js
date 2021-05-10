@@ -16,10 +16,11 @@ router.get('/', sessionAuth, (req, res) => {
         .then(teamData => {
             if (teamData) {
                 const team = teamData.get({ plain: true });
-                console.log(team);
-                res.render('team', { team, loggedIn: true });
+                const disable = team.pokemons.length >= 6;
+                console.log(team, disable);
+                res.render('team', { team, loggedIn: true, disable: disable});
             } else {
-                res.render('team', { team: false, loggedIn: true });
+                res.render('team', { team: false, loggedIn: true, disable: disable});
             }
         })
         .catch(e => {

@@ -21,16 +21,18 @@
 {{#if team}}
 <!-- RETURNING USER-->
 <!-- banner section start -->
-<div class="layout_padding banner_section">
+<div class="container-fluid me-4 p-4 d-flex justify-content-center">
     <div class="container">
-        <div class="row">
+        <div class="row d-flex flex-column align-items-center">
             <div class="col-sm-12">
                 <h1 class="banner_taital">Welcome back to Pokémon Draft {{team.team_name}}</h1>
                 <h4 class="banner_taital">Your secret key for drafting is {{team.id}}</h4>
-                <p class="browse_text">You have {{team.pokemon_count}} Pokémon drafted. To draft more Pokémon please
-                    visit the draft-page.</p>
+                <p class="browse_text">You have {{team.pokemons.length}} Pokémon(s) in your team. {{#if disable}} Your team is full, To go to battle, select battle in the Nav Bar. 
+                    {{else}} To draft more Pokémon please visit the draft-page. To go battle go to the battle page. {{/if}}</p>
                 <div class="banner_bt">
-                    <button class="read_bt"><a href="/draftpage">Draft Team</a></button>
+                    {{#unless disable}}
+                    <button class="btn btn-lg btn-dark"><a class="style-none text-white" href="/draftpage">Draft Team</a></button> {{/unless}}
+                     <button class="btn btn-lg btn-dark"><a class="style-none text-white" href="/battle">Go to Battle</a></button>
                 </div>
             </div>
         </div>
