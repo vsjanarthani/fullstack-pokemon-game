@@ -1,15 +1,23 @@
-
 // DOM Selection & Global variable assignment
 let PokemonBtnEl = document.querySelector("#listen");
 const draftTeamBtnEl = document.querySelector('#draft-team');
 const clearDraftBtnEl = document.querySelector('#draft-clear');
 // const draftMeBtnEl = PokemonBtnEl.getAttribute('name');
 let pokeTeam = [];
+let count;
 let dbTeam = [];
 let num;
 let team_id;
 let pokemons;
 
+// function to check count and disable buttons if needed 
+const countCheck = () => {
+    if (dbTeam[1] = 0) {
+        console.log(dbTeam[1])
+        console.log("buttons will be disabled now")
+        // PokemonBtnEl.disabled = true;
+    }
+};
 
 // Fetch team id and pokemon count
 fetch("/api/team")
@@ -18,19 +26,16 @@ fetch("/api/team")
         team_id = data.id;
         // let pokemons = data.pokemons;
         let count = 6 - (data.pokemons.length);
-        // console.log(count);
+        console.log(count);
         dbTeam.push(team_id);
         dbTeam.push(count);
     })
     .catch(e => {
         console.log(e);
         alert(response.statusText);
-    });
+});
 
-console.log(dbTeam);
-
-
-// Event listenr for button click to draft each pokemon
+// Event listener for button click to draft each pokemon
 PokemonBtnEl.addEventListener("click", (event) => {
     let buttonId = event.target.id;
     if (pokeTeam.length < dbTeam[1] && !pokeTeam.includes(buttonId) && buttonId != "") {
@@ -52,6 +57,7 @@ PokemonBtnEl.addEventListener("click", (event) => {
         pokeTeam.push(thisPokemon);
         console.log(pokeTeam);
     }
+    // countCheck();
 
 });
 
@@ -73,13 +79,13 @@ draftTeamBtnEl.addEventListener('click', event => {
             } 
             // else (disable all buttons)
         })
-            .then(response => {
-                // return response.json();
-                if (response.ok) {
-                    alert(`Pokemon Draft Completed!`);
-                    document.location.replace('/team');
-                }
-            })
+            // .then(response => {
+            //     // return response.json();
+            //     if (response.ok) {
+            //         alert(`Pokemon Draft Completed!`);
+            //         document.location.replace('/team');
+            //     }
+            // })
             // .then (response => {
             // console.log(response);
             // })
@@ -102,6 +108,7 @@ clearDraftBtnEl.addEventListener('click', event => {
           }
 });
 
+// countCheck();
 
 // to do
 //* draftpage.js

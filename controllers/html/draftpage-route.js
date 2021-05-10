@@ -42,32 +42,31 @@ const promisifedPingApi = new Promise ((resolve, reject) => {
 //   return
 // }
 
-// Fetch team id and pokemon count
+// empty array to store selected pokemon
+let selectedPokedex =[];
+// fetching our selected pokedex from database
 fetch("/api/pokemons")
     .then(response => response.json())
     .then(data => {
         console.log(data);
-        // team_id = data.id;
-        // // let pokemons = data.pokemons;
-        // let count = 6 - (data.pokemons.length);
-        // // console.log(count);
-        // dbTeam.push(team_id);
-        // dbTeam.push(count);
+        for (let i = 0; i < data.length; i++) {
+            const pokedex = data[i].pokedex;
+            selectedPokedex.push(pokedex)
+        }
+        console.log(selectedPokedex);
+
     })
     .catch(e => {
         console.log(e);
         alert(response.statusText);
-    });
-
-console.log(dbTeam);
-
+});
 // setting empty array to hold random pokemon ids to pull from api
 let pokeNums = [];
 
 // adding 20 random numbers to our array, making sure there are no repeats
 for (let i = 0; i < 20; i++) {
     const singlePokeNum = Math.floor(Math.random() * 898) + 1;
-    if (!pokeNums.includes(singlePokeNum)) {
+    if (!pokeNums.includes(singlePokeNum) && !selectedPokedex.includes(singlePokeNum)) {
         pokeNums.push(singlePokeNum);
     }
 };

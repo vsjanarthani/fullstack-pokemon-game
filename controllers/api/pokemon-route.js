@@ -2,12 +2,33 @@ const router = require('express').Router();
 const { Pokemon, Team } = require('../../models');
 const sessionAuth = require('../../utils/auth');
 const { QueryTypes } = require('sequelize');
+const { sequelize } = require('../../models/User');
 
 // GET /api/pokemons
 router.get('/', async (req, res) => {
   try {
     const allPokemon = await Pokemon.findAll();
     res.status(200).json(allPokemon);
+  }
+  catch (e) {
+    res.status(400).json({ Error: e });
+  }
+});
+
+// GET all pokedex from selected Pokemons
+router.get('/selectedPokedex', async (req, res) => {
+  try {
+    const allPokedex = await Pokemon.findAll({
+      attributes: {
+          include: [
+              [
+                  sequelize.literal(`(
+                    SELECT pokedex FROM pokemon WHERE selected = true;
+                  )`),
+              ]
+          ]
+      }
+  });
   }
   catch (e) {
     res.status(400).json({ Error: e });
