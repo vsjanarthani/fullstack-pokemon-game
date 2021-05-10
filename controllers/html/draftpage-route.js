@@ -42,6 +42,24 @@ const promisifedPingApi = new Promise ((resolve, reject) => {
 //   return
 // }
 
+// Fetch team id and pokemon count
+fetch("/api/pokemons")
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        // team_id = data.id;
+        // // let pokemons = data.pokemons;
+        // let count = 6 - (data.pokemons.length);
+        // // console.log(count);
+        // dbTeam.push(team_id);
+        // dbTeam.push(count);
+    })
+    .catch(e => {
+        console.log(e);
+        alert(response.statusText);
+    });
+
+console.log(dbTeam);
 
 // setting empty array to hold random pokemon ids to pull from api
 let pokeNums = [];

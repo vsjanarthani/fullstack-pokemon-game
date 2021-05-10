@@ -18,7 +18,7 @@ fetch("/api/team")
         team_id = data.id;
         // let pokemons = data.pokemons;
         let count = 6 - (data.pokemons.length);
-        console.log(count);
+        // console.log(count);
         dbTeam.push(team_id);
         dbTeam.push(count);
     })
@@ -55,17 +55,23 @@ PokemonBtnEl.addEventListener("click", (event) => {
 
 });
 
-// Event listner for draft team button
-    draftTeamBtnEl.addEventListener('click', event => {
-        event.preventDefault();
-        const response = fetch(`/api/pokemons/team`, {
-            method: 'POST',
-            body: JSON.stringify({
-                pokeTeam
-            }),
-            headers: {
-                'Content-Type': 'application/json'
-            }
+draftTeamBtnEl.addEventListener('click', event => {
+    event.preventDefault();
+    const response = fetch(`/api/pokemons/team`, {
+        method: 'POST',
+        body: JSON.stringify({
+            pokeTeam
+        }),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+        .then(response => {
+            if (response.ok) {
+                alert(`Pokemon Draft Completed!`);
+                document.location.replace('/team');
+            } 
+            // else (disable all buttons)
         })
             .then(response => {
                 // return response.json();
@@ -95,6 +101,29 @@ clearDraftBtnEl.addEventListener('click', event => {
             }
           }
 });
+
+
+// to do
+//* draftpage.js
+// 1. Event listener for clear draft button Jana
+// 2. Already drafted, should say already drafted, not dependant on button click Megan
+//    and compare pokedex from database to pokeapi to "already drafted"
+// 3. if logged in but no team, disable functionality Jana
+// 4. if dbTeam[1] <0, then disable draft buttons. Megan/Jana
+
+//* teampage.js (also .hbs)
+//1. create a form for team creating **team name/team-logo (.hbs) Sarah
+//2. button click listener for create team (do a post request for .html route team (/team)) Sarah
+
+//* draftpage-route
+//1. fetch request from our pokedex and compare to the random 20 so we don't repeat. 
+//2. time issue-every 24 hours. *Yev
+
+//* change header/nav bar so that options available are only there based on status of user 
+
+//* finally, present! 
+
+
 
 
 
