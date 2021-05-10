@@ -21,9 +21,6 @@ router.get('/', sessionAuth, (req, res) => {
             } else {
                 res.render('team', { team: false, loggedIn: true });
             }
-            else {
-                res.redirect('/draftpage');
-            }
         })
         .catch(e => {
             console.log(e)
