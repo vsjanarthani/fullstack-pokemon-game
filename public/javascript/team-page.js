@@ -2,6 +2,10 @@
 let PokemonBtnEl = document.querySelector("#listen");
 const removebtnEl = document.querySelector('#remove-pokemon');
 
+
+// let namePokeBtnEl = document.querySelector("#pokeTeamNaming");
+// need selector for logo as well
+
 // Event listener for remove pokemon button
 if (PokemonBtnEl) {
     console.log(PokemonBtnEl);
@@ -18,8 +22,27 @@ if (PokemonBtnEl) {
           }
     })
 }
-//NEED EVENT LISTENER FOR TEAM NAME BUTTON SET UP, TO ENABLE THIS
-//ALSO PLACEMENT/HANDLING OF NAMES. SHOW 1? SELECT?
+
+// Event Listener for the NAME pokemon team function started
+// should run random name generator
+// if (namePokeBtnEl) {
+//   console.log(namePokeBtnEl);
+//   namePokeBtnEl.addEventListener('click', async event => {
+//
+// SETTING TEAM NAME team.team_name}
+//       // const id = event.target.name;
+//       // const response = await fetch(``, {
+//       //     method: 'POST'
+//         });
+      
+//         if (response.ok) {
+//           document.location.reload('/team');
+//         } else {
+//           alert(response.statusText);
+//         }
+// //   })
+// // }
+//  LOGIC FOR THE RANDOM NAME GENERATOR
 // var teamBuild = [
 //   '"The "+nameTeam(adjective)+" "+nameTeam(legendary)',
 //   'nameTeam(adjective)+" "+nameTeam(pokeCity)',
@@ -53,6 +76,7 @@ if (PokemonBtnEl) {
 // function nameTeam(id){
 // return id[Math.floor(Math.random()*id.length)]
 // }
+// CHANGE THIS TO SELECT ONE OR JUST AS AN INSPIRATION BOX (?)
 // function pokeTeamName(){
 // var ul = document.getElementsByTagName('ul')[0];
 // ul.insertAdjacentHTML('afterBegin','<li>'+eval(teamBuild[Math.floor(Math.random()*teamBuild.length)])+'</li>')
