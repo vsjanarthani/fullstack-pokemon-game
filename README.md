@@ -64,7 +64,8 @@ Sarah Durkin [GitHub](https://github.com/sarahdurks)
 No automated test are set up for this application yet.
 ![Frame 99](https://user-images.githubusercontent.com/77648727/117526120-cf5ed600-af77-11eb-9b39-3549d7b88208.png)
 ### Screenshot
-<img width="923" alt="Screen Shot 2021-05-10 at 2 59 17 PM" src="https://user-images.githubusercontent.com/77648727/117730023-9190c600-b1a0-11eb-8463-6f4519ca1b36.png">
+<img width="647" alt="Screen Shot 2021-05-10 at 2 59 29 PM" src="https://user-images.githubusercontent.com/77648727/117730184-d0bf1700-b1a0-11eb-9610-a0feacae04c1.png">
+
 
 ### Questions 🤔
 If you have any questions, please reach out to the Author's email.
