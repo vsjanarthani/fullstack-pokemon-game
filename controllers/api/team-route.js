@@ -12,13 +12,13 @@ router.get('/', sessionAuth, (req, res) => {
                 model: Pokemon,
                 attributes: ['pokedex', 'pokemon_name', 'pokemon_pic', 'hp', 'attack', 'defense', 'speed'],
             }]
+            
     })
         .then(teamData => {
-            console.log("I will figure this out!")
             if (teamData) {
                 const team = teamData.get({ plain: true });
                 res.status(200).json(team);
-            } else res.status(400)
+            } else res.status(400).json('NO team yet!')
         })
         .catch(e => {
             console.log(e)
@@ -44,27 +44,6 @@ router.post('/', sessionAuth, (req, res) => {
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
-        });
-});
-
-// DELETE team
-router.delete('/:id', sessionAuth, (req, res) => {
-    Team.destroy({
-        where: {
-            id: req.params.id
-        }
-    })
-        .then(teamData => {
-            if (teamData) {
-                const team = teamData.get({ plain: true });
-                res.render('team', { team, loggedIn: true });
-            } else {
-                res.render('team', { team: false, loggedIn: true });
-            }
-        })
-        .catch(e => {
-            console.log(e)
-            res.status(400).json({ Error: e });
         });
 });
 

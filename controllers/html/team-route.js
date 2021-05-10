@@ -16,7 +16,10 @@ router.get('/', sessionAuth, (req, res) => {
         .then(teamData => {
             if (teamData) {
                 const team = teamData.get({ plain: true });
+                console.log(team);
                 res.render('team', { team, loggedIn: true });
+            } else {
+                res.render('team', { team: false, loggedIn: true });
             }
             else {
                 res.redirect('/draftpage');
