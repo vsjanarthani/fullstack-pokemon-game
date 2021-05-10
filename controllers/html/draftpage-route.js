@@ -2,14 +2,6 @@ const router = require('express').Router();
 const fetch = require('node-fetch');
 const sessionAuth = require('../../utils/auth');
 
-// ISSUES 
-// Initial fetch logic
-//https://github.com/sarahdurks/fullstack-pokemon-game/issues/16
-
-//Clear Draft
-//https://github.com/sarahdurks/fullstack-pokemon-game/issues/11
-
-
 // Function to fetch pokemon every 24hrs
 let id;
 
@@ -72,16 +64,21 @@ const getPokemon = () => {
             .then(data => {
                 let eachPoke =
                 {
-                    name: (data.name).toUpperCase(),
-                    id: data.id,
+                    pokedex: data.id,
+                    pokemon_name: (data.name).toUpperCase(),
+                    pokemon_pic: data.sprites.front_default,
                     hp: data.stats[0].base_stat,
                     attack: data.stats[1].base_stat,
                     defense: data.stats[2].base_stat,
-                    speed: data.stats[5].base_stat,
-                    imageSrc: data.sprites.front_default
+                    speed: data.stats[5].base_stat, 
+                    selected: false,
                 };
                 pokeData.push(eachPoke);
             })
+            .catch(e => {
+                console.log(e);
+                res.status(400).json({ Error: e });
+              });
     }
 };
 console.log(pokeData);
@@ -92,7 +89,6 @@ router.get('/', sessionAuth, (req, res) => {
     res.render("draftpage", {
         pokeData,
         loggedIn: req.session.loggedIn,
-        active: true
     })
 });
 

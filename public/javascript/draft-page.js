@@ -1,20 +1,17 @@
 
-// DOM Selection
+// DOM Selection & Global variable assignment
 let PokemonBtnEl = document.querySelector("#listen");
-const pokeTeam = [];
+const draftTeamBtnEl = document.querySelector('#draft-team');
+const clearDraftBtnEl = document.querySelector('#draft-clear');
+// const draftMeBtnEl = PokemonBtnEl.getAttribute('name');
+let pokeTeam = [];
 let dbTeam = [];
 let num;
 let team_id;
 let pokemons;
-const draftTeamBtnEl = document.querySelector('#draft-team');
 
-// console.log (pokeTeam);
 
-//ISSUES
-
-//Team ID hardcoded
-// https://github.com/sarahdurks/fullstack-pokemon-game/issues/12
-// const getTeamData = function() {
+// Fetch team id and pokemon count
 fetch("/api/team")
     .then(response => response.json())
     .then(data => {
@@ -24,25 +21,16 @@ fetch("/api/team")
         console.log(count);
         dbTeam.push(team_id);
         dbTeam.push(count);
-
-        // console.log(team_id);
-        // console.log(pokemons);
-        
+    })
+    .catch(e => {
+        console.log(e);
+        alert(response.statusText);
     });
-    console.log(dbTeam);
-// .then(data => console.log(data))
-// let team_id = data.id;
-// let pokemons = data.pokemons;
-// console.log(team_id);
-// console.log(pokemons);
-// };
 
-// getTeamData();
-// console.log(team_id);
-//Pokemon count should be incremental, ties to here and the team model
-//https://github.com/sarahdurks/fullstack-pokemon-game/issues/10
+console.log(dbTeam);
 
-// Listening for button click to draft each pokemon
+
+// Event listenr for button click to draft each pokemon
 PokemonBtnEl.addEventListener("click", (event) => {
     let buttonId = event.target.id;
     if (pokeTeam.length < dbTeam[1] && !pokeTeam.includes(buttonId) && buttonId != "") {
@@ -58,8 +46,8 @@ PokemonBtnEl.addEventListener("click", (event) => {
             attack: pokeInfo[4],
             defense: pokeInfo[5],
             speed: pokeInfo[6],
-            team_id: dbTeam[0]
-            // find a way to include team id in the array to bulk create
+            team_id: dbTeam[0],
+            selected: true
         }
         pokeTeam.push(thisPokemon);
         console.log(pokeTeam);
@@ -67,39 +55,48 @@ PokemonBtnEl.addEventListener("click", (event) => {
 
 });
 
-draftTeamBtnEl.addEventListener('click', event => {
-    event.preventDefault();
-    const response = fetch(`/api/pokemons/team`, {
-        method: 'POST',
-        body: JSON.stringify({
-            pokeTeam
-        }),
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
-        .then(response => {
-            // return response.json();
-            if (response.ok) {
-                alert(`Pokemon Draft Completed!`);
-                document.location.replace('/team');
+// Event listner for draft team button
+    draftTeamBtnEl.addEventListener('click', event => {
+        event.preventDefault();
+        const response = fetch(`/api/pokemons/team`, {
+            method: 'POST',
+            body: JSON.stringify({
+                pokeTeam
+            }),
+            headers: {
+                'Content-Type': 'application/json'
             }
         })
-        // .then (response => {
-        // console.log(response);
-        // })
-        .catch(e => {
-            console.log(e);
-            alert(response.statusText);
-        });
+            .then(response => {
+                // return response.json();
+                if (response.ok) {
+                    alert(`Pokemon Draft Completed!`);
+                    document.location.replace('/team');
+                }
+            })
+            // .then (response => {
+            // console.log(response);
+            // })
+            .catch(e => {
+                console.log(e);
+                alert(response.statusText);
+            });
+    });
 
+
+// Event listener for Clear draft button
+clearDraftBtnEl.addEventListener('click', event => {
+        pokeTeam = [];
+        let allBtns = PokemonBtnEl.getElementsByTagName('button');
+        for (let i = 0; i < allBtns.length; i++) {
+            if (allBtns[i].textContent == 'Already Drafted!') {
+                allBtns[i].disabled = false;
+                allBtns[i].innerText = "Draft Me";
+            }
+          }
 });
 
 
-// to do
-// 1. Event listener for clear draft button
-// 2. A way to get team_id and pokemon_count on line 25 and line 12 instead of hardcoding
-// 3. Change the pokemon_count as a function to count the pokemon in the team
 
 
 

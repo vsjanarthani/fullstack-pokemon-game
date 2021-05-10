@@ -20,6 +20,6 @@ if (PokemonBtnEl) {
 }
 
 
+
 // to do
-// 1. Pokemon Count should be correct.
-// 2. Place to add logos
+// Event listener for create team and its forms
