@@ -60,7 +60,7 @@ fetch(`${server}/api/pokemons`)
     })
     .catch(e => {
         console.log(e);
-        alert(response.statusText);
+
 });
 // setting empty array to hold random pokemon ids to pull from api
 let pokeNums = [];

@@ -29,9 +29,11 @@
                             style="width: {{speed}}%" aria-valuenow="{{speed}}" aria-valuemin="0" aria-valuemax="100">
                             Speed</div>
                     </div>
-
+                        {{#if selected}}
+                        <button id="{{pokedex}} {{pokemon_name}} {{pokemon_pic}} {{hp}} {{attack}} {{defense}} {{speed}}" type="submit" data-selected="{{selected}}" name="draftmeBtn" class="btnDraft"disabled>Already Drafted!</button>
+                        {{else}}
                         <button id="{{pokedex}} {{pokemon_name}} {{pokemon_pic}} {{hp}} {{attack}} {{defense}} {{speed}}" type="submit" data-selected="{{selected}}" name="draftmeBtn" class="btnDraft">DRAFT ME</button>
-
+                        {{/if}}
                 </div>
             </div>
         </div>
