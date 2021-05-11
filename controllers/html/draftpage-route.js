@@ -100,11 +100,10 @@ const getPokemon = () => {
               });
     }
 };
-console.log(pokeData);
+
 
 router.post("/updatePokeData", (req, res) => {
-    console.log("john is so nice")
-    console.log(req.body);
+    // console.log(req.body);
     let updatedPokemon = req.body;
      for (let i = 0; i < updatedPokemon.length; i++) {
          const newPoke = updatedPokemon[i].pokedex;
@@ -115,7 +114,6 @@ router.post("/updatePokeData", (req, res) => {
              }
          }
      }
-     console.log(pokeData); 
 });
 
 // Function to render Draftpage
