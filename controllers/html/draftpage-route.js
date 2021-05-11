@@ -4,14 +4,17 @@ const sessionAuth = require('../../utils/auth');
 const dev = process.env.NODE_ENV !== 'production';
 
 const server = dev ? 'http://localhost:5000' : 'https://your_deployment.server.com';
-// Function to fetch pokemon every 24hrs
-let id;
 
-const promisifedPingApi = new Promise ((resolve, reject) => {
-  id = setTimeout(() => {
-    getPokemon();
-  }, 500);
-});
+
+
+
+// let id;
+
+// const promisifedPingApi = new Promise ((resolve, reject) => {
+//   id = setTimeout(() => {
+//     getPokemon();
+//   }, 500);
+// });
 
 // Promise.race([
 //     promisifedPingApi,
@@ -19,7 +22,7 @@ const promisifedPingApi = new Promise ((resolve, reject) => {
 //       setTimeout(() => reject('Timeout!'), 500);
 //       (function () {
 //         setInterval(function () {
-//           getRandomWord();
+//           getPokemon();
 //         }, 1000 * 60 * 60 * 24);
 //       }) ();
 //     })
@@ -31,37 +34,26 @@ const promisifedPingApi = new Promise ((resolve, reject) => {
 //       clearTimeout(id);
 //     });
 
-// End of Function to fetch pokemon every 24hrs
 
-// const savedDate = localStorage.getItem("date");
-// const todaydate = new Date();
-// const mydate = todaydate.getFullYear() + '-' + (todaydate.getMonth() + 1) + '-' + todaydate.getDate();
 
-// if (!savedDate || savedDate != mydate) {
-//   getPokemon();
-// } else {
-//   localStorage.setItem('date', mydate);
-//   return
-// }
 
-// empty array to store selected pokemon
-let selectedPokedex =[];
 // fetching our selected pokedex from database
+let selectedPokedex = [];
 setTimeout(() => {
     fetch(`${server}/api/pokemons`)
-    .then(response => response.json())
-    .then(data => {
-        for (let i = 0; i < data.length; i++) {
-            const pokedex = data[i].pokedex;
-            selectedPokedex.push(pokedex)
-        }
-        // console.log(selectedPokedex);
+        .then(response => response.json())
+        .then(data => {
+            for (let i = 0; i < data.length; i++) {
+                const pokedex = data[i].pokedex;
+                selectedPokedex.push(pokedex)
+            }
+            // console.log(selectedPokedex);
 
-    })
-    .catch(e => {
-        console.log(e);
+        })
+        .catch(e => {
+            console.log(e);
 
-});
+        });
 }, 500);
 
 // setting empty array to hold random pokemon ids to pull from api
@@ -91,7 +83,7 @@ const getPokemon = () => {
                     hp: data.stats[0].base_stat,
                     attack: data.stats[1].base_stat,
                     defense: data.stats[2].base_stat,
-                    speed: data.stats[5].base_stat, 
+                    speed: data.stats[5].base_stat,
                     selected: false,
                 };
                 pokeData.push(eachPoke);
@@ -99,23 +91,33 @@ const getPokemon = () => {
             .catch(e => {
                 console.log(e);
                 res.status(400).json({ Error: e });
-              });
+            });
     }
 };
+
+getPokemon();
+
+// Function to fetch pokemon every 24hrs??????
+
+// setTimeout(() => {
+//     getPokemon();
+// }, 1000);
+
+setInterval(getPokemon, 1000 * 60 * 60 * 24);
 
 
 router.post("/updatePokeData", (req, res) => {
     // console.log(req.body);
     let updatedPokemon = req.body;
-     for (let i = 0; i < updatedPokemon.length; i++) {
-         const newPoke = updatedPokemon[i].pokedex;
-         for (let i = 0; i < pokeData.length; i++) {
-             const pokeInData = pokeData[i].pokedex;
-             if (pokeInData == newPoke) {
+    for (let i = 0; i < updatedPokemon.length; i++) {
+        const newPoke = updatedPokemon[i].pokedex;
+        for (let i = 0; i < pokeData.length; i++) {
+            const pokeInData = pokeData[i].pokedex;
+            if (pokeInData == newPoke) {
                 pokeData[i].selected = true;
-             }
-         }
-     }
+            }
+        }
+    }
 });
 
 // Function to render Draftpage

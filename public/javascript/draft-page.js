@@ -15,9 +15,8 @@ fetch("/api/team")
     .then(response => response.json())
     .then(data => {
         team_id = data.id;
-        // let pokemons = data.pokemons;
         let count = 6 - (data.pokemons.length);
-        console.log(count);
+        // console.log(count);
         dbTeam.push(team_id);
         dbTeam.push(count);
     })
@@ -47,6 +46,9 @@ PokemonBtnEl.addEventListener("click", (event) => {
         }
         pokeTeam.push(thisPokemon);
         // console.log(pokeTeam);
+    } else {
+        alert('No more slot on your team. Click "Draft Team" button to finish drafting.');
+        return;
     }
 });
 
@@ -81,7 +83,6 @@ draftTeamBtnEl.addEventListener('click', event => {
 
 // Event listener for Clear draft button// refresh page
 clearDraftBtnEl.addEventListener('click', event => {
-    pokeTeam = [];
     location.reload();
 });
 
