@@ -94,16 +94,10 @@ draftTeamBtnEl.addEventListener('click', event => {
     });
 
 
-// Event listener for Clear draft button
+// Event listener for Clear draft button// refresh page
 clearDraftBtnEl.addEventListener('click', event => {
         pokeTeam = [];
-        let allBtns = PokemonBtnEl.getElementsByTagName('button');
-        for (let i = 0; i < allBtns.length; i++) {
-            if (allBtns[i].textContent == 'Already Drafted!') {
-                allBtns[i].disabled = false;
-                allBtns[i].innerText = "Draft Me";
-            }
-          }
+        location.reload();
 });
 
 // countCheck();
