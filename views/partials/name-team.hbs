@@ -1,6 +1,12 @@
 
-<span class="border border-primary">
- <button  pokeTeamName() value="Generate Team Name" autofocus>Name My TEAM</button> --}}
-<!--NEED TO SET UP AS 1 NAME SHOWS, SELECT AND ENTER DATABASE WITH POST API CALL-->
-                    <ul id="pokeTeamShow"></ul>
-                   </span>
+<!--Consolidate team naming, two buttons to tie logic to-->
+
+<div class="input-group">
+  <input type="text" value="teamName" class="form-control" placeholder="Let's name" aria-label="Recipient's username" aria-describedby="basic-addon2">
+  <div class="input-group-append">
+    <button id="pokeNameGenerator" class="btn btn-outline-secondary" type="button">Get Team Name Ideas</button>
+    <button id="teamNameSave"  class="btn btn-outline-secondary" type="button">Commit to name!</button>
+    <ul id="pokeTeamShow"></ul> 
+  </div>
+</div>
+
