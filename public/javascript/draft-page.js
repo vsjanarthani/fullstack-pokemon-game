@@ -1,4 +1,3 @@
-// DOM Selection & Global variable assignment
 let PokemonBtnEl = document.querySelector("#listen");
 const draftTeamBtnEl = document.querySelector('#draft-team');
 const clearDraftBtnEl = document.querySelector('#draft-clear');

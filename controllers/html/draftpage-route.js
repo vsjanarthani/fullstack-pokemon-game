@@ -47,10 +47,10 @@ const promisifedPingApi = new Promise ((resolve, reject) => {
 // empty array to store selected pokemon
 let selectedPokedex =[];
 // fetching our selected pokedex from database
-fetch(`${server}/api/pokemons`)
+setTimeout(() => {
+    fetch(`${server}/api/pokemons`)
     .then(response => response.json())
     .then(data => {
-        // console.log(data);
         for (let i = 0; i < data.length; i++) {
             const pokedex = data[i].pokedex;
             selectedPokedex.push(pokedex)
@@ -62,6 +62,8 @@ fetch(`${server}/api/pokemons`)
         console.log(e);
 
 });
+}, 500);
+
 // setting empty array to hold random pokemon ids to pull from api
 let pokeNums = [];
 
