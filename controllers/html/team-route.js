@@ -20,7 +20,8 @@ router.get('/', sessionAuth, (req, res) => {
                 console.log(team, disable);
                 res.render('team', { team, loggedIn: true, disable: disable});
             } else {
-                res.render('team', { team: false, loggedIn: true, disable: disable});
+                console.log('no team');
+                res.render('team', { team: false, loggedIn: true});
             }
         })
         .catch(e => {
