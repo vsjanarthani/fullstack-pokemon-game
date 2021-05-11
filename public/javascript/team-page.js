@@ -31,13 +31,7 @@ if (createTeamEl) {
   createTeamEl.addEventListener('click', async event => {
     event.preventDefault();
     const team_name = teamNameEl.value;
-    const team_logo = teamLogoEl.value
-    console.log(teamNameEl.value);
-    console.log(teamLogoEl.value);
-    console.log(teamNameEl[0].innerText);
-    console.log(teamLogoEl[0].innerText);
-    console.log(team_name);
-    console.log(team_logo);
+    const team_logo = teamLogoEl.value;
     const response = await fetch(`/team`, {
         method: 'POST',
         body: JSON.stringify({

@@ -1,6 +1,5 @@
-
 <header>
-    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark p-4">
         <a href="#" class="navbar-brand">
             <img id="logoIcon" height="40"
                 src="https://res.cloudinary.com/actionfdfds/image/upload/v1620585026/draft-logo2_ocskrz.png">
@@ -9,13 +8,13 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarCollapse1">
+        <div class="collapse navbar-collapse d-lg-flex justify-content-lg-evenly" id="navbarCollapse1">
             {{#if loggedIn}}
             <div class="navbar-nav">
-                <a href="team" class="nav-item nav-link">Team</a>
-                <a href="/draftpage" class="nav-item nav-link">Draft</a>
-                <a href="/battle" class="nav-item nav-link">Battle</a>
-                <button type="submit" id="logout" class="btn btn-outline-light">Logout</button>
+                <a href="team" class="nav-item nav-link">My Team</a>
+                <a href="/draftpage" class="nav-item nav-link">Draft Page</a>
+                <a href="/battle" class="nav-item nav-link">Pokemon Battle</a>
+                <button type="submit" id="logout" class="btn nav-item nav-link">Logout</button>
             </div>
 
             {{/if}}
