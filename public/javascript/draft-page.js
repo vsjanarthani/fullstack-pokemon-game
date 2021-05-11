@@ -1,7 +1,7 @@
+// DOM Selection and global variable assignment
 let PokemonBtnEl = document.querySelector("#listen");
 const draftTeamBtnEl = document.querySelector('#draft-team');
 const clearDraftBtnEl = document.querySelector('#draft-clear');
-// const draftMeBtnEl = PokemonBtnEl.getAttribute('name');
 let pokeTeam = [];
 let count;
 let dbTeam = [];
@@ -9,16 +9,8 @@ let num;
 let team_id;
 let pokemons;
 
-// function to check count and disable buttons if needed 
-// const countCheck = () => {
-//     if (dbTeam[1] = 0) {
-//         console.log(dbTeam[1])
-//         console.log("buttons will be disabled now")
-//         // PokemonBtnEl.disabled = true;
-//     }
-// };
 
-// Fetch team id and pokemon count
+// Function to fetch team id and pokemon count
 fetch("/api/team")
     .then(response => response.json())
     .then(data => {
@@ -32,7 +24,7 @@ fetch("/api/team")
     .catch(e => {
         console.log(e);
         alert(response.statusText);
-});
+    });
 
 // Event listener for button click to draft each pokemon
 PokemonBtnEl.addEventListener("click", (event) => {
@@ -58,8 +50,13 @@ PokemonBtnEl.addEventListener("click", (event) => {
     }
 });
 
+// Event listener for draft team button - to bulk create pokemons
 draftTeamBtnEl.addEventListener('click', event => {
     event.preventDefault();
+    if (pokeTeam.length <= 0) {
+        alert(`Please draft a pokemon to add it to the team`);
+        return;
+    }
     const response = fetch(`/api/pokemons/team`, {
         method: 'POST',
         body: JSON.stringify({
@@ -73,49 +70,33 @@ draftTeamBtnEl.addEventListener('click', event => {
             if (response.ok) {
                 alert(`Pokemon Draft Completed!`);
                 document.location.replace('/team');
-            } 
-            // else (disable all buttons)
+            }
         })
-            // .then(response => {
-            //     // return response.json();
-            //     if (response.ok) {
-            //         alert(`Pokemon Draft Completed!`);
-            //         document.location.replace('/team');
-            //     }
-            // })
-            // .then (response => {
-            // console.log(response);
-            // })
-            .catch(e => {
-                console.log(e);
-                alert(response.statusText);
-            });
-    });
+        .catch(e => {
+            console.log(e);
+            alert(response.statusText);
+        });
+});
 
 
 // Event listener for Clear draft button// refresh page
 clearDraftBtnEl.addEventListener('click', event => {
-        pokeTeam = [];
-        location.reload();
+    pokeTeam = [];
+    location.reload();
 });
 
-// countCheck();
+
 
 // to do
-//* draftpage.js
-// 1. Event listener for clear draft button Jana
-// 2. Already drafted, should say already drafted, not dependant on button click Megan
-//    and compare pokedex from database to pokeapi to "already drafted"
-// 3. if logged in but no team, disable functionality Jana
-// 4. if dbTeam[1] <0, then disable draft buttons. Megan/Jana
 
 //* teampage.js (also .hbs)
 //1. create a form for team creating **team name/team-logo (.hbs) Sarah
 //2. button click listener for create team (do a post request for .html route team (/team)) Sarah
+// 3. Drop down for team name generator.
 
 //* draftpage-route
-//1. fetch request from our pokedex and compare to the random 20 so we don't repeat. 
-//2. time issue-every 24 hours. *Yev
+
+//1. time issue-every 24 hours. *Yev
 
 //* change header/nav bar so that options available are only there based on status of user 
 
