@@ -34,9 +34,6 @@ const server = dev ? 'http://localhost:5000' : 'https://pokemon-draft-fullstack.
 //       clearTimeout(id);
 //     });
 
-
-
-
 // fetching our selected pokedex from database
 let selectedPokedex = [];
 setTimeout(() => {
@@ -107,7 +104,8 @@ setInterval(getPokemon, 1000 * 60 * 60 * 24);
 
 
 router.post("/updatePokeData", (req, res) => {
-    // console.log(req.body);
+    console.log("this is req.body");
+    console.log(req.body);
     let updatedPokemon = req.body;
     for (let i = 0; i < updatedPokemon.length; i++) {
         const newPoke = updatedPokemon[i].pokedex;
@@ -116,6 +114,18 @@ router.post("/updatePokeData", (req, res) => {
             if (pokeInData == newPoke) {
                 pokeData[i].selected = true;
             }
+        }
+    }
+});
+
+router.post("/updatePokeDataDelete", (req, res) => {
+    console.log("this is req.body.id");
+    console.log(req.body.id);
+    let deletedPokemon = req.body.id;
+    for (let i = 0; i < pokeData.length; i++) {
+        const pokeInData = pokeData[i].pokedex;
+        if (pokeInData == deletedPokemon) {
+            pokeData[i].selected = false;
         }
     }
 });

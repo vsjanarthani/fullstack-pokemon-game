@@ -96,7 +96,7 @@ router.post('/team', sessionAuth, (req, res) => {
       res.status(200).json(pokemonData)
       fetch(`${server}/draftpage/updatePokeData`, {
         headers: {
-          // 'Accept': 'application/json',
+          'Accept': 'application/json',
           'Content-Type': 'application/json'
         },
         method: "POST",
@@ -117,7 +117,19 @@ router.post('/team', sessionAuth, (req, res) => {
 
 // DELETE /api/pokemons/id
 router.delete('/:id', sessionAuth, (req, res) => {
-  console.log('delete route hit');
+  fetch(`${server}/draftpage/updatePokeDataDelete`, {
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    method: "POST",
+    body: JSON.stringify(
+        req.params
+     )
+  })
+  .catch(e=> {
+    console.log(e);
+  })
   Pokemon.destroy({
     where: {
       pokedex: req.params.id
@@ -127,7 +139,10 @@ router.delete('/:id', sessionAuth, (req, res) => {
       if (!pokemonData) {
         return res.status(404).json({ message: 'Pokemon not found on your team' });
       }
-      res.status(200).json(`${pokemonData} removed from your team`);
+      res.status(200).json(`${pokemonData} removed from your team`)
+      // console.log("this is pokedata in pokeroute")
+      // console.log(pokedex);
+
     })
     .catch(e => {
       console.log(e);
