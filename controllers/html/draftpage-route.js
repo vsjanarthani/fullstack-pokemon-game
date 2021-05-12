@@ -5,6 +5,7 @@ const dev = process.env.NODE_ENV !== 'production';
 
 const server = dev ? 'http://localhost:5000' : 'https://your_deployment.server.com';
 
+<<<<<<< HEAD
 
 
 
@@ -15,6 +16,13 @@ const server = dev ? 'http://localhost:5000' : 'https://your_deployment.server.c
 //     getPokemon();
 //   }, 500);
 // });
+=======
+const promisifedPingApi = new Promise((resolve, reject) => {
+    id = setTimeout(() => {
+        getPokemon();
+    }, 500);
+});
+>>>>>>> buttons
 
 // Promise.race([
 //     promisifedPingApi,
@@ -37,6 +45,11 @@ const server = dev ? 'http://localhost:5000' : 'https://your_deployment.server.c
 
 
 
+<<<<<<< HEAD
+=======
+// empty array to store selected pokemon
+let selectedPokedex = [];
+>>>>>>> buttons
 // fetching our selected pokedex from database
 let selectedPokedex = [];
 setTimeout(() => {
@@ -107,7 +120,8 @@ setInterval(getPokemon, 1000 * 60 * 60 * 24);
 
 
 router.post("/updatePokeData", (req, res) => {
-    // console.log(req.body);
+    console.log("this is req.body");
+    console.log(req.body);
     let updatedPokemon = req.body;
     for (let i = 0; i < updatedPokemon.length; i++) {
         const newPoke = updatedPokemon[i].pokedex;
@@ -118,6 +132,21 @@ router.post("/updatePokeData", (req, res) => {
             }
         }
     }
+<<<<<<< HEAD
+=======
+});
+
+router.post("/updatePokeDataDelete", (req, res) => {
+    console.log("this is req.body.id");
+    console.log(req.body.id);
+    let deletedPokemon = req.body.id;
+    for (let i = 0; i < pokeData.length; i++) {
+        const pokeInData = pokeData[i].pokedex;
+        if (pokeInData == deletedPokemon) {
+            pokeData[i].selected = false;
+        }
+    }
+>>>>>>> buttons
 });
 
 // Function to render Draftpage
