@@ -1,82 +1,85 @@
 <!--GAME SECTION-->
-		<div class="grid-container">
-			<h1><img id="heroHeadline2" src="https://i.imgur.com/WigFSVQ.png"></h1>
-      <h3>Bootcamp Battles </h3>
-			<!--USER SIDE-->
-			<!--User side Pokemon information-->
-			<div class="grid-x" data-equalizer data-equalize-on="medium">
-				<div class="col small-6">
-					<div class="card" data-equalizer-watch>
-						<h5 id="userHeader">SELECTED POKÉMON</h5>
 
-						<!--User Pokemon Picture-->
-						<div id="userPokemonPicture"></div>
-						<div class="card-section" >
-							<!-- User Pokemon Health Bar-->
-							<h6 id="userPokemonName"> <img src="./assets/images/heart.png"></h6>
-							<div id="userHealthBar" class="success progress" role="progressbar" tabindex="0" aria-valuenow="100" aria-valuemin="0" aria-valuetext="100 percent" aria-valuemax="100">
-								<span id="userHealthStats" class="progress-meter" style="width: 100%">
-									<span class="progress-meter-text"><span id="user-Health"></span> %</span>
-								</span>
-							</div>
-							<!--User Pokemon game updates-->
-							<div id="userPokemonUpdates" class="small-3 medium-4 cell">
-								<h6><span id="userAttack"></span></h6>
-							</div>
-							<!--User Pokemon move buttons-->
-							<div class="button-group">
-								<button class="button attackButtons" value="5" id="move1"><p id="m1"></p></button>
-								<button class="button attackButtons" value="10" id="move2"><p id="m2"></p></button>
-								<button class="button attackButtons" value="15" id="move3"><p id="m3"></p></button>
-								<button class="button attackButtons" value="5" id="move4"><p id="m4"></p></button>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!--End user Pokemon-->
+<div class="container-fluid mt-10 d-line">
+	<h3 class="text-center">Pokemon Draft Battles</h3>
+</div>
 
 
+{{!-- option to pick a user to challenge --}}
+<div class="container-fluid col-10">
+	<form action="chat.html">
+		<div class="form-group">
+			<h4 id="username" aria-valuenow="{{userTeam.team_name}}">Team Name: {{userTeam.team_name}}</h4>
+		</div>
+		<div class="form-group">
+			<label for="room">Room</label>
+			<select name="room" id="room">
+				<option value="challenge-team">Challenge Team</option>
+				<option value="challenge-pokemon">Challenge Pokemon</option>
+			</select>
+		</div>
+		<button type="button" class="btn btn-dark">Join Room</button>
+	</form>
+</div>
 
-				<!--opponent USER Pokemon-->
-           
+<div class="container-fluid mt-10">
+	<!--User side Pokemon information-->
+	<h5 class="d-flex justify-content-center" id="userHeader">{{userTeam.team_name}}</h5>
+	<h1 class="d-flex justify-content-center"><img id="heroHeadline2" src="{{userTeam.team_logo}}"></h1>
 
-				<div class="col small-6">
-					<div class="card" data-equalizer-watch>
-						<h5 id="opponentHeader">OPPONENT</h5>
-						<div id="randomPokemonPicture">
-						</div>
-						<div class="card-section" >
-							<!-- Opponent Pokemon Health Bar-->
-							<h6 id="randomPokemonName"></h6>
-							<div id="enemyHealthBar" class="success progress" role="progressbar" tabindex="0" aria-valuenow="100" aria-valuemin="0" aria-valuetext="100 percent" aria-valuemax="100">
-								<span id="enemyHealthStats" class="progress-meter" style="width: 100%">
-									<span class="progress-meter-text"><span id="enemy-health"></span>%</span>
-								</span>
-							</div>
-							<!--OpponentPokemon-->
-							<div id="randomUpdates" class="small-3 medium-4 cell">
-								<h6><span id="enemyAttack"></span></h6>
-							</div>
-							<!--Picture placeholder-->
-							<div class="randomPicture" id="randomPicture"> <img width="8%"src="./assets/images/location-pin.svg">
-							</div>
+
+	<div class="container-fluid">
+		{{!--Each Pokemon info --}}
+		<div class="row card-group">
+			{{#each userTeam.pokemons as |pokemon|}}
+			<div class="col col-md-3" style="max-width:18rem">
+				<div class="card">
+					<!-- Pokemon Sprite-->
+					<img id="poke-img" class="card-img-top" src="{{pokemon_pic}}" alt="pokemon image">
+					<div class="card-body">
+						<!-- Pokemon Name-->
+						<h5 id="poke-name" class="card-title">{{pokemon_name}}</h5>
+
+						<div class="card-footer p-2 m-2">
+							<!-- Action to Pick pokemon-->
+							<button id="pick-pokemon" name="{{pokedex}}" type="button" class="btn btn-dark">Pick
+								Me</button>
 						</div>
 					</div>
 				</div>
 			</div>
+			{{/each}}
+		</div>
+	</div>
+</div>
 
-            
-			<!-- The Modal -->
-      <div id="myModal" class="modal">
 
-      <!-- Modal content -->
-        <div class="modal-content">
-          <h3 id="win-or-lose"></h3>
-          <p id="words"></p>
-          <a href='fightpage.html'><button class="button">Play Again</button></a>
-          <a href='highscores.html'><button class="button">Check out High Scores</button></a>
-		  <img src="./assets/images/modal.png">
-        </div>
-      </div>
 
-      <script src="/javascript/battle.js"></script>
+{{!-- to Do - Connect to the socket and challenge another user to see who has the best team --}}
+
+<!--opponent USER Pokemon-->
+<div class="container-fluid">
+	{{!--Each Pokemon info --}}
+	<div class="row card-group">
+		{{#each userTeam.pokemons as |pokemon|}}
+		<div class="col col-md-3" style="max-width:18rem">
+			<div class="card">
+				<!-- Pokemon Sprite-->
+				<img id="poke-img" class="card-img-top" src="{{pokemon_pic}}" alt="pokemon image">
+				<div class="card-body">
+					<!-- Pokemon Name-->
+					<h5 id="poke-name" class="card-title">{{pokemon_name}}</h5>
+
+					<div class="card-footer p-2 m-2">
+						<!-- Action to Pick pokemon-->
+						<button id="pick-pokemon" name="{{pokedex}}" type="button" class="btn btn-dark">Pick Me</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		{{/each}}
+	</div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/javascript/battle.js"></script>
