@@ -71,13 +71,9 @@ router.get('/', sessionAuth, (req, res) => {
                 console.log(team, disable);
                 res.render('team', { team, loggedIn: true, disable: disable });
             } else {
-<<<<<<< HEAD
                 pokeTeamName();
                 console.log(teamNamesArr);
                 res.render('team', { team: false, loggedIn: true, teamNamesArr:teamNamesArr });
-=======
-                res.render('team', { team: false, loggedIn: true });
->>>>>>> buttons
             }
         })
         .catch(e => {

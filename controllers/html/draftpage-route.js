@@ -5,7 +5,6 @@ const dev = process.env.NODE_ENV !== 'production';
 
 const server = dev ? 'http://localhost:5000' : 'https://your_deployment.server.com';
 
-<<<<<<< HEAD
 
 
 
@@ -16,13 +15,6 @@ const server = dev ? 'http://localhost:5000' : 'https://your_deployment.server.c
 //     getPokemon();
 //   }, 500);
 // });
-=======
-const promisifedPingApi = new Promise((resolve, reject) => {
-    id = setTimeout(() => {
-        getPokemon();
-    }, 500);
-});
->>>>>>> buttons
 
 // Promise.race([
 //     promisifedPingApi,
@@ -42,14 +34,6 @@ const promisifedPingApi = new Promise((resolve, reject) => {
 //       clearTimeout(id);
 //     });
 
-
-
-
-<<<<<<< HEAD
-=======
-// empty array to store selected pokemon
-let selectedPokedex = [];
->>>>>>> buttons
 // fetching our selected pokedex from database
 let selectedPokedex = [];
 setTimeout(() => {
@@ -132,8 +116,6 @@ router.post("/updatePokeData", (req, res) => {
             }
         }
     }
-<<<<<<< HEAD
-=======
 });
 
 router.post("/updatePokeDataDelete", (req, res) => {
@@ -146,7 +128,6 @@ router.post("/updatePokeDataDelete", (req, res) => {
             pokeData[i].selected = false;
         }
     }
->>>>>>> buttons
 });
 
 // Function to render Draftpage
