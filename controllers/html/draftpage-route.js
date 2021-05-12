@@ -1,11 +1,9 @@
 const router = require('express').Router();
 const fetch = require('node-fetch');
 const sessionAuth = require('../../utils/auth');
-// const dev = process.env.NODE_ENV !== 'production';
 
-const server = "https://pokemon-fullstack.herokuapp.com"
-
-
+const dev = (process.env.NODE_ENV != 'production');
+const server = dev ? 'http://localhost:5000' : process.env.SERVER_PROD;
 
 
 // let id;
