@@ -6,7 +6,7 @@ const { sequelize } = require('../../models/User');
 const fetch = require('node-fetch');
 const dev = (process.env.NODE_ENV != 'production');
 
-const server = dev ? 'http://localhost:5000' : 'https://pokemon-draft-fullstack.herokuapp.com';
+const server = dev ? 'http://localhost:5000' : process.env.SERVER_PROD;
 
 // GET /api/pokemons
 router.get('/', async (req, res) => {
