@@ -90,18 +90,17 @@ clearDraftBtnEl.addEventListener('click', event => {
 
 // to do
 
-//* teampage.js (also .hbs)
-//1. create a form for team creating **team name/team-logo (.hbs) Sarah
-//2. button click listener for create team (do a post request for .html route team (/team)) Sarah
-// 3. Drop down for team name generator.
+//* hbs
+//1. Styling & adding logo picker to create teams page
+
 
 //* draftpage-route
 
-//1. time issue-every 24 hours. *Yev
+//1. Fetch every 24 hours from pokiAPI. *Yev
 
-//* change header/nav bar so that options available are only there based on status of user 
+//2. Check if login validation is present for every route.
 
-//* finally, present! 
+//* Prepare presentation
 
 
 

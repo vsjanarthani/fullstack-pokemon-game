@@ -3,7 +3,6 @@ const { Team, Pokemon } = require('../../models');
 const sessionAuth = require('../../utils/auth');
 
 
-
 // GET /team of the user
 router.get('/', sessionAuth, (req, res) => {
     console.log(req.session.user_id);
@@ -18,7 +17,7 @@ router.get('/', sessionAuth, (req, res) => {
         .then(teamData => {
             if (teamData) {
                 const userTeam = teamData.get({ plain: true });
-                console.log(userTeam);
+                // console.log(`Console from server ${userTeam}`);
                 res.render('battle-page', { userTeam, loggedIn: true, });
             } else {
                document.location.replace('/team');

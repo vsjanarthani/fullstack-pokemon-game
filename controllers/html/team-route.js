@@ -68,11 +68,11 @@ router.get('/', sessionAuth, (req, res) => {
             if (teamData) {
                 const team = teamData.get({ plain: true });
                 const disable = team.pokemons.length >= 6;
-                console.log(team, disable);
+                // console.log(team, disable);
                 res.render('team', { team, loggedIn: true, disable: disable });
             } else {
                 pokeTeamName();
-                console.log(teamNamesArr);
+                // console.log(teamNamesArr);
                 res.render('team', { team: false, loggedIn: true, teamNamesArr:teamNamesArr });
             }
         })

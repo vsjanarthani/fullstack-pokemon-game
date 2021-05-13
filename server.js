@@ -35,19 +35,28 @@ app.set('view engine', 'hbs');
 // Middleware for static files
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Run when client connects
-io.on('connection', socket => {
-  console.log('New web socket connection..');
 
-  // msg for the user
-  socket.emit('message', 'Good Job! You are now connected to socket.io');
-  // Broadcast when a user connects (visible to all but the user)
-  socket.broadcast.emit('message', `A user has joined the room`);
-  // msg on disconnect
-  socket.on('disconnect', () => {
-    io.emit('message', `A User has left the room`);
-  });
-});
+// Run when client connects
+let pokeTeams = {};
+io.on('connection', connected);
+
+function connected(socket) {
+    socket.on('newUser', data => {
+      console.log(`New client connected, ${socket.id}`);
+      pokeTeams[socket.id] = JSON.stringify(data);
+      console.log(`Current number of pokemon players: ${Object.keys(pokeTeams).length}`);
+      console.log(`Pokemon teams: ${JSON.stringify(pokeTeams)}`);
+      io.emit('updatedUsers', pokeTeams);
+    });
+
+    socket.on('disconnect', () => {
+      delete pokeTeams[socket.id];
+      console.log(`Goodbye client with id: ${socket.id}`);
+      console.log(`Current number of pokemon players: ${Object.keys(pokeTeams).length}`);
+      io.emit('updatedUsers', pokeTeams);
+    });
+  };
+  
 
 // sync sequelize models to the database, then turn on the server
 sequelize.sync({ force: false}).then(() => {
