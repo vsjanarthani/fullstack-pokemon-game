@@ -8,6 +8,8 @@ This is a simple game built around the idea of selecting and saving a Pokemon te
 
 In later-stage development efforts, this game will hav elogic closer to resembling a fantasy football draft logic, where players take turns selecting the best Pokémon.
 
+![Frame 92](https://user-images.githubusercontent.com/77648727/118071368-7ec2f080-b35c-11eb-870d-9a0a713b0141.png)
+
 ## Built With & Using 🧰
 - [x] JavaScript
 - [x] ES6 
@@ -15,9 +17,6 @@ In later-stage development efforts, this game will hav elogic closer to resembli
 - [x] Heroku
 - [x] PokéAPI
 - [x] Socket.io
-
-![Frame 97](https://user-images.githubusercontent.com/77648727/117524923-b6a0f100-af74-11eb-811e-3a901792e48c.png)
-
 
 ## Table of Contents 📑
 * [User-Story](#User-Story)
@@ -29,6 +28,8 @@ In later-stage development efforts, this game will hav elogic closer to resembli
 * [Tests](#Tests)
 * [Screenshot](#Screenshot)
 * [Questions](#Questions)
+
+![Frame 97](https://user-images.githubusercontent.com/77648727/117524923-b6a0f100-af74-11eb-811e-3a901792e48c.png)
 
 ### User-Story 📖
 > AS a Pokémon Fan
@@ -50,9 +51,7 @@ In later-stage development efforts, this game will hav elogic closer to resembli
 > ```npm run seed``` to seed the database      
 
 ### License 📛
-This application is covered under the following license. 
-
-**MIT**
+This application is covered under the **MIT** license. 
 
 ### Authors 📝
 Janarthani: [GitHub](https://github.com/vsjanarthani)      
@@ -63,17 +62,16 @@ Sarah Durkin [GitHub](https://github.com/sarahdurks)
 ### Tests 🤓
 No automated test are set up for this application yet.
 ![Frame 99](https://user-images.githubusercontent.com/77648727/117526120-cf5ed600-af77-11eb-9b39-3549d7b88208.png)
-### Screenshot
-<img width="647" alt="Screen Shot 2021-05-10 at 2 59 29 PM" src="https://user-images.githubusercontent.com/77648727/117730184-d0bf1700-b1a0-11eb-9610-a0feacae04c1.png">
-
 
 ### Questions 🤔
-If you have any questions, please reach out to the Author's email.
+If you have any questions, please reach out to the Author's email or via github.
 <br>
 Janarthani - Email: <janarthani.vs@gmail.com>
 Yevgeniya Terlyuk
 Megan Close
 Sarah Durkin - Github: [@sarahdurks](https://www.github.com/sarahdurks/)
+
+![Frame 93](https://user-images.githubusercontent.com/77648727/118072017-d6ae2700-b35d-11eb-9840-22d6764b0e95.png)
 
 ### Resources & References 🙏
 
