@@ -28,7 +28,6 @@ In later-stage development efforts, this game will hav elogic closer to resembli
 * [Tests](#Tests)
 * [Screenshot](#Screenshot)
 * [Questions](#Questions)
-
 ![Frame 97](https://user-images.githubusercontent.com/77648727/117524923-b6a0f100-af74-11eb-811e-3a901792e48c.png)
 
 ### User-Story 📖
@@ -59,19 +58,19 @@ Yevgeniya Terlyuk [GitHub](https://github.com/down-dive)
 Megan Close [GitHub](https://github.com/meganclo)      
 Sarah Durkin [GitHub](https://github.com/sarahdurks)      
 
+![Frame 99](https://user-images.githubusercontent.com/77648727/117526120-cf5ed600-af77-11eb-9b39-3549d7b88208.png)
+
 ### Tests 🤓
 No automated test are set up for this application yet.
-![Frame 99](https://user-images.githubusercontent.com/77648727/117526120-cf5ed600-af77-11eb-9b39-3549d7b88208.png)
 
 ### Questions 🤔
 If you have any questions, please reach out to the Author's email or via github.
-<br>
-Janarthani - Email: <janarthani.vs@gmail.com>
-Yevgeniya Terlyuk
-Megan Close
-Sarah Durkin - Github: [@sarahdurks](https://www.github.com/sarahdurks/)
-
-![Frame 93](https://user-images.githubusercontent.com/77648727/118072017-d6ae2700-b35d-11eb-9840-22d6764b0e95.png)
+        
+Janarthani - Email: <janarthani.vs@gmail.com>        
+Yevgeniya Terlyuk - [Yev](https://github.com/down-dive)        
+Megan Close - [MeganClo](https://github.com/meganclo)             
+Sarah Durkin - [sarahdurks](https://www.github.com/sarahdurks/)               
+![Frame 100](https://user-images.githubusercontent.com/77648727/117526123-d554b700-af77-11eb-9830-6d010eb296e4.png)
 
 ### Resources & References 🙏
 
@@ -84,7 +83,7 @@ Sarah Durkin - Github: [@sarahdurks](https://www.github.com/sarahdurks/)
 - [12up Pokemon Go Article](https://www.12up.com/posts/3595664-every-nfl-helmet-redesigned-with-pokemon-go-characters)    
 - [Canva for Image Cleanup](https://www.canva.com/)    
 
+![Frame 93](https://user-images.githubusercontent.com/77648727/118072017-d6ae2700-b35d-11eb-9840-22d6764b0e95.png)
 
 
-![Frame 100](https://user-images.githubusercontent.com/77648727/117526123-d554b700-af77-11eb-9830-6d010eb296e4.png)
 
