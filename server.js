@@ -43,9 +43,8 @@ io.on('connection', connected);
 function connected(socket) {
     socket.on('newUser', data => {
       console.log(`New client connected, ${socket.id}`);
-      pokeTeams[socket.id] = JSON.stringify(data);
+      pokeTeams[socket.id] = data;
       console.log(`Current number of pokemon players: ${Object.keys(pokeTeams).length}`);
-      console.log(`Pokemon teams: ${JSON.stringify(pokeTeams)}`);
       io.emit('updatedUsers', pokeTeams);
     });
 

@@ -15,11 +15,20 @@ joinRoomBtnEl.addEventListener('click', async event => {
     .then(response => {
         console.log(response);
         socket.emit('newUser', response.id);
+        socket.on('updatedUsers', pokeTeams => {
+          for (let id in pokeTeams) {
+            if(id !== socket.id) {
+              document.location.replace(`/battle?id=${pokeTeams[id]}`);
+            }
+          }
+        });
+       
       
     })  
     .catch (e => {
       console.log(e);
     });  
+   
 });
 
 
