@@ -167,6 +167,21 @@ logoIcon {
     right: 0;
     z-index: 2;
 }
+
+a{
+	color: #000000 !important;
+}
+
+.github{
+	font-size: x-large;
+	padding: .2rem 3rem;
+
+}
+
+.btn-linkedin{
+	padding: .2rem 3rem;
+}
+
 @-webkit-keyframes animate-positive{
     0%{ width: 0; }}
 
