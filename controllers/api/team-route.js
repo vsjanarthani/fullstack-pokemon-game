@@ -12,7 +12,7 @@ router.get('/', sessionAuth, (req, res) => {
                 model: Pokemon,
                 attributes: ['pokedex', 'pokemon_name', 'pokemon_pic', 'hp', 'attack', 'defense', 'speed'],
             }]
-            
+
     })
         .then(teamData => {
             if (teamData) {
@@ -24,6 +24,38 @@ router.get('/', sessionAuth, (req, res) => {
             console.log(e)
             res.status(400).json({ Error: e });
         });
+});
+
+// GET /api/team/id
+router.get('/:id', sessionAuth, async (req, res) => {
+    let team = {};
+    try {
+        let userTeam = await Team.findOne({
+            where: { user_id: req.session.user_id },
+            include: [
+                {
+                    model: Pokemon,
+                    attributes: ['pokedex', 'pokemon_name', 'pokemon_pic', 'hp', 'attack', 'defense', 'speed'],
+                }]
+        });
+
+        let opponentTeam = await Team.findOne({
+            where: { id: req.params.id },
+            include: [
+                {
+                    model: Pokemon,
+                    attributes: ['pokedex', 'pokemon_name', 'pokemon_pic', 'hp', 'attack', 'defense', 'speed'],
+                }]
+        });
+
+        team['userTeamData'] = userTeam.get({ plain: true });
+        team['opponentTeamData'] = opponentTeam.get({ plain: true });
+
+        res.status(200).json(team);
+    } catch (e) {
+        console.log(e);
+        res.status(400).json({ Error: e });
+    };
 });
 
 // POST /api/team
@@ -49,4 +81,3 @@ router.post('/', sessionAuth, (req, res) => {
 
 
 module.exports = router;
-  
