@@ -8,6 +8,7 @@ const dev = (process.env.NODE_ENV != 'production');
 
 const server = dev ? 'http://localhost:5000' : process.env.SERVER_PROD;
 
+
 // GET /api/pokemons
 router.get('/', async (req, res) => {
   try {
