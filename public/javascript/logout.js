@@ -3,8 +3,6 @@ const logoutBtnEl = document.querySelector('#logout');
 
 
 // Event listener for logout button
-if (logoutBtnEl) {
-
   logoutBtnEl.addEventListener('click', async  event => {
     const response = await fetch('/api/users/logout', {
       method: 'POST',
@@ -17,4 +15,3 @@ if (logoutBtnEl) {
       alert(response.statusText);
     }
   });
-}
