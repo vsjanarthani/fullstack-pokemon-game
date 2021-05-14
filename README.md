@@ -80,7 +80,6 @@ Sarah Durkin - [sarahdurks](https://www.github.com/sarahdurks/)
 
 ### Resources & References 🙏
 
-- [MDN Web Docs Array.prototype.filter()](https://developer.mozilla.org/en US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)    
 - [Using Array Filter StackOverflow](https://stackoverflow.com/questions/56168771/how-to-limit-for-10-results-the-array-filter) - [Legendary Pokemon](https://pokemongo.fandom.com/wiki/Legendary_Pok%C3%A9mon)
 - [The BulbaPedia for Moves](https://bulbapedia.bulbagarden.net/wiki/List_of_moves)
 - [Pokemon Locations](https://bulbapedia.bulbagarden.net/wiki/List_of_locations_by_name)
