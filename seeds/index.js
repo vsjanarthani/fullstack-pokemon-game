@@ -1,9 +1,10 @@
 const seedUsers = require('./user-seeds');
 const seedPokemon = require('./pokemon-seeds');
 const seedTeamData = require('./team-seeds');
-
 const sequelize = require('../config/connection');
 
+
+// Function to seed all
 const seedAll = async () => {
     
   await sequelize.sync({ force: true });

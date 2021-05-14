@@ -40,6 +40,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 let pokeTeams = {};
 io.on('connection', connected);
 
+// Function to connect and pass data bwn socket server and client
 function connected(socket) {
     socket.on('newUser', data => {
       console.log(`New client connected, ${socket.id}`);

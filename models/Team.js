@@ -2,7 +2,7 @@ const { Model, DataTypes, Deferrable } = require('sequelize');
 const sequelize = require('../config/connection');
 const uuid = require('uuid');
 
-// create Pokemon model
+// create Team model
 class Team extends Model { 
 
 }

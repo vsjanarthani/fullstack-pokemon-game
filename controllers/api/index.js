@@ -6,6 +6,7 @@ const pokemonRoute = require('./pokemon-route');
 const teamRoute = require('./team-route');
 
 
+// middleware callback functions
 router.use('/users', userRoute);
 router.use('/highscores', highscoreRoute);
 router.use('/pokemons', pokemonRoute);

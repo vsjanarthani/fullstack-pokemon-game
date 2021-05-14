@@ -5,7 +5,7 @@ const sessionAuth = require('../../utils/auth');
 
 // Generating random team names
 let adjective = [ // madlib words https://studentsandwriters.com/2018/02/09/funny-mad-libs-word-lists-adjectives-nouns-and-verbs-2/
-    'Confused', 'Demanding', 'Ultimate', 'Drunken', 'Greedy', 'Hyperactive', 'Misunderstood', 'Out-of-Control', 'Rebellious', 'Territorial', 'Useless', 'Sassy', 'Salty', 'Hungry', 'Grumpy', 'Top-Secret', 'Barely Qualified', 'YOLO', 'Litty', 'Top-Secret', 'Major Key', '#Winning', 'Trill', '#Winning', 'Too Cool'
+    'Confident', 'Demanding', 'Ultimate', 'Drunken', 'Greedy', 'Hyperactive', 'Victorious', 'Out-of-Control', 'Rebellious', 'Territorial', 'Sassy', 'Hungry', 'Lovely', 'Top-Secret', 'YOLO', 'Litty', 'Top-Secret', 'Major Key', 'Winning', 'Adorable', 'Too Cool'
 ];
 let legendary = [ // Legendary Pokemon https://pokemongo.fandom.com/wiki/Legendary_Pok%C3%A9mon
     'Articunos', 'Zapdos', 'Mew Twos', 'Raikous', 'Enteis', 'Suicunes', 'Cobalions', 'Tornadus', 'Thundurus', 'Landorus', 'Moltres'
@@ -23,26 +23,17 @@ function nameTeam(id) {
 
 let teamBuild = [
     `The ${nameTeam(adjective)} ${nameTeam(legendary)}`,
-    `${nameTeam(adjective)} ${nameTeam(pokeCity)}`,
-    `2 ${nameTeam(adjective)} 2 ${nameTeam(attack)}`,
+    `2 ${nameTeam(adjective)} 2 ${nameTeam(adjective)}`,
     `${nameTeam(adjective)} 4 Lyfe`,
     `Team ${nameTeam(adjective)}`,
     `Team ${nameTeam(legendary)}`,
     `Team ${nameTeam(pokeCity)}`,
-    `${nameTeam(legendary)} With ${nameTeam(legendary)}`,
-    `${nameTeam(legendary)} From ${nameTeam(pokeCity)}`,
-    `${nameTeam(legendary)} ${nameTeam(attack)}`,
-    `${nameTeam(legendary)} Don’t ${nameTeam(attack)}`,
-    `${nameTeam(pokeCity)} ${nameTeam(legendary)}`,
-    `${nameTeam(pokeCity)}’s ${nameTeam(adjective)}  ${nameTeam(legendary)}`,
-    `${nameTeam(pokeCity)}’s Potions`,
-    `${nameTeam(attack)} & ${nameTeam(attack)}`,
     `Level Up & ${nameTeam(attack)}`
 ];
 
 let teamNamesArr = [];
 const pokeTeamName = () => {
-    for (let i = 0; i < 15; i++) {
+    for (let i = 0; i < 10; i++) {
         var teamName = teamBuild[Math.floor(Math.random() * teamBuild.length)];
         if(!teamNamesArr.includes(teamName)) {
             teamNamesArr.push(teamName);
@@ -53,7 +44,7 @@ const pokeTeamName = () => {
 // End of generating random team names.
 
 
-// GET /team
+// GET request to /team
 router.get('/', sessionAuth, (req, res) => {
     console.log(req.session.user_id);
     Team.findOne({
@@ -82,7 +73,7 @@ router.get('/', sessionAuth, (req, res) => {
         });
 });
 
-// POST team
+// POST request to /team
 router.post('/', sessionAuth, (req, res) => {
     Team.create({
         team_name: req.body.team_name,
@@ -103,7 +94,7 @@ router.post('/', sessionAuth, (req, res) => {
         });
 });
 
-// DELETE team
+// DELETE team -Never used :(
 router.delete('/:id', sessionAuth, (req, res) => {
     Team.destroy({
         where: {

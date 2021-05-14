@@ -8,25 +8,10 @@
 	<button id="quitbtn" type="button" class="col-5 col-lg-1 btn btn-dark m-5">Quit</button>
 </div>
 
-{{!-- option to pick a user to challenge
-<div class="container-fluid col-10">
-	<form action="chat.html">
-		<div class="form-group">
-			<h4 id="username" aria-valuenow="{{userTeam.team_name}}">Team Name: {{userTeam.team_name}}</h4>
-		</div>
-		<div class="form-group">
-			<label for="room">Room</label>
-			<select name="room" id="room">
-				<option value="challenge-team">Challenge Team</option>
-				<option value="challenge-pokemon">Challenge Pokemon</option>
-			</select>
-		</div>
-		
-	</form>
-</div> --}}
 
+{{!-- User Team card --}}
 <div class="container-fluid card col-12 col-lg-9 mt-5 mb-5 d-flex flex-column p-5">
-	<!--User side Pokemon information-->
+	<!--User Pokemon information-->
 	<h5 class="d-flex justify-content-center" id="userHeader">Your Team: {{userTeam.team_name}}</h5>
 	<h1 class="d-flex justify-content-center"><img id="heroHeadline2" src="{{userTeam.team_logo}}"></h1>
 
@@ -57,8 +42,7 @@
 </div>
 
 
-
-{{!-- to Do - Connect to the socket and challenge another user to see who has the best team --}}
+{{!-- Opponent Team card --}}
 {{#if opponentTeam}}
 
 <div class="container-fluid card col-12 col-lg-9 mt-5 mb-5 d-flex flex-column p-5">

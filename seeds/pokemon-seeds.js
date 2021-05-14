@@ -1,5 +1,6 @@
 const { Pokemon } = require('../models');
 
+// creating pokemon seed 
 const pokemonData = [
   {
     pokedex: '001',

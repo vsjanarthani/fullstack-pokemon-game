@@ -1,8 +1,6 @@
 const router = require('express').Router();
 const { Pokemon, Team } = require('../../models');
 const sessionAuth = require('../../utils/auth');
-const { QueryTypes } = require('sequelize');
-const { sequelize } = require('../../models/User');
 const fetch = require('node-fetch');
 const dev = (process.env.NODE_ENV != 'production');
 
@@ -20,23 +18,23 @@ router.get('/', async (req, res) => {
 });
 
 // GET /api/pokemons/id
-// router.get('/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
 
-//   try {
-//     const { pokedex } = req.params;
-//     const pokemonById = await Pokemon.findOne({
-//       where: { pokedex }
-//     });
-//     if (!pokemonById) {
-//       return res.status(404).json({ message: 'No pokemon found with this id' });
-//     }
-//     res.status(200).json(pokemonById);
-//   }
-//   catch (e) {
-//     console.log(e)
-//     res.status(400).json({ Error: e });
-//   }
-// });
+  try {
+    const { pokedex } = req.params;
+    const pokemonById = await Pokemon.findOne({
+      where: { pokedex }
+    });
+    if (!pokemonById) {
+      return res.status(404).json({ message: 'No pokemon found with this id' });
+    }
+    res.status(200).json(pokemonById);
+  }
+  catch (e) {
+    console.log(e)
+    res.status(400).json({ Error: e });
+  }
+});
 
 // GET /api/pokemons/pokedex
 router.get('/pokedex', (req, res) => {
@@ -139,10 +137,8 @@ router.delete('/:id', sessionAuth, (req, res) => {
       if (!pokemonData) {
         return res.status(404).json({ message: 'Pokemon not found on your team' });
       }
-      res.status(200).json(`${pokemonData} removed from your team`)
-      // console.log("this is pokedata in pokeroute")
-      // console.log(pokedex);
-
+      res.status(200).json(`${pokemonData} removed from your team`);
+     
     })
     .catch(e => {
       console.log(e);
@@ -152,6 +148,3 @@ router.delete('/:id', sessionAuth, (req, res) => {
 
 module.exports = router;
 
-
-// to do
-// 1. Resolve the error in getting all pokedex from pokemon

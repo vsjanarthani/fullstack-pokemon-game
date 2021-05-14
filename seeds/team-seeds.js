@@ -1,5 +1,6 @@
 const { Team } = require('../models');
 
+// creating team seed
 const teamData = [
   {
     id: 'b5296bda-df8d-428a-8386-f2a14e992ad2',

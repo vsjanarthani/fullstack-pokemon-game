@@ -1,5 +1,6 @@
 const { User } = require('../models');
 
+// creating user seed
 const userData = [
   {
     id:'0a9213f9-003e-4fba-9837-e23756924e99',

@@ -2,6 +2,7 @@
 const logoutBtnEl = document.querySelector('#logout');
 
 
+// Event listener for logout button
 if (logoutBtnEl) {
 
   logoutBtnEl.addEventListener('click', async  event => {

@@ -33,7 +33,7 @@ joinBtnEl.addEventListener('click', async event => {
 }
 
 
-
+// Event listener for quit battle button
 if (quitBtnEl) {
   quitBtnEl.addEventListener('click', async event => {
     
@@ -42,5 +42,8 @@ if (quitBtnEl) {
 }
 
 
-
+// To Do
+// 1. Add event listner for start battle
+// 2. Add event listener for pick me
+// 3. Build a pokemon fight/best pokemon/team logic
 
