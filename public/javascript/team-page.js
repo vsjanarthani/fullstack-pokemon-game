@@ -43,8 +43,8 @@ let teamBuild = [
   `${nameTeam(pokeCity)} ${nameTeam(legendary)}`,
   `${nameTeam(pokeCity)}’s ${nameTeam(adjective)}  ${nameTeam(legendary)}`,
   `${nameTeam(pokeCity)}’s Potions`,
-  `${nameTeam(attack)} & ${nameTeam(attack)}`,
-  `Level Up & ${nameTeam(attack)}`
+  `${nameTeam(attack)} and ${nameTeam(attack)}`,
+  `Level Up and ${nameTeam(attack)}`
 ];
 
 let teamNamesArr = [];
