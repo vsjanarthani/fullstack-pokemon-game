@@ -14,7 +14,7 @@ joinRoomBtnEl.addEventListener('click', async event => {
     .then(response => response.json())
     .then(response => {
         console.log(response);
-        socket.emit('newUser', response);
+        socket.emit('newUser', response.id);
       
     })  
     .catch (e => {
