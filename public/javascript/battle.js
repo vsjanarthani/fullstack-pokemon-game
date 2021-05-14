@@ -3,10 +3,13 @@
 const socket = io();
 
 // DOM Selection
-const joinRoomBtnEl = document.querySelector('#join-room');
+const joinBtnEl = document.querySelector('#joinbtn');
+
+const quitBtnEl = document.querySelector('#quitbtn');
 
 // Event listener for join room button
-joinRoomBtnEl.addEventListener('click', async event => {
+if (joinBtnEl) {
+joinBtnEl.addEventListener('click', async event => {
   await fetch('/api/team', {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' }
@@ -22,15 +25,21 @@ joinRoomBtnEl.addEventListener('click', async event => {
             }
           }
         });
-       
-      
     })  
     .catch (e => {
       console.log(e);
-    });  
-   
+    });   
 });
+}
 
+
+
+if (quitBtnEl) {
+  quitBtnEl.addEventListener('click', async event => {
+    
+    document.location.replace('/team');
+  });
+}
 
 
 

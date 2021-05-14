@@ -1,11 +1,14 @@
-<!--GAME SECTION-->
+{{> header}}
+<!--Battle-Page Section-->
 
-<div class="container-fluid mt-10 d-line">
-	<h3 class="text-center">Pokemon Draft Battles</h3>
+<div class="container-fluid mt-5 mb-5 text-center">
+	<h3>Pokemon Draft Battles</h3>
+	<button id="joinbtn" type="button" class="col-5 col-lg-1 btn btn-dark m-5">Join Battle</button>
+	<button id="startbtn" type="button" class="col-5 col-lg-1 btn btn-dark m-5">Start Battle</button>
+	<button id="quitbtn" type="button" class="col-5 col-lg-1 btn btn-dark m-5">Quit</button>
 </div>
 
-
-{{!-- option to pick a user to challenge --}}
+{{!-- option to pick a user to challenge
 <div class="container-fluid col-10">
 	<form action="chat.html">
 		<div class="form-group">
@@ -18,19 +21,19 @@
 				<option value="challenge-pokemon">Challenge Pokemon</option>
 			</select>
 		</div>
-		<button id="join-room" type="button" class="btn btn-dark">Join Room</button>
+		
 	</form>
-</div>
+</div> --}}
 
-<div class="container-fluid mt-10">
+<div class="container-fluid card col-12 col-lg-9 mt-5 mb-5 d-flex flex-column p-5">
 	<!--User side Pokemon information-->
-	<h5 class="d-flex justify-content-center" id="userHeader">{{userTeam.team_name}}</h5>
+	<h5 class="d-flex justify-content-center" id="userHeader">Your Team: {{userTeam.team_name}}</h5>
 	<h1 class="d-flex justify-content-center"><img id="heroHeadline2" src="{{userTeam.team_logo}}"></h1>
 
 
 	<div class="container-fluid">
 		{{!--Each Pokemon info --}}
-		<div class="row card-group">
+		<div class="row card-group d-flex justify-content-between">
 			{{#each userTeam.pokemons as |pokemon|}}
 			<div class="col col-md-3" style="max-width:18rem">
 				<div class="card">
@@ -58,9 +61,9 @@
 {{!-- to Do - Connect to the socket and challenge another user to see who has the best team --}}
 {{#if opponentTeam}}
 
-<div class="container-fluid mt-10">
+<div class="container-fluid card col-12 col-lg-9 mt-5 mb-5 d-flex flex-column p-5">
 	<!--Opponent side Pokemon information-->
-	<h5 class="d-flex justify-content-center" id="userHeader">{{opponentTeam.team_name}}</h5>
+	<h5 class="d-flex justify-content-center" id="userHeader">opponent Team: {{opponentTeam.team_name}}</h5>
 	<h1 class="d-flex justify-content-center"><img id="heroHeadline2" src="{{opponentTeam.team_logo}}"></h1>
 
 

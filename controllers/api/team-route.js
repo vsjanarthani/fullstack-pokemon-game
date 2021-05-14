@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const { Team, Pokemon } = require('../../models');
 const sessionAuth = require('../../utils/auth');
-// const { QueryTypes } = require('sequelize');
 
 // GET /api/team
 router.get('/', sessionAuth, (req, res) => {
@@ -25,8 +24,6 @@ router.get('/', sessionAuth, (req, res) => {
             res.status(400).json({ Error: e });
         });
 });
-
-
 
 // POST /api/team
 router.post('/', sessionAuth, (req, res) => {

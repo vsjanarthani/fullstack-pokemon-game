@@ -1,11 +1,9 @@
 const router = require('express').Router();
 const { Team, Pokemon } = require('../../models');
 const sessionAuth = require('../../utils/auth');
-// const fetch = require('node-fetch');
-// const dev = (process.env.NODE_ENV != 'production');
-// const server = dev ? 'http://localhost:5000' : process.env.SERVER_PROD;
 
-// GET /team of the user
+
+// GET /battle - displaying user and opponent data
 router.get('/', sessionAuth, async (req, res) => {
     if (req.query.id) {
         
