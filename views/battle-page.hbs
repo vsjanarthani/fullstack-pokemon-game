@@ -3,34 +3,21 @@
 
 <div class="container-fluid mt-5 mb-5 text-center">
 	<h3>Pokemon Draft Battles</h3>
+	{{#unless opponentTeam}}
 	<button id="joinbtn" type="button" class="col-5 col-lg-1 btn btn-dark m-5">Join Battle</button>
+	{{/unless}}
+	{{#if opponentTeam}}
 	<button id="startbtn" type="button" class="col-5 col-lg-1 btn btn-dark m-5">Start Battle</button>
 	<button id="quitbtn" type="button" class="col-5 col-lg-1 btn btn-dark m-5">Quit</button>
+	{{/if}}
+
 </div>
 
-{{!-- option to pick a user to challenge
-<div class="container-fluid col-10">
-	<form action="chat.html">
-		<div class="form-group">
-			<h4 id="username" aria-valuenow="{{userTeam.team_name}}">Team Name: {{userTeam.team_name}}</h4>
-		</div>
-		<div class="form-group">
-			<label for="room">Room</label>
-			<select name="room" id="room">
-				<option value="challenge-team">Challenge Team</option>
-				<option value="challenge-pokemon">Challenge Pokemon</option>
-			</select>
-		</div>
-		
-	</form>
-</div> --}}
-
-<div class="container-fluid card col-12 col-lg-9 mt-5 mb-5 d-flex flex-column p-5">
+<div class="container-fluid card col-12 col-lg-9 mt-5 mb-5 d-flex flex-column p-3">
 	<!--User side Pokemon information-->
 	<h5 class="d-flex justify-content-center" id="userHeader">Your Team: {{userTeam.team_name}}</h5>
 	<h1 class="d-flex justify-content-center"><img id="heroHeadline2" src="{{userTeam.team_logo}}"></h1>
-
-
+	
 	<div class="container-fluid">
 		{{!--Each Pokemon info --}}
 		<div class="row card-group d-flex justify-content-between">
@@ -66,10 +53,9 @@
 	<h5 class="d-flex justify-content-center" id="userHeader">opponent Team: {{opponentTeam.team_name}}</h5>
 	<h1 class="d-flex justify-content-center"><img id="heroHeadline2" src="{{opponentTeam.team_logo}}"></h1>
 
-
 	<div class="container-fluid">
 		{{!--Each Pokemon info --}}
-		<div class="row card-group">
+		<div class="row card-group justify-content-between">
 			{{#each opponentTeam.pokemons as |pokemon|}}
 			<div class="col col-md-3" style="max-width:18rem">
 				<div class="card">
@@ -79,11 +65,6 @@
 						<!-- Pokemon Name-->
 						<h5 id="poke-name" class="card-title">{{pokemon_name}}</h5>
 
-						<div class="card-footer p-2 m-2">
-							<!-- Action to Pick pokemon-->
-							<button id="pick-pokemon" name="{{pokedex}}" type="button" class="btn btn-dark">Pick
-								Me</button>
-						</div>
 					</div>
 				</div>
 			</div>

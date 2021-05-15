@@ -32,6 +32,12 @@ joinBtnEl.addEventListener('click', async event => {
 });
 }
 
+socket.on('updatedUsers', pokeTeams => {
+  if(Object.keys(pokeTeams).length === 0) {
+    alert('Your openent left the battle');
+    document.location.replace('/team');
+  }
+});
 
 
 if (quitBtnEl) {
