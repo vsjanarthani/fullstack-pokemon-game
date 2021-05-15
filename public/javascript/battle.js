@@ -4,8 +4,8 @@ const socket = io();
 
 // DOM Selection
 const joinBtnEl = document.querySelector('#joinbtn');
-
 const quitBtnEl = document.querySelector('#quitbtn');
+const pickEl = document.querySelector('#pick-pokemon');
 
 // Event listener for join room button
 if (joinBtnEl) {
@@ -47,6 +47,19 @@ if (quitBtnEl) {
   });
 }
 
-
-
+// Event listner for clicking on the Pokemon options
+let sum = 0;
+pickEl.addEventListener('click', event => {
+  console.log(`btn clicked`);
+  let id = event.target.attributes.id.value;
+  let stats = event.target.attributes.name.value;
+  let result = stats.split('-').join(', ').split(',');
+ for (let i=0; i<result.length; i++) {
+  sum = parseInt(result[i]) + sum
+ }
+  // console.log(id, stats, sum);
+  const pickedBtnEl = document.getElementById(`${id}`);
+  pickedBtnEl.innerText = "Picked";
+  
+});
 
