@@ -201,7 +201,8 @@ a{
   .tech {
 	font-family: Arial, Helvetica, sans-serif;
   }
-
+ 
+  /* logo signs */
   .logo {
 	width: 50px; /* Set a small width */
 	margin-left: 1rem;
