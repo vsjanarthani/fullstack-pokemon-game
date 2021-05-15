@@ -8,10 +8,10 @@
 <!-- RETURNING USER-->
 <!-- banner section start -->
 
-<div class="container d-flex col-9 mt-2 justify-content-evenly">
+<div class="container d-flex col-9 mt-2 justify-content-evenly" id="listen">
 
     <div class="row d-flex align-items-center">
-        <div class="card mt-4">
+        <div class="card mt-4 p-2 m-2">
             <h1 id="namesaved" class=" mt-2 fs-2">{{team.team_name}}</h1>
             <img id="team-logo" class="card-img-top" src="{{team.team_logo}}" alt="team-logo">
 
@@ -37,7 +37,7 @@
         <!-- Pokemon Stat Cards -->
         {{#each team.pokemons as |pokemon|}}
 
-        <div class="card m-1" style="min-width:18rem; max-width:18rem;">
+        <div class="card m-1">
             <!-- Pokemon Sprite-->
             <img id="poke-img" class="card-img-top" src="{{pokemon_pic}}" alt="pokemon image">
             <div class="card-body">

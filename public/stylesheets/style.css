@@ -1,13 +1,24 @@
 .form-group {
 	font-family: 'Poppins';
 }
-
-#sliderscreen {
-	max-height: 70vh;
-	max-width: 95vh;
-	object-fit:scale-down;
-
+body {
+	background-color: #000000;
+	background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
+	background-repeat: no-repeat;
 }
+
+#listen
+{
+	min-height: 100vh;
+}
+#background-hack {
+	background-color: #000000;
+	background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
+	background-repeat: no-repeat;
+	height: 100vh;
+}
+
+
 	.form-label {
 		font-family: 'Poppins';
 		font-size: small;
@@ -57,7 +68,7 @@
 }
 	.text-light {
 		text-shadow: 1px 1px #2b2929;
-		}
+	}
 
 .carousel-container {
 	position: relative;
@@ -99,8 +110,7 @@
   }
 
 .draft-header {
-	background-image: url("https://res.cloudinary.com/actionfdfds/image/upload/v1620603338/intrologo_khbj0h.png") 50% no-repeat;
-	
+
 	height: 10vh;
 	max-width: 10vh;
 	position: absolute;
@@ -140,9 +150,10 @@ body {
 }
 .card-title {
 	font-family: 'Poppins', sans-serif;
-	font-weight: 500;
+	font-weight: 700;
 	font-size: medium;
 	align-self: center !important;
+	width: 16rem;
 }
 
 	.btnDraft {
@@ -172,9 +183,10 @@ body {
 
 
 .card-img-top {
-	width:50% !important;
+	width:40% !important;
 	align-self: center;
 	margin-top: 10px;
+	width: 12rem;
 }
 
 
@@ -221,12 +233,17 @@ body {
 .card {
     margin-bottom: 10px;
     margin-top: 10px;
-
+	margin-left: 10px;
+    margin-right: 10px;
+	width: 16rem !important;
 	align-items: center;
 	border-radius: 10px;
 	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
 }
+
+
+
 .progress-title{
     font-size: 20px;
     font-weight: 700;
