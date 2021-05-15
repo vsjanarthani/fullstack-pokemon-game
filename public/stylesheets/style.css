@@ -168,7 +168,7 @@ logoIcon {
     z-index: 2;
 }
 
-/* linkedin and github links */
+/* linkedin and github links style*/
 a{
 	color: #000000 !important;
 	padding: .2rem 4rem !important; /* needs a fix for mobile*/
