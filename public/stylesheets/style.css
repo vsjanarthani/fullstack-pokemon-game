@@ -204,6 +204,8 @@ a{
 
   .logo {
 	width: 50px; /* Set a small width */
+	margin-left: 1rem;
+	margin-right: 1rem;
   }
 
 @-webkit-keyframes animate-positive{
