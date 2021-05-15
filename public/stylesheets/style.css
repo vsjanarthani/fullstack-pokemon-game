@@ -212,6 +212,13 @@ a{
 	margin-right: 1rem;
   }
 
+.copyright {
+	padding: 15px 0;
+	background: #333;
+	margin-top: 20px;
+	font-size: 15px;
+  }
+
 @-webkit-keyframes animate-positive{
     0%{ width: 0; }}
 
