@@ -29,7 +29,10 @@
 	text-align: center;
 }
 
-
+#team-logo{
+	height: 10vh;
+	object-fit:scale-down;
+}
 	.text-light {
 		text-shadow: 1px 1px #2b2929;
 		}
@@ -87,6 +90,7 @@
 	font-weight: 500;
 	font-size: medium;
 	justify-self: auto;
+	width: 300px;
 }
 
 .form-group {
@@ -126,9 +130,7 @@ body {
 		border-width: 1px;
 		font-family: 'Poppins', sans-serif;
 		font-size: 1rem;
-		padding-left: 25px !important;
-		padding-right: 25px!important;
-		min-height: 25px;
+
 		border-radius: 5px;
 	  }
 	  
