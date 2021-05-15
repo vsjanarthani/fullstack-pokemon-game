@@ -4,9 +4,10 @@ const sessionAuth = require('../../utils/auth');
 const { QueryTypes } = require('sequelize');
 const { sequelize } = require('../../models/User');
 const fetch = require('node-fetch');
-const dev = process.env.NODE_ENV !== 'production';
+const dev = (process.env.NODE_ENV != 'production');
 
-const server = dev ? 'http://localhost:5000' : 'https://your_deployment.server.com';
+const server = dev ? 'http://localhost:5000' : process.env.SERVER_PROD;
+
 
 // GET /api/pokemons
 router.get('/', async (req, res) => {
