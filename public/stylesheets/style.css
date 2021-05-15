@@ -168,20 +168,28 @@ logoIcon {
     z-index: 2;
 }
 
+footer {
+	background-color: 83CFE1 !important;
+}
+/* linkedin and github links */
 a{
 	color: #000000 !important;
 	padding: .2rem 3rem !important;
+	text-align: center !important;
 }
 
-.github{
+/* github logo size */
+.github {
 	font-size: x-large;
-	padding: .2rem 3rem;
 
 }
 
-linkedin{
-	padding: .2rem 3rem;
-}
+.profile-pic {
+	border: 1px solid #ddd; /* Gray border */
+	border-radius: 4px;  /* Rounded border */
+	padding: 5px; /* Some padding */
+	width: 150px; /* Set a small width */
+  }
 
 @-webkit-keyframes animate-positive{
     0%{ width: 0; }}
