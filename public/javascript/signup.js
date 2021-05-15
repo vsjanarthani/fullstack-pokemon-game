@@ -31,11 +31,13 @@ signupBtnEl.addEventListener('click', async (event) => {
                 // alert('Sign-Up successful');
 
             } else {
-                alert(response.statusText);
+                const thisres = await response.json();
+                console.log(thisres);
+                alert(thisres.message);
             }
         }
         catch (e) {
-            console.log(e);
+            console.log(e.message);
         }
 
     }
