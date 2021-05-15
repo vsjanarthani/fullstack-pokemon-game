@@ -168,20 +168,22 @@ logoIcon {
     z-index: 2;
 }
 
-footer {
-	background-color: 83CFE1 !important;
-}
 /* linkedin and github links */
 a{
 	color: #000000 !important;
-	padding: .2rem 3rem !important;
-	text-align: center !important;
+	padding: .2rem 4rem !important; /* needs a fix for mobile*/
+	margin-left: auto !important;
+	margin-right: auto !important;
 }
 
 /* github logo size */
 .github {
 	font-size: x-large;
+}
 
+.name {
+	text-align: center !important;
+	margin-bottom: 1rem;
 }
 
 .profile-pic {
@@ -189,6 +191,11 @@ a{
 	border-radius: 4px;  /* Rounded border */
 	padding: 5px; /* Some padding */
 	width: 150px; /* Set a small width */
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
 
 @-webkit-keyframes animate-positive{
