@@ -168,6 +168,10 @@ logoIcon {
     z-index: 2;
 }
 
+.greeting {
+	font-family: "Lucida Console", "Courier New", monospace;
+  }
+
 /* linkedin and github links style*/
 a{
 	color: #000000 !important;
