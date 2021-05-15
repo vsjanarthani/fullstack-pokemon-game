@@ -47,7 +47,7 @@ function connected(socket) {
   socket.on('newUser', data => {
     console.log(`New client connected, ${socket.id}`);
     pokeTeams[socket.id] = data.teamId;
-    pokeTeamStats[socket.id] = data.pokemonStats;
+    pokeTeamStats[data.teamId] = data.pokemonStats;
     // console.log(data);
     // console.log(`Current number of pokemon players: ${Object.keys(pokeTeams).length}`);
     io.emit('updatedUsers', pokeTeams);
@@ -56,11 +56,6 @@ function connected(socket) {
   socket.on('getUserStats', dummyData => {
     io.emit('updateUserStats', pokeTeamStats);
   })
-
-  socket.on('battlingPokemon', data => {
-    battlingPokeTeams[socket.id] = data;
-    io.emit('battleUpdate', battlingPokeTeams);
-  });
 
   socket.on('disconnect', () => {
     console.log('Disconnect got hit');
