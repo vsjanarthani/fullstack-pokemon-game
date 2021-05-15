@@ -31,9 +31,9 @@ signupBtnEl.addEventListener('click', async (event) => {
                 // alert('Sign-Up successful');
 
             } else {
-                const thisres = await response.json();
-                console.log(thisres);
-                alert(thisres.message);
+                const thisresponse = await response.json();
+                console.log(thisresponse);
+                alert(thisresponse.message);
             }
         }
         catch (e) {
