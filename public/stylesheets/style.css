@@ -170,6 +170,7 @@ logoIcon {
 
 a{
 	color: #000000 !important;
+	padding: .2rem 3rem !important;
 }
 
 .github{
@@ -178,7 +179,7 @@ a{
 
 }
 
-.btn-linkedin{
+linkedin{
 	padding: .2rem 3rem;
 }
 
