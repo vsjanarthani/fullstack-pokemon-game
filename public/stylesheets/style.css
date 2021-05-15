@@ -181,6 +181,7 @@ a{
 	font-size: x-large;
 }
 
+/* centering the names */
 .name {
 	text-align: center !important;
 	margin-bottom: 1rem;
