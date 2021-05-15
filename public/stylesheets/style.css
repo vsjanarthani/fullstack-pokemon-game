@@ -198,6 +198,14 @@ a{
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
 
+  .tech {
+	font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .logo {
+	width: 50px; /* Set a small width */
+  }
+
 @-webkit-keyframes animate-positive{
     0%{ width: 0; }}
 
