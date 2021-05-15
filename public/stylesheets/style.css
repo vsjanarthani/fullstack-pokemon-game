@@ -169,7 +169,8 @@ logoIcon {
 }
 
 .greeting {
-	font-family: "Lucida Console", "Courier New", monospace;
+	font-family: "Copperplate"
+	/* "Lucida Console", "Courier New", monospace; */
   }
 
 /* linkedin and github links style*/
