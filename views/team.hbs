@@ -8,31 +8,29 @@
 <!-- RETURNING USER-->
 <!-- banner section start -->
 
-<div class="container d-flex col-9 mt-2 justify-content-evenly" id="listen">
-
-    <div class="row d-flex align-items-center">
-        <div class="card mt-4 p-2 m-2">
-            <h1 id="namesaved" class=" mt-2 fs-2">{{team.team_name}}</h1>
-            <img id="team-logo" class="card-img-top" src="{{team.team_logo}}" alt="team-logo">
-
-            <p class="browse_text">You have {{team.pokemons.length}} Pokémon in your team. {{#if disable}} Your team
+       
+<div class="container fluid justiy-items-center mt-2" id="listen">
+    <div class="row d-flex justiy-items-center ">
+<div>     <img id="team-logo" class="card-img-top" src="{{team.team_logo}}" alt="team-logo">
+            <h1 id="namesaved" class="mt-2">{{team.team_name}}</h1> </div>
+            <p class=" gx-2 text-light text-center">You have {{team.pokemons.length}} Pokémon in your team. {{#if disable}} Your team
                 is full,
                 If you wish to draft different Pokémon, please drop Pokémon from your Team.
                 {{else}} To draft more Pokémon please visit the draft-page. If you wish to battle click on Go to
                 Battle button.{{/if}}</p>
-            <div class="col-10 d-flex justify-content-evenly">
+            <div class="col-10 d-flex">
                 {{#unless disable}}
-                <button class="btn btn-dark mb-4"><a class="style-none text-white fs-lg-4" href="/draftpage">Draft
+                <button id="maxButton"class="btn btn-dark btn-block mx-auto mb-4"><a class="style-none text-white fs-lg-4" href="/draftpage">Draft
                         Team</a></button> {{/unless}}
 
             </div>
 
         </div>
-    </div>
+
 </div>
 <!-- banner section end -->
 
-<div class="container d-flex  col-10 justify-content-evenly" id="listen">
+<div class="container d-flex  col-10" id="listen">
     <div class="card-group align-items-center">
         <!-- Pokemon Stat Cards -->
         {{#each team.pokemons as |pokemon|}}
@@ -80,5 +78,5 @@
     </div>
 </div>
 {{/if}}
-
+</div>
 <script src="/javascript/team-page.js"></script>

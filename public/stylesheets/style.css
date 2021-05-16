@@ -15,15 +15,11 @@ body {
 	padding-top: 30px;
 
 }
-#darkmode {
-	max-width: 60vw;
-	padding-top: 5vh;
-	
+
+#maxButton {
+	max-width: 400px;;
 }
-#listen
-{
-	min-height: 100vh;
-}
+
 #background-hack {
 	background-color: #000000;
 	background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
@@ -50,18 +46,22 @@ body {
 			
 		}
 
+		#namesaved{
+		font-family: 'Staatliches';
+			font-size: 2.4rem;
+			flex-wrap: nowrap;
+			color: white;
+			text-align: center;
+			
+		}
+
 #random-name-div {
 	height: 15vh;
 	justify-items: baseline;
 	
 }
 
-		#namesaved {
-			font-family: 'Staatliches';
-			font-size: 2rem;
-			
-			
-		}
+
 #draftheader{
 	font-weight: 800;
 	text-align: center;
@@ -95,7 +95,7 @@ body {
 	}
 
 	#create-team {	max-width:800px;}
-	
+
 .carousel-container {
 	position: relative;
 	max-width:800px;
@@ -153,8 +153,8 @@ body {
 	font-family: 'Poppins', sans-serif;
 	font-weight: 500;
 	font-size: medium;
-	justify-self: auto;
 	width: 300px;
+	height:80px;
 }
 
 .form-group {
@@ -185,6 +185,11 @@ body {
 	font-size: medium;
 	align-self: center !important;
 	width: 16rem;
+}
+
+.card-body {
+	width: 16rem;
+
 }
 
 	.btnDraft {
@@ -259,6 +264,7 @@ body {
 
 .progress {
     margin-bottom: 3px;
+	margin: 4px;
 }
 
 .card {
@@ -266,6 +272,10 @@ body {
     margin-top: 10px;
 	margin-left: 10px;
     margin-right: 10px;
+	padding-bottom: 10px;
+   padding-top: 10px;
+	padding-left: 10px;
+    padding-right: 10px;
 	width: 16rem !important;
 	align-items: center;
 	border-radius: 10px;
@@ -301,7 +311,7 @@ body {
     animation: animate-positive 1s;
 }
 .progress .progress-value{
-    width: 70px;
+    width: 14rem;
     height: 35px;
     line-height: 27px;
     border-radius: 20px;
