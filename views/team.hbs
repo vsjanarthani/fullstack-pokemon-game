@@ -6,13 +6,13 @@
 {{#if team}}
   <!-- RETURNING USER-->
   <!-- banner section start -->
-  <div class="container fluid justiy-items-center mt-2" id="listen">
+  <div class="container d-flex  col-10  mt-2" id="listen">
     <div class="row d-flex justiy-items-center ">
       <div> <img id="team-logo" class="card-img-top" src="{{team.team_logo}}" alt="team-logo">
         <h1 id="namesaved" class="mt-2">{{team.team_name}}</h1>
       </div>
       <p class="gx-2 text-light text-center">You have {{team.pokemons.length}} Pokémon in your team. {{#if disable}} Your team is full, If you wish to draft different Pokémon, please drop Pokémon from your Team. {{else}} To draft more Pokémon please visit the draft-page. If you wish to battle click on Go to Battle button.{{/if}}</p>
-      <div class="col-10 d-flex">
+      <div class="co    l-10 d-flex">
         {{#unless disable}}
           <button id="maxButton" class="btn btn-dark btn-block mx-auto mb-4"><a class="style-none text-white fs-lg-4" href="/draftpage">Draft Team</a></button> {{/unless}}
       </div>
