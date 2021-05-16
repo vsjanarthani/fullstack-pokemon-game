@@ -1,12 +1,13 @@
 {{> header}}
-
-<div class="d-flex justify-content-evenly mt-5">
-
-    <button id="draft-team" type="button" class="col-4 col-lg-1 btn btn-dark mb-4 p-2">Draft Team</button>
-    <button id="draft-clear" type="button" class="col-4 col-lg-1 btn btn-dark mb-4 p-2">Clear Selection</button>
-
+<div class="container d-flex">
+  <div class="row justify-content-center">
+    <div class="row">
+      <div class="btn-group no-wrap">
+        <button id="draft-team" type="button" class="btn-danger btn-block">Save My Picks</button>
+        <button id="draft-clear" type="button" class="btn-dark btn-block ">Clear Draft Picks</button>
+      </div>
+    </div>
+  </div>
 </div>
-
 {{> pokemon-display}}
-
 <script src="/javascript/draft-page.js"></script>
