@@ -142,6 +142,12 @@ body {
   background-image: none;
 }
 
+  /* #carousel-thumbs .selected img {
+	border-color: rgb(39, 228, 156);
+	border-width: 3px;
+	border-radius: 85%;
+  } */
+
 .draft-header {
   height: 10vh;
   max-width: 10vh;
