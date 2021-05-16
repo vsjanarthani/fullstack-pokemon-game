@@ -108,11 +108,8 @@
   
   #carousel-thumbs {
 	background: rgba(255, 255, 255, .3);
-	bottom: 0;
-	left: 0;
+margin-top: 35px;
 	padding: 0 50px;
-	position: absolute;
-	right: 0;
   }
   
   #carousel-thumbs img {
