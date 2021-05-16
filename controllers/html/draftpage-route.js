@@ -34,6 +34,7 @@ const server = dev ? 'http://localhost:5000' : process.env.SERVER_PROD;
 
 // fetching our selected pokedex from database
 let selectedPokedex = [];
+let pokeNums = [];
 setTimeout(() => {
     fetch(`${server}/api/pokemons`)
         .then(response => response.json())
@@ -42,8 +43,12 @@ setTimeout(() => {
                 const pokedex = data[i].pokedex;
                 selectedPokedex.push(pokedex)
             }
+            // console.log("selected pokedex follows")
             // console.log(selectedPokedex);
 
+        })
+        .then(() => {
+            forLoop();
         })
         .catch(e => {
             console.log(e);
@@ -52,19 +57,23 @@ setTimeout(() => {
 }, 500);
 
 // setting empty array to hold random pokemon ids to pull from api
-let pokeNums = [];
+
 
 // adding 20 random numbers to our array, making sure there are no repeats
-for (let i = 0; i < 20; i++) {
-    const singlePokeNum = Math.floor(Math.random() * 898) + 1;
-    if (!pokeNums.includes(singlePokeNum) && !selectedPokedex.includes(singlePokeNum)) {
-        pokeNums.push(singlePokeNum);
+const forLoop = () => {
+    for (let i = 0; i < 20; i++) {
+        const singlePokeNum = Math.floor(Math.random() * 898) + 1;
+        if (!pokeNums.includes(singlePokeNum) && !selectedPokedex.includes(singlePokeNum)) {
+            pokeNums.push(singlePokeNum);
+        }
     }
-};
+    getPokemon();
+}
 let pokeData = [];
 // looping through our array, using numbers as pokemon to get pokemon data
 const getPokemon = () => {
-
+    console.log("selected pokedex follows")
+    console.log(selectedPokedex)
     for (let i = 0; i < pokeNums.length; i++) {
         const pokeNum = pokeNums[i];
         fetch(`https://pokeapi.co/api/v2/pokemon/${pokeNum}`)
@@ -90,7 +99,7 @@ const getPokemon = () => {
     }
 };
 
-getPokemon();
+// getPokemon();
 
 // Function to fetch pokemon every 24hrs??????
 
