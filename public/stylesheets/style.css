@@ -1,3 +1,62 @@
+
+.greeting {
+	margin-top: 2rem;
+	font-family: "Poppins"
+	/* "Lucida Console", "Courier New", monospace; */
+  }
+
+/* linkedin and github links style*/
+a{
+	color: white !important;
+	padding: .2rem 4rem !important; /* needs a fix for mobile*/
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
+/* github logo size */
+.github {
+	font-size: small;
+}
+
+/* centering the names */
+.name {
+	text-align: center !important;
+	margin-bottom: 1rem;
+	font-family: 'Poppins';
+}
+ 
+/* profile pictures style */
+.profile-pic {
+	border: 3px solid #ddd; /* Gray border */
+	width: 125px; /* Set a small width */
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 100%;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+ 
+  /* logo signs */
+  .logo {
+	width: 50px; /* Set a small width */
+	margin-left: 1rem;
+	margin-right: 1rem;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+  }
+
+/* style of copyright */
+.copyright {
+	padding: 10px;
+	background: rgb(46, 45, 45);
+
+	font-size: small;
+	font-family:'Poppins';
+  }
+
+
+
+
 .form-group {
 	font-family: 'Poppins';
   }
@@ -19,7 +78,7 @@
   
   #maxButton {
 	max-width: 400px;
-	;
+	
   }
   
   #background-hack {
