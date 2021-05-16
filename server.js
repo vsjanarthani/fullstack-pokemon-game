@@ -24,6 +24,8 @@ const sess = {
   })
 };
 
+
+// Middlewares
 app.use(session(sess));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -42,6 +44,7 @@ let pokeTeamStats = {};
 let battlingPokeTeams = {};
 io.on('connection', connected);
 
+// Function for socket.io
 function connected(socket) {
 
   socket.on('newUser', data => {
