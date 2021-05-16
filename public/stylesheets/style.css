@@ -6,7 +6,20 @@ body {
 	background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
 	background-repeat: no-repeat;
 }
+#sliderscreen {	
+	height: 100vh; 
+	align-content: center !important;
+}
 
+.card-team {
+	padding-top: 30px;
+
+}
+#darkmode {
+	max-width: 60vw;
+	padding-top: 5vh;
+	
+}
 #listen
 {
 	min-height: 100vh;
@@ -27,11 +40,21 @@ body {
 		}
 		#random-name {
 			font-family: 'Staatliches';
-			font-size: 2rem;
+			font-size: 2.4rem;
+			flex-wrap: nowrap;
+			color: white;
 			margin-top: 2vh;
+			text-align: center;
 			
+
 			
 		}
+
+#random-name-div {
+	height: 15vh;
+	justify-items: baseline;
+	
+}
 
 		#namesaved {
 			font-family: 'Staatliches';
@@ -68,14 +91,20 @@ body {
 }
 	.text-light {
 		text-shadow: 1px 1px #2b2929;
+		font-family: 'Poppins';
 	}
 
+	#create-team {	max-width:800px;}
+	
 .carousel-container {
 	position: relative;
-  }
+	max-width:800px;
+	align-content: center;
+  }	
   .carousel-item img {
+		object-fit: cover;
 	object-fit:scale-down;
-	max-height: 200px;
+	max-height: 30vh;
   }
   #carousel-thumbs {
 	background: rgba(255,255,255,.3);
@@ -88,9 +117,11 @@ body {
   #carousel-thumbs img {
 	border: 5px solid transparent;
 	cursor: pointer;
+	
   }
   #carousel-thumbs img:hover {
 	border-color: rgba(255,255,255,.3);
+	border-radius: 100%;
   }
  
   #carousel-thumbs .selected img {

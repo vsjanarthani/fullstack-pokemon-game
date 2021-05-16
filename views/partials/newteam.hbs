@@ -3,14 +3,15 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" />
 <div class="container" id="sliderscreen">
     <div class="row d-flex justify-content-center">
-        <div class="col-12 col-lg-6">
-           
+        <div class="col-8 gy-8">
+           <container class="darkmode">
             <!-- Pick a Team Name Generator-->
             {{> team-name}}
+            </div>
             <!-- Pick a Logo-->
-            <div class="container mt-5">
+            <div class="container mt-5 justify-content-center">
                 <div class="carousel-container row">
-                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <div id="myCarousel" class="carousel slide justify-content-center" data-ride="carousel">
                         <div class="carousel-inner">
                             <!-- 0 - Gyrados -->
                             <div class="carousel-item active" data-slide-number="0">
@@ -234,15 +235,14 @@
                 </div>
             </div>
 
-            <p class="text-center plain">Select your logo and LFG!</p>
+            <p class="text-center mt-1 text-light">Select your logo and LFG!</p>
             </div>
            
 <div>
-                <button id="create-team" class="btn btn-danger btn-block justify-content-center createbutton">Create Team</button>
+                <button id="create-team" class="btn btn-danger btn-block justify-content-center createbutton">Create Team</button></container>
              </div>
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
-</div>
