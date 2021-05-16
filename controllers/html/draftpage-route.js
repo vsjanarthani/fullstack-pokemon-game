@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const fetch = require('node-fetch');
 const sessionAuth = require('../../utils/auth');
-
 const dev = (process.env.NODE_ENV != 'production');
 const server = dev ? 'http://localhost:5000' : process.env.SERVER_PROD;
 
@@ -14,23 +13,6 @@ const server = dev ? 'http://localhost:5000' : process.env.SERVER_PROD;
 //   }, 500);
 // });
 
-// Promise.race([
-//     promisifedPingApi,
-//     new Promise((_, reject) => {
-//       setTimeout(() => reject('Timeout!'), 500);
-//       (function () {
-//         setInterval(function () {
-//           getPokemon();
-//         }, 1000 * 60 * 60 * 24);
-//       }) ();
-//     })
-//   ]).then(res => {
-//       console.log('response: ', res);
-//   })
-//     .catch(e => {
-//       console.error('error: ', e);
-//       clearTimeout(id);
-//     });
 
 // fetching our selected pokedex from database
 let selectedPokedex = [];
@@ -91,16 +73,9 @@ const getPokemon = () => {
 };
 
 getPokemon();
-
-// Function to fetch pokemon every 24hrs??????
-
-// setTimeout(() => {
-//     getPokemon();
-// }, 1000);
-
 setInterval(getPokemon, 1000 * 60 * 60 * 24);
 
-
+// Post request to update pokemon data when its drafted to a team
 router.post("/updatePokeData", (req, res) => {
     console.log("this is req.body");
     console.log(req.body);
@@ -116,6 +91,7 @@ router.post("/updatePokeData", (req, res) => {
     }
 });
 
+// Post request to update pokemon data when its removed from a team
 router.post("/updatePokeDataDelete", (req, res) => {
     console.log("this is req.body.id");
     console.log(req.body.id);
@@ -137,10 +113,6 @@ router.get('/', sessionAuth, (req, res) => {
     })
 });
 
-
 module.exports = router;
 
 
-// to do
-// 1. Modify the setinterval or clearTimeout function to make sure the fetch is happening every 24 hrs. Test the code above
-// 2. Exclude the saved pokemons from fetch request (compare if podex array includes random nums)
