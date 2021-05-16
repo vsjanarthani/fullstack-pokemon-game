@@ -14,7 +14,7 @@ let pokeCity = [ // Locations in pokemon world https://bulbapedia.bulbagarden.ne
     'Abandoned Ship', 'Artisan Cave', 'Cave of Being', 'Citadark Isle', 'Dark Cave', 'Dreamyard', 'Eterna Forest', 'Flower Paradise', 'Giant Mirror', 'Gnarled Den', 'Lake of Rage', 'Outcast Island'
 ];
 let attack = [ // Pokemon moves https://bulbapedia.bulbagarden.net/wiki/List_of_moves
-    'Double Slap', 'Mega Kick', 'Pay Day', 'Slam', 'Stomp', 'Fire Punch', 'Vine Whip', 'Fly', 'Thrash', 'Roar', 'Growl', 'Acid', 'Sonic Boom', 'Headbutt'
+    'Double Slap', 'Mega Kick', 'Pay Day', 'Slam', 'Stomp', 'Fire Punch', 'Vine Whip', 'Fly', 'Thrash', 'Roar', 'Growl', 'Sonic Boom', 'Headbutt'
 ];
 
 function nameTeam(id) {
@@ -27,17 +27,24 @@ let teamBuild = [
     `${nameTeam(adjective)} Forever`,
     `${nameTeam(legendary)} Warriors`,
     `Team ${nameTeam(pokeCity)}`,
-    `Level Up & ${nameTeam(attack)}`
+    `Level Up & ${nameTeam(attack)}`,
+    `The ${nameTeam(adjective)} ${nameTeam(legendary)}`,
+    `${nameTeam(legendary)} ${nameTeam(attack)}`,
+    `${nameTeam(adjective)} 4 Lyfe`,
+    `${nameTeam(legendary)} Champions`,
+    `Team ${nameTeam(pokeCity)}`,
+    `${nameTeam(attack)} Queen`
 ];
 
 let teamNamesArr = [];
 const pokeTeamName = () => {
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 15; i++) {
         var teamName = teamBuild[Math.floor(Math.random() * teamBuild.length)];
-        if(!teamNamesArr.includes(teamName)) {
+        if(!teamNamesArr.includes(teamName) && teamName !== undefined) {
             teamNamesArr.push(teamName);
         } 
     }
+    console.log(teamNamesArr);
     return teamNamesArr;
 };
 // End of generating random team names.

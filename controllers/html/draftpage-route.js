@@ -6,7 +6,6 @@ const server = dev ? 'http://localhost:5000' : process.env.SERVER_PROD;
 
 
 // Function to fetch pokemon API once a day
-
 const fetchAPI = async () => {
     try {
         await setTimeout(() => {
@@ -32,6 +31,7 @@ setTimeout(() => {
                 selectedPokedex.push(pokedex)
             }
             // console.log(selectedPokedex);
+
         })
         .catch(e => {
             console.log(e);
@@ -39,18 +39,19 @@ setTimeout(() => {
         });
 }, 500);
 
-// setting empty array to hold random pokemon ids to pull from api
-let pokeNums = [];
+
 
 // adding 20 random numbers to our array, making sure there are no repeats
+let pokeNums = [];
 for (let i = 0; i < 20; i++) {
     const singlePokeNum = Math.floor(Math.random() * 898) + 1;
     if (!pokeNums.includes(singlePokeNum) && !selectedPokedex.includes(singlePokeNum)) {
         pokeNums.push(singlePokeNum);
     }
 };
-let pokeData = [];
+
 // looping through our array, using numbers as pokemon to get pokemon data
+let pokeData = [];
 const getPokemon = () => {
 
     for (let i = 0; i < pokeNums.length; i++) {
@@ -79,7 +80,7 @@ const getPokemon = () => {
 };
 
 
-// Post request to update pokemon data when its drafted to a team
+// Post request to update pokemon data after the pokemon is drafted to a team
 router.post("/updatePokeData", (req, res) => {
     console.log("this is req.body");
     console.log(req.body);
@@ -95,7 +96,7 @@ router.post("/updatePokeData", (req, res) => {
     }
 });
 
-// Post request to update pokemon data when its removed from a team
+// Post request to update pokemon data after the pokemon is removed from a team
 router.post("/updatePokeDataDelete", (req, res) => {
     console.log("this is req.body.id");
     console.log(req.body.id);
@@ -116,6 +117,7 @@ router.get('/', sessionAuth, (req, res) => {
         loggedIn: req.session.loggedIn,
     })
 });
+
 
 module.exports = router;
 

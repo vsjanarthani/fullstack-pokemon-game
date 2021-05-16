@@ -88,21 +88,6 @@ clearDraftBtnEl.addEventListener('click', event => {
 
 
 
-// to do
-
-//* hbs
-//1. Styling & adding logo picker to create teams page
-
-
-//* draftpage-route
-
-//1. Fetch every 24 hours from pokiAPI. *Yev
-
-//2. Check if login validation is present for every route.
-
-//* Prepare presentation
-
-
 
 
 
