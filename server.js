@@ -5,7 +5,7 @@ const socketio = require('socket.io');
 const sequelize = require('./config/connection');
 const routes = require('./controllers');
 const exphbs = require('express-handlebars');
-const hbs = exphbs.create({ extname: 'hbs', defaultLayout: 'main'});
+const hbs = exphbs.create({ extname: 'hbs', defaultLayout: 'main' });
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
@@ -20,7 +20,7 @@ const sess = {
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
-      db: sequelize
+    db: sequelize
   })
 };
 
@@ -38,27 +38,37 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Run when client connects
 let pokeTeams = {};
+let pokeTeamStats = {};
+let battlingPokeTeams = {};
 io.on('connection', connected);
 
 // Function to connect and pass data bwn socket server and client
 function connected(socket) {
-    socket.on('newUser', data => {
-      console.log(`New client connected, ${socket.id}`);
-      pokeTeams[socket.id] = data;
-      console.log(`Current number of pokemon players: ${Object.keys(pokeTeams).length}`);
-      io.emit('updatedUsers', pokeTeams);
-    });
 
-    socket.on('disconnect', () => {
-      delete pokeTeams[socket.id];
-      console.log(`Goodbye client with id: ${socket.id}`);
-      console.log(`Current number of pokemon players: ${Object.keys(pokeTeams).length}`);
-      io.emit('updatedUsers', pokeTeams);
-    });
-  };
-  
+  socket.on('newUser', data => {
+    console.log(`New client connected, ${socket.id}`);
+    pokeTeams[socket.id] = data.teamId;
+    pokeTeamStats[data.teamId] = data.pokemonStats;
+    // console.log(data);
+    // console.log(`Current number of pokemon players: ${Object.keys(pokeTeams).length}`);
+    io.emit('updatedUsers', pokeTeams);
+  });
+
+  socket.on('getUserStats', dummyData => {
+    io.emit('updateUserStats', pokeTeamStats);
+  })
+
+  socket.on('disconnect', () => {
+    console.log('Disconnect got hit');
+    delete pokeTeams[socket.id];
+    console.log(`Goodbye client with id: ${socket.id}`);
+    console.log(`Current number of pokemon players: ${Object.keys(pokeTeams).length}`);
+    io.emit('updatedUsers', pokeTeams);
+  });
+};
+
 
 // sync sequelize models to the database, then turn on the server
-sequelize.sync({ force: false}).then(() => {
+sequelize.sync({ force: false }).then(() => {
   socketServer.listen(PORT, () => console.log(`Now listening to ${PORT}`));
 });
