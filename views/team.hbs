@@ -1,82 +1,57 @@
 {{> header}}
 {{#unless team}}
-<!-- NEW USER-->
-{{> newteam}}
+  <!-- NEW USER-->
+  {{> newteam}}
 {{/unless}}
-
 {{#if team}}
-<!-- RETURNING USER-->
-<!-- banner section start -->
-
-       
-<div class="container fluid justiy-items-center mt-2" id="listen">
+  <!-- RETURNING USER-->
+  <!-- banner section start -->
+  <div class="container fluid justiy-items-center mt-2" id="listen">
     <div class="row d-flex justiy-items-center ">
-<div>     <img id="team-logo" class="card-img-top" src="{{team.team_logo}}" alt="team-logo">
-            <h1 id="namesaved" class="mt-2">{{team.team_name}}</h1> </div>
-            <p class="gx-2 text-light text-center">You have {{team.pokemons.length}} Pokémon in your team. {{#if disable}} Your team
-                is full,
-                If you wish to draft different Pokémon, please drop Pokémon from your Team.
-                {{else}} To draft more Pokémon please visit the draft-page. If you wish to battle click on Go to
-                Battle button.{{/if}}</p>
-            <div class="col-10 d-flex">
-                {{#unless disable}}
-                <button id="maxButton"class="btn btn-dark btn-block mx-auto mb-4"><a class="style-none text-white fs-lg-4" href="/draftpage">Draft
-                        Team</a></button> {{/unless}}
-
-            </div>
-
-        </div>
-
-</div>
-<!-- banner section end -->
-
-<div class="container d-flex  col-10" id="listen">
-    <div class="card-group align-items-center">
-        <!-- Pokemon Stat Cards -->
-        {{#each team.pokemons as |pokemon|}}
-
-        <div class="card m-1">
-            <!-- Pokemon Sprite-->
-            <img id="poke-img" class="card-img-top" src="{{pokemon_pic}}" alt="pokemon image">
-            <div class="card-body">
-                <!-- Pokemon Name-->
-                <h5 id="poke-name" class="card-title">{{pokemon_name}}</h5>
-                <div class="progress">
-                    <!-- Pokemon HP-->
-                    <div id="hp" class="progress-bar" role="progressbar" style="width: {{hp}}%" aria-valuenow="{{hp}}"
-                        aria-valuemin="0" aria-valuemax="100">HP</div>
-                </div>
-                <div class="progress">
-                    <!-- Pokemon Attack-->
-                    <div id="attack" class="progress-bar  bg-danger" role="progressbar" style="width: {{attack}}%"
-                        aria-valuenow="{{attack}}" aria-valuemin="0" aria-valuemax="100">
-                        Attack</div>
-                </div>
-                <div class="progress">
-                    <!-- Pokemon Defense-->
-                    <div id="defense" class="progress-bar  bg-info" role="progressbar" style="width: {{defense}}%"
-                        aria-valuenow="{{defense}}" aria-valuemin="0" aria-valuemax="100">Defense</div>
-                </div>
-                <div class="progress">
-
-                    <!-- Pokemon Speed-->
-                    <div id="speed" class="progress-bar bg-secondary" role="progressbar" style="width: {{speed}}%"
-                        aria-valuenow="{{speed}}" aria-valuemin="0" aria-valuemax="100">
-                        Speed</div>
-                </div>
-              
-
-                    <!-- Action to Remove-->
-                    <button id="remove-pokemon" name="{{pokedex}}" type="button" class="btn btn-block btn-dark">REMOVE
-                        ME</button>
-
-              
-
-            </div>
-        </div>
-        {{/each}}
+      <div> <img id="team-logo" class="card-img-top" src="{{team.team_logo}}" alt="team-logo">
+        <h1 id="namesaved" class="mt-2">{{team.team_name}}</h1>
+      </div>
+      <p class="gx-2 text-light text-center">You have {{team.pokemons.length}} Pokémon in your team. {{#if disable}} Your team is full, If you wish to draft different Pokémon, please drop Pokémon from your Team. {{else}} To draft more Pokémon please visit the draft-page. If you wish to battle click on Go to Battle button.{{/if}}</p>
+      <div class="col-10 d-flex">
+        {{#unless disable}}
+          <button id="maxButton" class="btn btn-dark btn-block mx-auto mb-4"><a class="style-none text-white fs-lg-4" href="/draftpage">Draft Team</a></button> {{/unless}}
+      </div>
     </div>
-</div>
+  </div>
+  <!-- banner section end -->
+  <div class="container d-flex  col-10" id="listen">
+    <div class="card-group align-items-center">
+      <!-- Pokemon Stat Cards -->
+      {{#each team.pokemons as |pokemon|}}
+        <div class="card m-1">
+          <!-- Pokemon Sprite-->
+          <img id="poke-img" class="card-img-top" src="{{pokemon_pic}}" alt="pokemon image">
+          <div class="card-body">
+            <!-- Pokemon Name-->
+            <h5 id="poke-name" class="card-title">{{pokemon_name}}</h5>
+            <div class="progress">
+              <!-- Pokemon HP-->
+              <div id="hp" class="progress-bar" role="progressbar" style="width: {{hp}}%" aria-valuenow="{{hp}}" aria-valuemin="0" aria-valuemax="100">HP</div>
+            </div>
+            <div class="progress">
+              <!-- Pokemon Attack-->
+              <div id="attack" class="progress-bar  bg-danger" role="progressbar" style="width: {{attack}}%" aria-valuenow="{{attack}}" aria-valuemin="0" aria-valuemax="100"> Attack</div>
+            </div>
+            <div class="progress">
+              <!-- Pokemon Defense-->
+              <div id="defense" class="progress-bar  bg-info" role="progressbar" style="width: {{defense}}%" aria-valuenow="{{defense}}" aria-valuemin="0" aria-valuemax="100">Defense</div>
+            </div>
+            <div class="progress">
+              <!-- Pokemon Speed-->
+              <div id="speed" class="progress-bar bg-secondary" role="progressbar" style="width: {{speed}}%" aria-valuenow="{{speed}}" aria-valuemin="0" aria-valuemax="100"> Speed</div>
+            </div>
+            <!-- Action to Remove-->
+            <button id="remove-pokemon" name="{{pokedex}}" type="button" class="btn btn-block btn-dark">REMOVE ME</button>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+<!--if breaking check these divs --->
 {{/if}}
 </div>
 <script src="/javascript/team-page.js"></script>
