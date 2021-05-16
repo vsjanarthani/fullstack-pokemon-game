@@ -29,7 +29,7 @@ In later-stage development efforts, this game will hav elogic closer to resembli
 * [Tests](#Tests)
 * [Screenshot](#Screenshot)
 * [Questions](#Questions)
-* ![Frame 118](https://user-images.githubusercontent.com/77648727/118218400-2c510500-b42c-11eb-87f9-1cb89e6d23fd.png)
+![Frame 118](https://user-images.githubusercontent.com/77648727/118218400-2c510500-b42c-11eb-87f9-1cb89e6d23fd.png)
 
 
 ### User-Story 📖
