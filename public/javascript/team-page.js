@@ -120,13 +120,13 @@ if (createTeamEl) {
 };
 
 
-// carousel logic
-$('#myCarousel').carousel({
-  interval: false
-});
-$('#carousel-thumbs').carousel({
-  interval: false
-});
+// // carousel logic
+// $('#myCarousel').carousel({
+// //   interval: false
+// // });
+// $('#carousel-thumbs').carousel({
+//   interval: false
+// });
 
 $('[id^=carousel-selector-]').click(function () {
   var id_selector = $(this).attr('id');
