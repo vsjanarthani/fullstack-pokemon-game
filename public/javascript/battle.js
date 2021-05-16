@@ -84,14 +84,14 @@ gradeEl.addEventListener('click', event => {
   // console.log("Your team power:" + pokemonStats);
   // console.log("Your opponent power: " + opponentPokemonStats);
   if (pokemonStats > opponentPokemonStats) {
-    myModal.setAttribute('class', 'modal d-flex');
+    myModal.setAttribute('class', 'modal d-block bg-info');
     myModalBody.innerText = "Congratulations! Your team is stronger than your opponent's";
   } else if (pokemonStats < opponentPokemonStats){
-    myModal.setAttribute('class', 'modal d-flex');
+    myModal.setAttribute('class', 'modal d-block bg-info');
     myModalBody.innerText = "Your opponent has a stronger team. Better Luck Next Time!";
  ;
   } else {
-    myModal.setAttribute('class', 'modal d-flex');
+    myModal.setAttribute('class', 'modal d-block bg-info');
     myModalBody.innerText = "Its a TIE!!! Both your teams are equally strong!";
   }
 });
@@ -102,7 +102,7 @@ gradeEl.addEventListener('click', event => {
 if(closeModalEl){
   closeModalEl.addEventListener('click',() => {
     myModal.setAttribute('class', 'modal d-none');
-    document.location.replace('/battle')
+    document.location.replace('/team')
   });
 }
 
