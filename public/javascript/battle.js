@@ -1,7 +1,6 @@
 
-//Requiring variables
+//Requiring variables or assigning global variables
 const socket = io();
-
 let pokemonStats = 0;
 let opponentPokemonStats = 0;
 
@@ -10,6 +9,12 @@ const joinBtnEl = document.querySelector('#joinbtn');
 const quitBtnEl = document.querySelector('#quitbtn');
 const pickEl = document.querySelector('#pick-pokemon');
 const gradeEl = document.querySelector('#gradebtn');
+const myModal = document.getElementById('myModal');
+const myModalTitle = document.querySelector('.modal-title');
+const myModalBody = document.getElementById('modalbodyval');
+const closeModalEl = document.querySelector('.btn-close');
+
+
 
 // Event listener for join room button
 if (joinBtnEl) {
@@ -68,7 +73,6 @@ socket.on('updatedUsers', pokeTeams => {
 
 if (quitBtnEl) {
   quitBtnEl.addEventListener('click', event => {
-
     document.location.replace('/team');
   });
 }
@@ -77,24 +81,30 @@ if (quitBtnEl) {
 // Event listener for grade team button
 if(gradeEl) {
 gradeEl.addEventListener('click', event => {
-  console.log("Your team power:" + pokemonStats);
-  console.log("Your opponent power: " + opponentPokemonStats);
+  // console.log("Your team power:" + pokemonStats);
+  // console.log("Your opponent power: " + opponentPokemonStats);
   if (pokemonStats > opponentPokemonStats) {
-    alert("Your team is stronger than your opponent");
+    myModal.setAttribute('class', 'modal d-flex');
+    myModalBody.innerText = "Congratulations! Your team is stronger than your opponent's";
   } else if (pokemonStats < opponentPokemonStats){
-    alert("Your opponent has a stronger team");
+    myModal.setAttribute('class', 'modal d-flex');
+    myModalBody.innerText = "Your opponent has a stronger team. Better Luck Next Time!";
+ ;
   } else {
-    alert("Both your teams are equally strong!");
+    myModal.setAttribute('class', 'modal d-flex');
+    myModalBody.innerText = "Its a TIE!!! Both your teams are equally strong!";
   }
 });
 }
-// Event listner for clicking on the Pokemon options
-// pickEl.addEventListener('click', event => {
-//   //console.log(`btn clicked`);
-//   let id = event.target.attributes.id.value;
 
-//   let pickedBtnEl = document.getElementById(`${id}`);
-//   pickedBtnEl.innerText = "Picked";
-// });
+
+// Event listner for closing the modal
+if(closeModalEl){
+  closeModalEl.addEventListener('click',() => {
+    myModal.setAttribute('class', 'modal d-none');
+    document.location.replace('/battle')
+  });
+}
+
 
 

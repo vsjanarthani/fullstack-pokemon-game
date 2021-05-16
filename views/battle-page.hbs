@@ -1,10 +1,10 @@
 {{> header}}
 <!--Battle-Page Section-->
 
-<div class="container-fluid mt-5 mb-5 text-center">
-	<h3>Pokemon Draft Battles</h3>
+<div class="container-fluid mt-5 mb-2 text-center">
+	<h3>Pokemon Draft: Team Challenge</h3>
 	{{#unless opponentTeam}}
-	<button id="joinbtn" type="button" class="col-5 col-lg-1 btn btn-dark m-5">Join Battle</button>
+	<button id="joinbtn" type="button" class="col-5 col-lg-1 btn btn-dark m-5">Find a Team</button>
 	{{/unless}}
 	{{#if opponentTeam}}
 	<button id="gradebtn" type="button" class="col-5 col-lg-1 btn btn-dark m-5">Grade Team</button>
@@ -13,14 +13,16 @@
 
 </div>
 
-<div class="container-fluid card col-12 col-lg-9 mt-5 mb-5 d-flex flex-column p-3">
+<div class="container-fluid d-flex flex-wrap">
+
+<div class="container-fluid card col-12 col-lg-5 mt-3 mb-5 d-flex flex-column p-3">
 	<!--User side Pokemon information-->
 	<h5 class="d-flex justify-content-center" id="userHeader">Your Team: {{userTeam.team_name}}</h5>
 	<h1 class="d-flex justify-content-center"><img id="heroHeadline2" src="{{userTeam.team_logo}}"></h1>
 	
 	<div class="container-fluid">
 		{{!--Each Pokemon info --}}
-		<div id="pick-pokemon" class="row card-group d-flex justify-content-between">
+		<div id="pick-pokemon" class="row card-group d-flex justify-content-evenly">
 			{{#each userTeam.pokemons as |pokemon|}}
 			<div class="col col-md-3" style="max-width:18rem">
 				<div class="card">
@@ -29,12 +31,6 @@
 					<div class="card-body">
 						<!-- Pokemon Name-->
 						<h5 id="pokemon" class="card-title">{{pokemon_name}}</h5>
-
-						<div class="card-footer p-2 m-2">
-							<!-- Action to Pick pokemon-->
-							<button id="{{pokedex}}" name="{{hp}}-{{defense}}-{{attack}}-{{speed}}" type="button" class="btn btn-dark pickme">Pick
-								Me</button>
-						</div>
 					</div>
 				</div>
 			</div>
@@ -43,19 +39,22 @@
 	</div>
 </div>
 
-
+{{#if opponentTeam}}
+<div class="align-self-center">
+	<h1 class="text-center fs-1">VS</h1>
+</div>
 
 {{!-- to Do - Connect to the socket and challenge another user to see who has the best team --}}
-{{#if opponentTeam}}
 
-<div class="container-fluid card col-12 col-lg-9 mt-5 mb-5 d-flex flex-column p-5">
+
+<div class="container-fluid card col-12 col-lg-5 mt-3 mb-5 d-flex flex-column p-3">
 	<!--Opponent side Pokemon information-->
 	<h5 class="d-flex justify-content-center" id="userHeader">opponent Team: {{opponentTeam.team_name}}</h5>
 	<h1 class="d-flex justify-content-center"><img id="heroHeadline2" src="{{opponentTeam.team_logo}}"></h1>
 
 	<div class="container-fluid">
 		{{!--Each Pokemon info --}}
-		<div class="row card-group justify-content-between">
+		<div class="row card-group d-flex justify-content-evenly">
 			{{#each opponentTeam.pokemons as |pokemon|}}
 			<div class="col col-md-3" style="max-width:18rem">
 				<div class="card">
@@ -73,6 +72,27 @@
 	</div>
 </div>
 {{/if}}
+
+</div>
+
+  <!-- Display modal for error messages -->
+
+  <!-- Modal -->
+   <div id="myModal" class="modal d-none" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Team Challenge Result:</h5>
+                    <button type="button" class="btn-close" 
+                    aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="modalbodyval"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 <script src="/socket.io/socket.io.js"></script>
 <script src="/javascript/battle.js"></script>
