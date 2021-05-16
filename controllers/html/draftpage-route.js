@@ -5,14 +5,21 @@ const dev = (process.env.NODE_ENV != 'production');
 const server = dev ? 'http://localhost:5000' : process.env.SERVER_PROD;
 
 
-// let id;
+// Function to fetch pokemon API once a day
 
-// const promisifedPingApi = new Promise ((resolve, reject) => {
-//   id = setTimeout(() => {
-//     getPokemon();
-//   }, 500);
-// });
-
+const fetchAPI = async () => {
+    try {
+        await setTimeout(() => {
+            getPokemon();
+        }, 500);
+    }
+    catch (e) {
+        console.log(e)
+    }
+};
+fetchAPI().then(() => {
+    setInterval(getPokemon, 1000 * 60 * 60 * 24);
+});
 
 // fetching our selected pokedex from database
 let selectedPokedex = [];
@@ -25,7 +32,6 @@ setTimeout(() => {
                 selectedPokedex.push(pokedex)
             }
             // console.log(selectedPokedex);
-
         })
         .catch(e => {
             console.log(e);
@@ -72,8 +78,6 @@ const getPokemon = () => {
     }
 };
 
-getPokemon();
-setInterval(getPokemon, 1000 * 60 * 60 * 24);
 
 // Post request to update pokemon data when its drafted to a team
 router.post("/updatePokeData", (req, res) => {
