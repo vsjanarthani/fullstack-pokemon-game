@@ -79,6 +79,8 @@ Sarah Durkin - [sarahdurks](https://www.github.com/sarahdurks/)
 - [Stickpng assets for Pokemon Graphics non-sprites](https://www.stickpng.com/)    
 - [12up Pokemon Go Article](https://www.12up.com/posts/3595664-every-nfl-helmet-redesigned-with-pokemon-go-characters)    
 - [Canva for Image Cleanup](https://www.canva.com/)    
+- [Tooltip Codepen](https://codepen.io/reiinii1/pen/aPGXEa)
+- [Carousel for Bootstrap Example] (https://codepen.io/Ashik-iqbal/pen/WNbRWGR)
 
 ![Frame 93](https://user-images.githubusercontent.com/77648727/118072017-d6ae2700-b35d-11eb-9840-22d6764b0e95.png)
 
