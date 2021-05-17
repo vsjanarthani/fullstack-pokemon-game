@@ -19,7 +19,7 @@ html {
 	
   }
 /* linkedin and github links style*/
-.nav-item, #logout {
+.nav-item, .github, #logout {
 	color: white !important;
 }
 /*https://codepen.io/reiinii1/pen/aPGXEa*/
@@ -199,14 +199,7 @@ html {
 	margin-top: 2vh;
 	text-align: center;
   }
-  
-  #namesaved {
-	font-family: 'Staatliches';
-	font-size: 2.4rem;
-	flex-wrap: nowrap;
-	color: white;
-	text-align: center;
-  }
+
   
   #random-name-div {
 	justify-items: baseline;
@@ -482,3 +475,10 @@ margin-top: 35px;
 	z-index: 2;
   }
 
+.namesaved {
+	font-family: 'Staatliches';
+	font-size: 2.4rem;
+	flex-wrap: nowrap;
+	color: white;
+	text-align: center;
+  }
