@@ -22,6 +22,7 @@ fetchAPI().then(() => {
 
 // fetching our selected pokedex from database
 let selectedPokedex = [];
+let pokeNums = [];
 setTimeout(() => {
     fetch(`${server}/api/pokemons`)
         .then(response => response.json())
@@ -30,8 +31,12 @@ setTimeout(() => {
                 const pokedex = data[i].pokedex;
                 selectedPokedex.push(pokedex)
             }
+            // console.log("selected pokedex follows")
             // console.log(selectedPokedex);
 
+        })
+        .then(() => {
+            forLoop();
         })
         .catch(e => {
             console.log(e);
@@ -40,20 +45,22 @@ setTimeout(() => {
 }, 500);
 
 
-
 // adding 20 random numbers to our array, making sure there are no repeats
-let pokeNums = [];
-for (let i = 0; i < 20; i++) {
-    const singlePokeNum = Math.floor(Math.random() * 898) + 1;
-    if (!pokeNums.includes(singlePokeNum) && !selectedPokedex.includes(singlePokeNum)) {
-        pokeNums.push(singlePokeNum);
+const forLoop = () => {
+    for (let i = 0; i < 20; i++) {
+        const singlePokeNum = Math.floor(Math.random() * 898) + 1;
+        if (!pokeNums.includes(singlePokeNum) && !selectedPokedex.includes(singlePokeNum)) {
+            pokeNums.push(singlePokeNum);
+        }
     }
-};
+    getPokemon();
+}
 
 // looping through our array, using numbers as pokemon to get pokemon data
 let pokeData = [];
 const getPokemon = () => {
-
+    console.log("selected pokedex follows")
+    console.log(selectedPokedex)
     for (let i = 0; i < pokeNums.length; i++) {
         const pokeNum = pokeNums[i];
         fetch(`https://pokeapi.co/api/v2/pokemon/${pokeNum}`)
