@@ -53,7 +53,7 @@ router.get('/', sessionAuth, async (req, res) => {
                 res.render('battle-page', { userTeam, loggedIn: true });
             }
             else {
-                document.location.replace('/team');
+                res.render('battle-page', { userTeam: false });
             }
 
         } catch (e) {
