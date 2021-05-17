@@ -1,4 +1,8 @@
-
+html {
+	scroll-behavior: smooth;
+    margin: 0;
+	padding: 0;
+}
 .greeting {
 	margin-top: 2rem;
 	font-family: "Poppins"
@@ -15,7 +19,7 @@
 	
   }
 /* linkedin and github links style*/
-a{
+.nav-item, #logout {
 	color: white !important;
 }
 /*https://codepen.io/reiinii1/pen/aPGXEa*/
@@ -92,6 +96,7 @@ a{
 	transition-duration: 0.2s;
 	transform: translateX(-50%) scaleY(1);
   }
+
 
 /* github logo size */
 .github {
@@ -360,8 +365,8 @@ margin-top: 35px;
 	border-radius: 5px;
   }
 
-  .choice {
-    margin-top: .5rem !important;
+  .draftpagebtn {
+	  margin: 5px;
   }
   
   .btnDraft:hover,
@@ -421,10 +426,6 @@ margin-top: 35px;
 	margin-bottom: 3px;
 	margin: 4px;
   }
-
-  .poke-display {
-	  margin: 0px;
-  }
   
   .card {
 	margin-bottom: 10px;
@@ -480,3 +481,4 @@ margin-top: 35px;
 	right: 0;
 	z-index: 2;
   }
+
