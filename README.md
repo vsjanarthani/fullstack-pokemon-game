@@ -75,6 +75,8 @@ The app is deployed on Heroku [https://pokemon-fullstack.herokuapp.com/](https:/
 - [Tooltip Codepen](https://codepen.io/reiinii1/pen/aPGXEa)
 - [Carousel for Bootstrap Example](https://codepen.io/Ashik-iqbal/pen/WNbRWGR)
 - [Canva for Image Cleanup](https://www.canva.com/)    
+- [Tooltip Codepen](https://codepen.io/reiinii1/pen/aPGXEa)
+- [Carousel for Bootstrap Example] (https://codepen.io/Ashik-iqbal/pen/WNbRWGR)
 
 ![Frame 93](https://user-images.githubusercontent.com/77648727/118072017-d6ae2700-b35d-11eb-9840-22d6764b0e95.png)
 
