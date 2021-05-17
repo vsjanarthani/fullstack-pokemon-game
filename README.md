@@ -4,7 +4,9 @@
 ## Description 🏈
 This is a simple game built around the idea of selecting and saving a Pokemon team.
 First time players will sign up with their name, email, and a password. They will land on a team-building page where they can run a random name generator to help spark ideas for their team name--it mixes up Legendary Pokemon, Pokemon 'world' locations, moves, and fun descriptors to create something unique. Users can select and save a logo, then proceed on to the draft.
+
 Players are able to review stats of "free agent" pokemon to draft and claim them for their Pokémon team. Data comes from the PokéAPI and the team a user builds is stored for future use and play. 
+
 In later-stage development efforts, this game will hav elogic closer to resembling a fantasy football draft logic, where players take turns selecting the best Pokémon.
 ![Frame 92](https://user-images.githubusercontent.com/77648727/118071368-7ec2f080-b35c-11eb-870d-9a0a713b0141.png)
 
@@ -70,6 +72,8 @@ The app is deployed on Heroku [https://pokemon-fullstack.herokuapp.com/](https:/
 - [Pokemon Locations](https://bulbapedia.bulbagarden.net/wiki/List_of_locations_by_name)
 - [Stickpng assets for Pokemon Graphics non-sprites](https://www.stickpng.com/)    
 - [12up Pokemon Go Article](https://www.12up.com/posts/3595664-every-nfl-helmet-redesigned-with-pokemon-go-characters)    
+-- [Tooltip Codepen](https://codepen.io/reiinii1/pen/aPGXEa)
+- [Carousel for Bootstrap Example](https://codepen.io/Ashik-iqbal/pen/WNbRWGR)
 - [Canva for Image Cleanup](https://www.canva.com/)    
 
 ![Frame 93](https://user-images.githubusercontent.com/77648727/118072017-d6ae2700-b35d-11eb-9840-22d6764b0e95.png)
