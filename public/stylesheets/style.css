@@ -5,38 +5,48 @@
 	/* "Lucida Console", "Courier New", monospace; */
   }
 
-
+  
 
   #footer {
 	width: 100%;
 	height: 100px;
 	bottom: 0;
-	left: 0;
+	justify-self: center;
+	
   }
 /* linkedin and github links style*/
 a{
 	color: white !important;
-	padding: .2rem 4rem !important; /* needs a fix for mobile*/
-	margin-left: auto !important;
-	margin-right: auto !important;
 }
 
 /* github logo size */
 .github {
 	font-size: small;
+	text-align: center !important;
 }
 
+
+.footerhead {
+	text-align: center !important;
+	size: 1.5rem;
+	margin-bottom: 2rem;
+	font-family: 'Poppins';
+
+}
 /* centering the names */
 .name {
 	text-align: center !important;
+	size: 1rem;
+
+	margin-top: 1rem;
 	margin-bottom: 1rem;
 	font-family: 'Poppins';
 }
- 
+
 /* profile pictures style */
 .profile-pic {
 	border: 3px solid #ddd; /* Gray border */
-	width: 125px; /* Set a small width */
+	width: 100px; /* Set a small width */
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
