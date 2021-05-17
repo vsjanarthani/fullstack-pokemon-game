@@ -24,8 +24,12 @@ In later-stage development efforts, this game will hav elogic closer to resembli
 * [License](#License📛)
 * [Authors](#Authors📝)
 * [Tests](#Tests🤓)
+* [Screenshot](#Screenshot)
 * [Deployed-Link](#Deployed-Link)
 * [Questions](#Questions🤔)
+* [Resources/References](Resources/References🙏)
+
+
 ![Frame 118](https://user-images.githubusercontent.com/77648727/118218400-2c510500-b42c-11eb-87f9-1cb89e6d23fd.png)
 
 
@@ -33,30 +37,35 @@ In later-stage development efforts, this game will hav elogic closer to resembli
 > AS a Pokémon Fan
 > I WANT to make Data-based decisions and build a strong team       
 > SO I CAN win when I play in tournaments against My friends
-
+      
 ### Installation🧮
 > To download the application: ```git clone https://github.com/sarahdurks/fullstack-pokemon-game.git```.         
 > ```npm i```  to install dependencies      
 > Configure an .env file with your username, password, database name, session secret and server path.    
 > ```npm start``` to start the server      
-> ```npm run seed``` to seed the database
-      
+> ```npm run seed``` to seed the database      
+![Frame 117](https://user-images.githubusercontent.com/77648727/118218461-4db1f100-b42c-11eb-9713-c88e23c1d596.png)
 ### License📛
 This application is covered under the **MIT** license. 
-![Frame 117](https://user-images.githubusercontent.com/77648727/118218461-4db1f100-b42c-11eb-9713-c88e23c1d596.png)
+
 
 ### Authors📝
 * Janarthani: [GitHub](https://github.com/vsjanarthani)      
 * Yevgeniya Terlyuk [GitHub](https://github.com/down-dive)     
 * Megan Close [GitHub](https://github.com/meganclo)      
 * Sarah Durkin [GitHub](https://github.com/sarahdurks)   
+
 ![Frame 120](https://user-images.githubusercontent.com/77648727/118218517-6de1b000-b42c-11eb-949e-c125ba69421d.png)
+
 
 ### Tests🤓
 No automated test are set up for this application yet.
 
+### Screenshot
+![code](./assets/images/screenshot-pokemon.png)
 ### Questions🤔
 If you have any questions, please reach out to the Authors via github.
+        
 * Janarthani - [vsjanarthani](https://github.com/vsjanarthani)        
 * Yevgeniya Terlyuk - [Yev](https://github.com/down-dive)        
 * Megan Close - [MeganClo](https://github.com/meganclo)             
@@ -76,9 +85,8 @@ The app is deployed on Heroku [https://pokemon-fullstack.herokuapp.com/](https:/
 - [Carousel for Bootstrap Example](https://codepen.io/Ashik-iqbal/pen/WNbRWGR)
 - [Canva for Image Cleanup](https://www.canva.com/)    
 - [Tooltip Codepen](https://codepen.io/reiinii1/pen/aPGXEa)
-- [Carousel for Bootstrap Example] (https://codepen.io/Ashik-iqbal/pen/WNbRWGR)
+- [Carousel for Bootstrap Example](https://codepen.io/Ashik-iqbal/pen/WNbRWGR)
 
 ![Frame 93](https://user-images.githubusercontent.com/77648727/118072017-d6ae2700-b35d-11eb-9840-22d6764b0e95.png)
-
 
 
