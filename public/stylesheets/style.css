@@ -347,6 +347,7 @@ margin-top: 35px;
 	font-family: 'Poppins', sans-serif;
 	font-size: 1rem;
 	border-radius: 5px;
+  padding: .5rem;
   }
 
   .draftpagebtn {
@@ -472,4 +473,19 @@ margin-top: 35px;
 	flex-wrap: nowrap;
 	color: white;
 	text-align: center;
+  }
+
+  .removeBtn {
+  	color: #faf8f8;
+	align-self: center;
+	border-width: 1px;
+	font-family: 'Poppins', sans-serif;
+	font-size: 1rem;
+	border-radius: 5px;
+  padding: .5rem !important;
+  width: 100%;
+  }
+
+  .buttonWidth {
+    width: 20rem !important
   }
