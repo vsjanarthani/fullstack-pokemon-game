@@ -237,8 +237,9 @@ margin-top: 35px;
   }
   
   .navbar-brand {
+	justify-self:left;
 	font-family: 'Poppins', sans-serif;
-	font-size: x-large !important;
+	font-size: large !important;
 	font-weight: 600;
   }
   
