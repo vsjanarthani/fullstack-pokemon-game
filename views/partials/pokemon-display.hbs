@@ -1,7 +1,7 @@
 <div class="container d-flex justify-content-evenly mt-1" id="listen">
   <div class="row card-group">
     {{#each pokeData}}
-      <div class="col-12 col-sm-3">
+      <div class="col-12 col-sm-6 col-md-4">
 
         <!--card template-->
         <div class="card">
@@ -25,7 +25,7 @@
               <div id="speed" class="progress-bar  bg-secondary" role="progressbar" style="width: {{speed}}%" aria-valuenow="{{speed}}" aria-valuemin="0" aria-valuemax="100"> Speed</div>
             </div>
             {{#if selected}}
-              <button id="{{pokedex}} {{pokemon_name}} {{pokemon_pic}} {{hp}} {{attack}} {{defense}} {{speed}}" type="submit" data-selected="{{selected}}" name="draftmeBtn" class="btn-block btnDraft" disabled>Already Drafted!</button>
+              <button id="{{pokedex}} {{pokemon_name}} {{pokemon_pic}} {{hp}} {{attack}} {{defense}} {{speed}}" type="submit" data-selected="{{selected}}" name="draftmeBtn" class="btn-block btnDraft" disabled>DRAFTED!</button>
             {{else}}
               <button id="{{pokedex}} {{pokemon_name}} {{pokemon_pic}} {{hp}} {{attack}} {{defense}} {{speed}}" type="submit" data-selected="{{selected}}" name="draftmeBtn" class="btn-block btnDraft">DRAFT ME</button>
             {{/if}}

@@ -31,7 +31,7 @@ PokemonBtnEl.addEventListener("click", (event) => {
     if (pokeTeam.length < dbTeam[1] && !pokeTeam.includes(buttonId) && buttonId != "") {
         let thisButton = document.getElementById(`${buttonId}`);
         thisButton.disabled = true;
-        thisButton.innerText = "Already Drafted!"
+        thisButton.innerText = "DRAFTED!"
         pokeInfo = buttonId.split(" ");
         let thisPokemon = {
             pokedex: pokeInfo[0],
