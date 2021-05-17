@@ -333,6 +333,10 @@ margin-top: 35px;
 	margin-bottom: 3px;
 	margin: 4px;
   }
+
+  .poke-display {
+	  margin: 0px;
+  }
   
   .card {
 	margin-bottom: 10px;
