@@ -44,12 +44,11 @@ In later-stage development efforts, this game will hav elogic closer to resembli
 > Configure an .env file with your username, password, database name, session secret and server path.    
 > ```npm start``` to start the server      
 > ```npm run seed``` to seed the database      
-
+![Frame 117](https://user-images.githubusercontent.com/77648727/118218461-4db1f100-b42c-11eb-9713-c88e23c1d596.png)
 ### License📛
 This application is covered under the **MIT** license. 
-![Frame 117](https://user-images.githubusercontent.com/77648727/118218461-4db1f100-b42c-11eb-9713-c88e23c1d596.png)
 
-![Frame 117](https://user-images.githubusercontent.com/77648727/118218461-4db1f100-b42c-11eb-9713-c88e23c1d596.png)
+
 ### Authors📝
 * Janarthani: [GitHub](https://github.com/vsjanarthani)      
 * Yevgeniya Terlyuk [GitHub](https://github.com/down-dive)     

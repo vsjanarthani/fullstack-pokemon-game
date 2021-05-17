@@ -41,7 +41,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Run when client connects
 let pokeTeams = {};
 let pokeTeamStats = {};
-let battlingPokeTeams = {};
 io.on('connection', connected);
 
 // Function for socket.io
