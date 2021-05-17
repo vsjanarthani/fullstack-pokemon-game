@@ -1,5 +1,5 @@
 <header>
-    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark p-3">
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark p-4">
         <a href="/draftpage" class="navbar-brand">
             <!--logo in nav-->
             <img id="logoIcon" height="40"
@@ -12,10 +12,11 @@
 
         <div class="collapse navbar-collapse d-lg-flex justify-content-lg-evenly" id="navbarCollapse1">
             {{#if loggedIn}}
-            <div class="navbar-nav">
-                <a href="team" class="nav-item text-light nav-link">My Team</a>
-                <a href="/draftpage" class="nav-item text-light nav-link">Draft Page</a>
-                <button type="submit" id="logout" class="btn btn-outline-light nav-item text-light nav-link">Logout</button>
+            <div class="navbar-nav text-center">
+                <a href="team" class="nav-item nav-link mt-1 fs-5">My Team</a>
+                <a href="/draftpage" class="nav-item nav-link mt-1 fs-5">Draft Pokemon</a>
+                <a href="/battle" class="nav-item nav-link mt-1 fs-5">Challenge Team</a>
+                <button type="submit" id="logout" class="btn nav-item text-light fs-5 nav-link">Logout</button>
             </div>
 
             {{/if}}
