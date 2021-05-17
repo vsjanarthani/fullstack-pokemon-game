@@ -72,7 +72,7 @@ The app is deployed on Heroku [https://pokemon-fullstack.herokuapp.com/](https:/
 - [Pokemon Locations](https://bulbapedia.bulbagarden.net/wiki/List_of_locations_by_name)
 - [Stickpng assets for Pokemon Graphics non-sprites](https://www.stickpng.com/)    
 - [12up Pokemon Go Article](https://www.12up.com/posts/3595664-every-nfl-helmet-redesigned-with-pokemon-go-characters)    
--- [Tooltip Codepen](https://codepen.io/reiinii1/pen/aPGXEa)
+-[Tooltip Codepen](https://codepen.io/reiinii1/pen/aPGXEa)
 - [Carousel for Bootstrap Example](https://codepen.io/Ashik-iqbal/pen/WNbRWGR)
 - [Canva for Image Cleanup](https://www.canva.com/)    
 
