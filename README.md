@@ -20,13 +20,10 @@ In later-stage development efforts, this game will hav elogic closer to resembli
 - [x] Node.js (express.js, mysql2, sequelize, nodemon, dotenv, express-handlebars)
 - [x] Heroku
 - [x] PokéAPI
-- [x] Socket.io
 
 ## Table of Contents 📑
 * [User-Story](#User-Story)
-* [Acceptance-Criteria](#Acceptance-Criteria)
 * [Installation](#Installation)
-* [Usage](#Usage)
 * [License](#License)
 * [Authors](#Authors)
 * [Tests](#Tests)
@@ -39,15 +36,11 @@ In later-stage development efforts, this game will hav elogic closer to resembli
 > AS a Pokémon Fan
 > I WANT to make Data-based decisions and build a strong team       
 > SO I CAN win when I play in tournaments against My friends
-
-### Acceptance-Criteria :white_check_mark:
-> ADD     
-> THIS     
-> TOO       
+   
 ![Frame 117](https://user-images.githubusercontent.com/77648727/118218461-4db1f100-b42c-11eb-9713-c88e23c1d596.png)
 
 
-### Installation & Usage 🧮
+### Installation 🧮
 > To download the application: ```git clone https://github.com/sarahdurks/fullstack-pokemon-game.git```.         
 > ```npm i```  to install dependencies      
 > Configure an .env file with tyour username, password and database name      
