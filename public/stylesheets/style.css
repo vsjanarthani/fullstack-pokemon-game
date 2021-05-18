@@ -190,7 +190,11 @@ text-shadow: 1px 1px #2b2929;
 	margin-top: 2vh;
 	text-align: center;
   }
-
+  #opponentHeader,
+  #userHeader {
+	font-family: 'Staatliches';
+	font-size: 2rem;
+  }
   
   #random-name-div {
 	justify-items: baseline;
@@ -294,7 +298,13 @@ margin-top: 35px;
   }
   
   #draft-clear,
-  #draft-team {
+  #draft-team,
+  #joinbtn,
+  #gradebtn,
+  #quitbtn,
+  #pokeTeamNaming,
+  #create-team,
+  .utility {
 	font-family: 'Poppins', sans-serif;
 	font-weight: 500;
 	font-size: medium;
@@ -308,6 +318,10 @@ margin-top: 35px;
   
   #heroHeadline {
 	max-width: 10vh;
+  }
+
+  #heroHeadline2 {
+	  max-width: 15vh;
   }
   
   .navbar-brand {
@@ -347,7 +361,7 @@ margin-top: 35px;
 	font-family: 'Poppins', sans-serif;
 	font-size: 1rem;
 	border-radius: 5px;
-  padding: .5rem;
+  	padding: .5rem;
   }
 
   .draftpagebtn {
@@ -482,10 +496,20 @@ margin-top: 35px;
 	font-family: 'Poppins', sans-serif;
 	font-size: 1rem;
 	border-radius: 5px;
-  padding: .5rem !important;
-  width: 100%;
+  	padding: .5rem !important;
+  	width: 90%;
   }
 
   .buttonWidth {
     width: 20rem !important
   }
+
+/* smaller phones like galaxy fold & apple SE */
+@media screen and (max-width: 320px) {
+
+	#listen {
+		margin:0%;
+		padding:10px;
+	}
+
+}
