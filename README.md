@@ -19,37 +19,37 @@ In later-stage development efforts, this game will hav elogic closer to resembli
 - [x] Socket.io
 
 ## Table of Contents 📑
-* [User-Story](#User-Story📖)
-* [Installation](#Installation🧮)
-* [License](#License📛)
-* [Authors](#Authors📝)
-* [Tests](#Tests🤓)
+* [User-Story](#User-Story)
+* [Installation](#Installation)
+* [License](#License)
+* [Authors](#Authors)
+* [Tests](#Tests)
 * [Screenshot](#Screenshot)
 * [Deployed-Link](#Deployed-Link)
-* [Questions](#Questions🤔)
+* [Questions](#Questions)
 * [Resources/References](Resources/References🙏)
 
 
 ![Frame 118](https://user-images.githubusercontent.com/77648727/118218400-2c510500-b42c-11eb-87f9-1cb89e6d23fd.png)
 
 
-### User-Story📖
+### User-Story
 > AS a Pokémon Fan
 > I WANT to make Data-based decisions and build a strong team       
 > SO I CAN win when I play in tournaments against My friends
       
-### Installation🧮
+### Installation
 > To download the application: ```git clone https://github.com/sarahdurks/fullstack-pokemon-game.git```.         
 > ```npm i```  to install dependencies      
 > Configure an .env file with your username, password, database name, session secret and server path.    
 > ```npm start``` to start the server      
 > ```npm run seed``` to seed the database      
 ![Frame 117](https://user-images.githubusercontent.com/77648727/118218461-4db1f100-b42c-11eb-9713-c88e23c1d596.png)
-### License📛
+### License
 This application is covered under the **MIT** license. 
 
 
-### Authors📝
+### Authors
 * Janarthani: [GitHub](https://github.com/vsjanarthani)      
 * Yevgeniya Terlyuk [GitHub](https://github.com/down-dive)     
 * Megan Close [GitHub](https://github.com/meganclo)      
@@ -58,12 +58,11 @@ This application is covered under the **MIT** license.
 ![Frame 120](https://user-images.githubusercontent.com/77648727/118218517-6de1b000-b42c-11eb-949e-c125ba69421d.png)
 
 
-### Tests🤓
+### Tests
 No automated test are set up for this application yet.
 
 ### Screenshot
 ![code](./assets/images/screenshot-pokemon.png)
-### Questions🤔
 If you have any questions, please reach out to the Authors via github.
         
 * Janarthani - [vsjanarthani](https://github.com/vsjanarthani)        
@@ -75,7 +74,7 @@ If you have any questions, please reach out to the Authors via github.
 ### Deployed-Link
 The app is deployed on Heroku [https://pokemon-fullstack.herokuapp.com/](https://pokemon-fullstack.herokuapp.com/)
 
-### Resources/References🙏
+### Resources/References
 - [Using Array Filter StackOverflow](https://stackoverflow.com/questions/56168771/how-to-limit-for-10-results-the-array-filter) - [Legendary Pokemon](https://pokemongo.fandom.com/wiki/Legendary_Pok%C3%A9mon)
 - [The BulbaPedia for Moves](https://bulbapedia.bulbagarden.net/wiki/List_of_moves)
 - [Pokemon Locations](https://bulbapedia.bulbagarden.net/wiki/List_of_locations_by_name)
