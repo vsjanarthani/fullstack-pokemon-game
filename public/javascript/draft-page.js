@@ -27,30 +27,33 @@ fetch("/api/team")
 
 // Event listener for button click to draft each pokemon
 PokemonBtnEl.addEventListener("click", (event) => {
-    let buttonId = event.target.id;
-    if (pokeTeam.length < dbTeam[1] && !pokeTeam.includes(buttonId) && buttonId != "") {
-        let thisButton = document.getElementById(`${buttonId}`);
-        thisButton.disabled = true;
-        thisButton.innerText = "DRAFTED!"
-        pokeInfo = buttonId.split(" ");
-        let thisPokemon = {
-            pokedex: pokeInfo[0],
-            pokemon_name: pokeInfo[1],
-            pokemon_pic: pokeInfo[2],
-            hp: pokeInfo[3],
-            attack: pokeInfo[4],
-            defense: pokeInfo[5],
-            speed: pokeInfo[6],
-            team_id: dbTeam[0],
-            selected: true
+    if (event.target.matches("button")) {
+        let buttonId = event.target.id;
+        if (pokeTeam.length < dbTeam[1] && !pokeTeam.includes(buttonId) && buttonId != "") {
+            let thisButton = document.getElementById(`${buttonId}`);
+            thisButton.disabled = true;
+            thisButton.innerText = "DRAFTED!";
+            thisButton.classList.add("btn-dark")
+            pokeInfo = buttonId.split(" ");
+            let thisPokemon = {
+                pokedex: pokeInfo[0],
+                pokemon_name: pokeInfo[1],
+                pokemon_pic: pokeInfo[2],
+                hp: pokeInfo[3],
+                attack: pokeInfo[4],
+                defense: pokeInfo[5],
+                speed: pokeInfo[6],
+                team_id: dbTeam[0],
+                selected: true
+            }
+            pokeTeam.push(thisPokemon);
+            // console.log(pokeTeam);
+        } else if (pokeTeam.length == dbTeam[1]) {
+            alert('No more slots on your team. Click "Draft Team" button to finish drafting.');
+            return;
+        } else {
+            return;
         }
-        pokeTeam.push(thisPokemon);
-        // console.log(pokeTeam);
-    } else if (pokeTeam.length == dbTeam[1]) {
-        alert('No more slots on your team. Click "Draft Team" button to finish drafting.');
-        return;
-    } else {
-        return;
     }
 });
 
