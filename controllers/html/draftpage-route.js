@@ -5,21 +5,6 @@ const dev = (process.env.NODE_ENV != 'production');
 const server = dev ? 'http://localhost:5000' : process.env.SERVER_PROD;
 
 
-// Function to fetch pokemon API once a day
-const fetchAPI = async () => {
-    try {
-        await setTimeout(() => {
-            getPokemon();
-        }, 500);
-    }
-    catch (e) {
-        console.log(e)
-    }
-};
-fetchAPI().then(() => {
-    setInterval(getPokemon, 1000 * 60 * 60 * 24);
-});
-
 // fetching our selected pokedex from database
 let selectedPokedex = [];
 let pokeNums = [];
@@ -36,8 +21,9 @@ setTimeout(() => {
 
         })
         .then(() => {
-            forLoop();
+            checkPokedex();
         })
+        
         .catch(e => {
             console.log(e);
 
@@ -46,14 +32,16 @@ setTimeout(() => {
 
 
 // adding 20 random numbers to our array, making sure there are no repeats
-const forLoop = () => {
+const checkPokedex = () => {
     for (let i = 0; i < 20; i++) {
         const singlePokeNum = Math.floor(Math.random() * 898) + 1;
         if (!pokeNums.includes(singlePokeNum) && !selectedPokedex.includes(singlePokeNum)) {
             pokeNums.push(singlePokeNum);
         }
     }
-    getPokemon();
+    fetchAPI().then(() => {
+        setInterval(getPokemon, 1000 * 60 * 60 * 24);
+    });
 }
 
 // looping through our array, using numbers as pokemon to get pokemon data
@@ -85,6 +73,21 @@ const getPokemon = () => {
             });
     }
 };
+
+
+// Function to fetch pokemon API once a day
+const fetchAPI = async () => {
+    try {
+        await setTimeout(() => {
+            getPokemon();
+        }, 500);
+    }
+    catch (e) {
+        console.log(e)
+    }
+};
+
+
 
 
 // Post request to update pokemon data after the pokemon is drafted to a team
